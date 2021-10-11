@@ -1,0 +1,11 @@
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FRMVenta.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRIngreso.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.exe
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.pdb
