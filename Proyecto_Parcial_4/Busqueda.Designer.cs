@@ -74,9 +74,9 @@ namespace Proyecto_Parcial_4
             // 
             this.CBBusqueda.Enabled = false;
             this.CBBusqueda.FormattingEnabled = true;
-            this.CBBusqueda.Location = new System.Drawing.Point(35, 143);
+            this.CBBusqueda.Location = new System.Drawing.Point(35, 133);
             this.CBBusqueda.Name = "CBBusqueda";
-            this.CBBusqueda.Size = new System.Drawing.Size(121, 21);
+            this.CBBusqueda.Size = new System.Drawing.Size(166, 21);
             this.CBBusqueda.TabIndex = 3;
             // 
             // textBox1
@@ -126,7 +126,7 @@ namespace Proyecto_Parcial_4
             // LBTitle3
             // 
             this.LBTitle3.AutoSize = true;
-            this.LBTitle3.Location = new System.Drawing.Point(46, 118);
+            this.LBTitle3.Location = new System.Drawing.Point(65, 117);
             this.LBTitle3.Name = "LBTitle3";
             this.LBTitle3.Size = new System.Drawing.Size(110, 13);
             this.LBTitle3.TabIndex = 9;

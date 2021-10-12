@@ -30,8 +30,6 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBTitle = new System.Windows.Forms.Label();
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
@@ -60,6 +58,9 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar = new System.Windows.Forms.Button();
             this.BTNLimpiar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,25 +71,14 @@ namespace Proyecto_Parcial_4
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Articulo,
+            this.Marca,
             this.Contacto});
-            this.dataGridView1.Location = new System.Drawing.Point(389, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(347, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(340, 188);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Artículo";
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            // 
-            // Contacto
-            // 
-            this.Contacto.HeaderText = "Contacto";
-            this.Contacto.Name = "Contacto";
-            this.Contacto.ReadOnly = true;
             // 
             // LBTitle
             // 
@@ -170,8 +160,10 @@ namespace Proyecto_Parcial_4
             // 
             // TBCodigo
             // 
+            this.TBCodigo.Enabled = false;
             this.TBCodigo.Location = new System.Drawing.Point(94, 252);
             this.TBCodigo.Name = "TBCodigo";
+            this.TBCodigo.ReadOnly = true;
             this.TBCodigo.Size = new System.Drawing.Size(100, 20);
             this.TBCodigo.TabIndex = 11;
             // 
@@ -316,18 +308,36 @@ namespace Proyecto_Parcial_4
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(554, 383);
+            this.BTNCerrar.Location = new System.Drawing.Point(612, 383);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
             this.BTNCerrar.TabIndex = 29;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Artículo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Contacto
+            // 
+            this.Contacto.HeaderText = "Contacto";
+            this.Contacto.Name = "Contacto";
+            this.Contacto.ReadOnly = true;
+            // 
             // FMRProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 418);
+            this.ClientSize = new System.Drawing.Size(707, 418);
             this.ControlBox = false;
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.BTNLimpiar);
@@ -373,8 +383,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Label LBTitle;
         private System.Windows.Forms.Label LBTitle2;
         private System.Windows.Forms.ComboBox CBArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
         private System.Windows.Forms.Button BTNBuscar;
         private System.Windows.Forms.Label LBTitle3;
         private System.Windows.Forms.TextBox TBUnidades;
@@ -400,5 +408,8 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNAgregar;
         private System.Windows.Forms.Button BTNLimpiar;
         private System.Windows.Forms.Button BTNCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
     }
 }

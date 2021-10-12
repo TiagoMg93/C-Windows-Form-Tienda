@@ -12,9 +12,14 @@ namespace Proyecto_Parcial_4
 {
     public partial class FRMVenta : Form
     {
-        public FRMVenta()
+        public FRMVenta(bool administrador)
         {
             InitializeComponent();
+        }
+
+        private void FRMVenta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

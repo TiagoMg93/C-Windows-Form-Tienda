@@ -25,5 +25,20 @@ namespace Proyecto_Parcial_4
         {
 
         }
+
+        private void TBUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNSalir_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BTNEntrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -43,6 +43,7 @@ namespace Proyecto_Parcial_4
             this.TBUser.Name = "TBUser";
             this.TBUser.Size = new System.Drawing.Size(100, 20);
             this.TBUser.TabIndex = 0;
+            this.TBUser.TextChanged += new System.EventHandler(this.TBUser_TextChanged);
             // 
             // LBUser
             // 
@@ -79,6 +80,7 @@ namespace Proyecto_Parcial_4
             this.BTNEntrar.TabIndex = 4;
             this.BTNEntrar.Text = "Entrar";
             this.BTNEntrar.UseVisualStyleBackColor = true;
+            this.BTNEntrar.Click += new System.EventHandler(this.BTNEntrar_Click);
             // 
             // BTNSalir
             // 
@@ -88,6 +90,7 @@ namespace Proyecto_Parcial_4
             this.BTNSalir.TabIndex = 5;
             this.BTNSalir.Text = "Salir";
             this.BTNSalir.UseVisualStyleBackColor = true;
+            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
             // 
             // FMRIngreso
             // 

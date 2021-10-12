@@ -9,3 +9,11 @@ C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programaci
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.exe
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.pdb
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRBusqueda.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRDescuentos.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRDevoluciones.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRInformes.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FRMHistorial.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRInventarios.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRProveedores.resources
+C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRUsuarios.resources

@@ -64,17 +64,17 @@
     <Compile Include="Devoluciones.Designer.cs">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMRInformes.cs">
+    <Compile Include="Informes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMRInformes.Designer.cs">
-      <DependentUpon>FMRInformes.cs</DependentUpon>
+    <Compile Include="Informes.Designer.cs">
+      <DependentUpon>Informes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Venta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Historial.cs">
       <SubType>Form</SubType>
@@ -117,11 +117,11 @@
     <EmbeddedResource Include="Devoluciones.resx">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMRInformes.resx">
-      <DependentUpon>FMRInformes.cs</DependentUpon>
+    <EmbeddedResource Include="Informes.resx">
+      <DependentUpon>Informes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>

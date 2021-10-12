@@ -39,6 +39,7 @@ namespace Proyecto_Parcial_4
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DGVVenta = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,6 @@ namespace Proyecto_Parcial_4
             this.LBTotal = new System.Windows.Forms.Label();
             this.TBTotal = new System.Windows.Forms.TextBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
-            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVenta)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +146,12 @@ namespace Proyecto_Parcial_4
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
             this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.descuentosToolStripMenuItem.Text = "Descuentos";
+            // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.historialToolStripMenuItem.Text = "Historial";
             // 
             // DGVVenta
             // 
@@ -380,12 +386,6 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.Text = "Buscar Articulo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             // 
-            // historialToolStripMenuItem
-            // 
-            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.historialToolStripMenuItem.Text = "Historial";
-            // 
             // FRMVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +419,7 @@ namespace Proyecto_Parcial_4
             this.Name = "FRMVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta";
+            this.Load += new System.EventHandler(this.FRMVenta_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVenta)).EndInit();

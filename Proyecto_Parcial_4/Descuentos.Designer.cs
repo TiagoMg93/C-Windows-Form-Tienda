@@ -40,7 +40,6 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar = new System.Windows.Forms.Button();
             this.BTNModificar = new System.Windows.Forms.Button();
             this.BTNActualizar = new System.Windows.Forms.Button();
-            this.BTNEliminar = new System.Windows.Forms.Button();
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.TBDescuento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVDescuento)).BeginInit();
@@ -114,7 +113,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNAgregar
             // 
-            this.BTNAgregar.Location = new System.Drawing.Point(250, 255);
+            this.BTNAgregar.Location = new System.Drawing.Point(250, 261);
             this.BTNAgregar.Name = "BTNAgregar";
             this.BTNAgregar.Size = new System.Drawing.Size(75, 23);
             this.BTNAgregar.TabIndex = 26;
@@ -123,7 +122,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNModificar
             // 
-            this.BTNModificar.Location = new System.Drawing.Point(250, 284);
+            this.BTNModificar.Location = new System.Drawing.Point(250, 300);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(75, 23);
             this.BTNModificar.TabIndex = 27;
@@ -133,22 +132,12 @@ namespace Proyecto_Parcial_4
             // BTNActualizar
             // 
             this.BTNActualizar.Enabled = false;
-            this.BTNActualizar.Location = new System.Drawing.Point(250, 313);
+            this.BTNActualizar.Location = new System.Drawing.Point(250, 338);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
             this.BTNActualizar.TabIndex = 28;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
-            // 
-            // BTNEliminar
-            // 
-            this.BTNEliminar.Enabled = false;
-            this.BTNEliminar.Location = new System.Drawing.Point(250, 342);
-            this.BTNEliminar.Name = "BTNEliminar";
-            this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BTNEliminar.TabIndex = 29;
-            this.BTNEliminar.Text = "Eliminar";
-            this.BTNEliminar.UseVisualStyleBackColor = true;
             // 
             // LBTitle2
             // 
@@ -175,7 +164,6 @@ namespace Proyecto_Parcial_4
             this.ControlBox = false;
             this.Controls.Add(this.TBDescuento);
             this.Controls.Add(this.LBTitle2);
-            this.Controls.Add(this.BTNEliminar);
             this.Controls.Add(this.BTNActualizar);
             this.Controls.Add(this.BTNModificar);
             this.Controls.Add(this.BTNAgregar);
@@ -207,7 +195,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNAgregar;
         private System.Windows.Forms.Button BTNModificar;
         private System.Windows.Forms.Button BTNActualizar;
-        private System.Windows.Forms.Button BTNEliminar;
         private System.Windows.Forms.Label LBTitle2;
         private System.Windows.Forms.TextBox TBDescuento;
     }
