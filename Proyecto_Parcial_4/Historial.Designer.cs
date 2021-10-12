@@ -30,10 +30,10 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.DTGVHistorial = new System.Windows.Forms.DataGridView();
-            this.BTNCerrar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +52,6 @@ namespace Proyecto_Parcial_4
             this.DTGVHistorial.Size = new System.Drawing.Size(343, 306);
             this.DTGVHistorial.TabIndex = 0;
             // 
-            // BTNCerrar
-            // 
-            this.BTNCerrar.Location = new System.Drawing.Point(280, 324);
-            this.BTNCerrar.Name = "BTNCerrar";
-            this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
-            this.BTNCerrar.Text = "Cerrar";
-            this.BTNCerrar.UseVisualStyleBackColor = true;
-            // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Código";
@@ -78,6 +69,16 @@ namespace Proyecto_Parcial_4
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
+            // 
+            // BTNCerrar
+            // 
+            this.BTNCerrar.Location = new System.Drawing.Point(280, 324);
+            this.BTNCerrar.Name = "BTNCerrar";
+            this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
+            this.BTNCerrar.TabIndex = 20;
+            this.BTNCerrar.Text = "Cerrar";
+            this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // FRMHistorial
             // 

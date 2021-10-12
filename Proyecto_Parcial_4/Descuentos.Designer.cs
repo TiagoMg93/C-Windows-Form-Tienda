@@ -53,6 +53,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 21;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // DTGVDescuento
             // 

@@ -30,6 +30,9 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBTitle = new System.Windows.Forms.Label();
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
@@ -58,9 +61,6 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar = new System.Windows.Forms.Button();
             this.BTNLimpiar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,24 @@ namespace Proyecto_Parcial_4
             this.dataGridView1.Size = new System.Drawing.Size(340, 188);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Artículo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Contacto
+            // 
+            this.Contacto.HeaderText = "Contacto";
+            this.Contacto.Name = "Contacto";
+            this.Contacto.ReadOnly = true;
             // 
             // LBTitle
             // 
@@ -314,24 +332,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 29;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Artículo";
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Contacto
-            // 
-            this.Contacto.HeaderText = "Contacto";
-            this.Contacto.Name = "Contacto";
-            this.Contacto.ReadOnly = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // FMRProveedores
             // 
