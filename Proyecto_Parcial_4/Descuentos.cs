@@ -16,5 +16,20 @@ namespace Proyecto_Parcial_4
         {
             InitializeComponent();
         }
+
+        private void FMRDescuentos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTGVDescuento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CBArticulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,9 +31,6 @@ namespace Proyecto_Parcial_4
         {
             this.BTNCerrar = new System.Windows.Forms.Button();
             this.DTGVDescuento = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBTitle = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
@@ -42,12 +39,17 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.TBDescuento = new System.Windows.Forms.TextBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNActBusqueda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVDescuento)).BeginInit();
             this.SuspendLayout();
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(297, 381);
+            this.BTNCerrar.Location = new System.Drawing.Point(414, 380);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
             this.BTNCerrar.TabIndex = 21;
@@ -62,26 +64,13 @@ namespace Proyecto_Parcial_4
             this.DTGVDescuento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Articulo,
+            this.Marca,
             this.Descuento});
-            this.DTGVDescuento.Location = new System.Drawing.Point(22, 44);
+            this.DTGVDescuento.Location = new System.Drawing.Point(28, 47);
             this.DTGVDescuento.Name = "DTGVDescuento";
-            this.DTGVDescuento.Size = new System.Drawing.Size(344, 150);
+            this.DTGVDescuento.Size = new System.Drawing.Size(437, 150);
             this.DTGVDescuento.TabIndex = 22;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Artículo";
-            this.Articulo.Name = "Articulo";
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
+            this.DTGVDescuento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGVDescuento_CellContentClick);
             // 
             // LBTitle
             // 
@@ -96,15 +85,16 @@ namespace Proyecto_Parcial_4
             // 
             this.CBArticulo.Enabled = false;
             this.CBArticulo.FormattingEnabled = true;
-            this.CBArticulo.Location = new System.Drawing.Point(59, 219);
+            this.CBArticulo.Location = new System.Drawing.Point(69, 219);
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(174, 21);
             this.CBArticulo.TabIndex = 24;
+            this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // BTNBuscar
             // 
             this.BTNBuscar.Enabled = false;
-            this.BTNBuscar.Location = new System.Drawing.Point(250, 219);
+            this.BTNBuscar.Location = new System.Drawing.Point(276, 221);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(89, 21);
             this.BTNBuscar.TabIndex = 25;
@@ -113,7 +103,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNAgregar
             // 
-            this.BTNAgregar.Location = new System.Drawing.Point(250, 261);
+            this.BTNAgregar.Location = new System.Drawing.Point(290, 260);
             this.BTNAgregar.Name = "BTNAgregar";
             this.BTNAgregar.Size = new System.Drawing.Size(75, 23);
             this.BTNAgregar.TabIndex = 26;
@@ -122,7 +112,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNModificar
             // 
-            this.BTNModificar.Location = new System.Drawing.Point(250, 300);
+            this.BTNModificar.Location = new System.Drawing.Point(290, 298);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(75, 23);
             this.BTNModificar.TabIndex = 27;
@@ -132,7 +122,7 @@ namespace Proyecto_Parcial_4
             // BTNActualizar
             // 
             this.BTNActualizar.Enabled = false;
-            this.BTNActualizar.Location = new System.Drawing.Point(250, 338);
+            this.BTNActualizar.Location = new System.Drawing.Point(290, 337);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
             this.BTNActualizar.TabIndex = 28;
@@ -142,7 +132,7 @@ namespace Proyecto_Parcial_4
             // LBTitle2
             // 
             this.LBTitle2.AutoSize = true;
-            this.LBTitle2.Location = new System.Drawing.Point(56, 282);
+            this.LBTitle2.Location = new System.Drawing.Point(66, 303);
             this.LBTitle2.Name = "LBTitle2";
             this.LBTitle2.Size = new System.Drawing.Size(59, 13);
             this.LBTitle2.TabIndex = 30;
@@ -151,17 +141,48 @@ namespace Proyecto_Parcial_4
             // TBDescuento
             // 
             this.TBDescuento.Enabled = false;
-            this.TBDescuento.Location = new System.Drawing.Point(133, 279);
+            this.TBDescuento.Location = new System.Drawing.Point(153, 298);
             this.TBDescuento.Name = "TBDescuento";
             this.TBDescuento.Size = new System.Drawing.Size(100, 20);
             this.TBDescuento.TabIndex = 31;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Artículo";
+            this.Articulo.Name = "Articulo";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Descuento
+            // 
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            // 
+            // BTNActBusqueda
+            // 
+            this.BTNActBusqueda.Enabled = false;
+            this.BTNActBusqueda.Location = new System.Drawing.Point(371, 219);
+            this.BTNActBusqueda.Name = "BTNActBusqueda";
+            this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
+            this.BTNActBusqueda.TabIndex = 32;
+            this.BTNActBusqueda.Text = "Actualizar Busqueda";
+            this.BTNActBusqueda.UseVisualStyleBackColor = true;
             // 
             // FMRDescuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 415);
+            this.ClientSize = new System.Drawing.Size(501, 415);
             this.ControlBox = false;
+            this.Controls.Add(this.BTNActBusqueda);
             this.Controls.Add(this.TBDescuento);
             this.Controls.Add(this.LBTitle2);
             this.Controls.Add(this.BTNActualizar);
@@ -176,6 +197,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FMRDescuentos";
             this.Text = "Descuentos";
+            this.Load += new System.EventHandler(this.FMRDescuentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVDescuento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,9 +208,6 @@ namespace Proyecto_Parcial_4
 
         private System.Windows.Forms.Button BTNCerrar;
         private System.Windows.Forms.DataGridView DTGVDescuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.Label LBTitle;
         private System.Windows.Forms.ComboBox CBArticulo;
         private System.Windows.Forms.Button BTNBuscar;
@@ -197,5 +216,10 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNActualizar;
         private System.Windows.Forms.Label LBTitle2;
         private System.Windows.Forms.TextBox TBDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.Button BTNActBusqueda;
     }
 }

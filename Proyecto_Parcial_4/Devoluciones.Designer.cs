@@ -42,6 +42,7 @@ namespace Proyecto_Parcial_4
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BTNCerrar = new System.Windows.Forms.Button();
+            this.BTNActBusqueda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CBArticulo
@@ -123,7 +124,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNEliminar
             // 
-            this.BTNEliminar.Location = new System.Drawing.Point(83, 265);
+            this.BTNEliminar.Location = new System.Drawing.Point(68, 256);
             this.BTNEliminar.Name = "BTNEliminar";
             this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
             this.BTNEliminar.TabIndex = 16;
@@ -150,19 +151,30 @@ namespace Proyecto_Parcial_4
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(247, 289);
+            this.BTNCerrar.Location = new System.Drawing.Point(247, 337);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
             this.BTNCerrar.TabIndex = 19;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             // 
+            // BTNActBusqueda
+            // 
+            this.BTNActBusqueda.Enabled = false;
+            this.BTNActBusqueda.Location = new System.Drawing.Point(204, 256);
+            this.BTNActBusqueda.Name = "BTNActBusqueda";
+            this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
+            this.BTNActBusqueda.TabIndex = 33;
+            this.BTNActBusqueda.Text = "Actualizar Busqueda";
+            this.BTNActBusqueda.UseVisualStyleBackColor = true;
+            // 
             // FMRDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 324);
+            this.ClientSize = new System.Drawing.Size(334, 372);
             this.ControlBox = false;
+            this.Controls.Add(this.BTNActBusqueda);
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LBTitle2);
@@ -200,5 +212,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Label LBTitle2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BTNCerrar;
+        private System.Windows.Forms.Button BTNActBusqueda;
     }
 }

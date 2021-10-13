@@ -33,12 +33,13 @@ namespace Proyecto_Parcial_4
             this.CBNombre = new System.Windows.Forms.CheckBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
             this.CBBusqueda = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBBusqueda = new System.Windows.Forms.TextBox();
             this.LBTitle = new System.Windows.Forms.Label();
             this.LBTitle2 = new System.Windows.Forms.Label();
             this.BTNCerrar = new System.Windows.Forms.Button();
             this.BTNAceptar = new System.Windows.Forms.Button();
             this.LBTitle3 = new System.Windows.Forms.Label();
+            this.CBMarca = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // CBCodigo
@@ -50,16 +51,18 @@ namespace Proyecto_Parcial_4
             this.CBCodigo.TabIndex = 0;
             this.CBCodigo.Text = "Código";
             this.CBCodigo.UseVisualStyleBackColor = true;
+            this.CBCodigo.CheckedChanged += new System.EventHandler(this.CBCodigo_CheckedChanged);
             // 
             // CBNombre
             // 
             this.CBNombre.AutoSize = true;
-            this.CBNombre.Location = new System.Drawing.Point(200, 72);
+            this.CBNombre.Location = new System.Drawing.Point(199, 68);
             this.CBNombre.Name = "CBNombre";
             this.CBNombre.Size = new System.Drawing.Size(63, 17);
             this.CBNombre.TabIndex = 1;
             this.CBNombre.Text = "Nombre";
             this.CBNombre.UseVisualStyleBackColor = true;
+            this.CBNombre.CheckedChanged += new System.EventHandler(this.CBNombre_CheckedChanged);
             // 
             // BTNBuscar
             // 
@@ -69,6 +72,7 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.TabIndex = 2;
             this.BTNBuscar.Text = "Buscar";
             this.BTNBuscar.UseVisualStyleBackColor = true;
+            this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
             // 
             // CBBusqueda
             // 
@@ -78,13 +82,16 @@ namespace Proyecto_Parcial_4
             this.CBBusqueda.Name = "CBBusqueda";
             this.CBBusqueda.Size = new System.Drawing.Size(166, 21);
             this.CBBusqueda.TabIndex = 3;
+            this.CBBusqueda.SelectedIndexChanged += new System.EventHandler(this.CBBusqueda_SelectedIndexChanged);
             // 
-            // textBox1
+            // TBBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.TBBusqueda.Enabled = false;
+            this.TBBusqueda.Location = new System.Drawing.Point(35, 42);
+            this.TBBusqueda.Name = "TBBusqueda";
+            this.TBBusqueda.Size = new System.Drawing.Size(100, 20);
+            this.TBBusqueda.TabIndex = 4;
+            this.TBBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LBTitle
             // 
@@ -112,6 +119,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 7;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // BTNAceptar
             // 
@@ -122,6 +130,7 @@ namespace Proyecto_Parcial_4
             this.BTNAceptar.TabIndex = 8;
             this.BTNAceptar.Text = "Aceptar";
             this.BTNAceptar.UseVisualStyleBackColor = true;
+            this.BTNAceptar.Click += new System.EventHandler(this.BTNAceptar_Click);
             // 
             // LBTitle3
             // 
@@ -132,18 +141,30 @@ namespace Proyecto_Parcial_4
             this.LBTitle3.TabIndex = 9;
             this.LBTitle3.Text = "Seleccione el artículo";
             // 
+            // CBMarca
+            // 
+            this.CBMarca.AutoSize = true;
+            this.CBMarca.Location = new System.Drawing.Point(199, 91);
+            this.CBMarca.Name = "CBMarca";
+            this.CBMarca.Size = new System.Drawing.Size(56, 17);
+            this.CBMarca.TabIndex = 10;
+            this.CBMarca.Text = "Marca";
+            this.CBMarca.UseVisualStyleBackColor = true;
+            this.CBMarca.CheckedChanged += new System.EventHandler(this.CBMarca_CheckedChanged);
+            // 
             // FMRBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 229);
             this.ControlBox = false;
+            this.Controls.Add(this.CBMarca);
             this.Controls.Add(this.LBTitle3);
             this.Controls.Add(this.BTNAceptar);
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.LBTitle2);
             this.Controls.Add(this.LBTitle);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBBusqueda);
             this.Controls.Add(this.CBBusqueda);
             this.Controls.Add(this.BTNBuscar);
             this.Controls.Add(this.CBNombre);
@@ -152,6 +173,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FMRBusqueda";
             this.Text = "Busqueda";
+            this.Load += new System.EventHandler(this.FMRBusqueda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,11 +185,12 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.CheckBox CBNombre;
         private System.Windows.Forms.Button BTNBuscar;
         private System.Windows.Forms.ComboBox CBBusqueda;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBBusqueda;
         private System.Windows.Forms.Label LBTitle;
         private System.Windows.Forms.Label LBTitle2;
         private System.Windows.Forms.Button BTNCerrar;
         private System.Windows.Forms.Button BTNAceptar;
         private System.Windows.Forms.Label LBTitle3;
+        private System.Windows.Forms.CheckBox CBMarca;
     }
 }

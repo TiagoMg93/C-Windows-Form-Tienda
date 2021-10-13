@@ -66,6 +66,7 @@ namespace Proyecto_Parcial_4
             this.LBTotal = new System.Windows.Forms.Label();
             this.TBTotal = new System.Windows.Forms.TextBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
+            this.BTNActBusqueda = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVenta)).BeginInit();
             this.SuspendLayout();
@@ -297,7 +298,7 @@ namespace Proyecto_Parcial_4
             // LBSubtotal
             // 
             this.LBSubtotal.AutoSize = true;
-            this.LBSubtotal.Location = new System.Drawing.Point(165, 336);
+            this.LBSubtotal.Location = new System.Drawing.Point(301, 338);
             this.LBSubtotal.Name = "LBSubtotal";
             this.LBSubtotal.Size = new System.Drawing.Size(46, 13);
             this.LBSubtotal.TabIndex = 11;
@@ -305,7 +306,7 @@ namespace Proyecto_Parcial_4
             // 
             // TBSubtotal
             // 
-            this.TBSubtotal.Location = new System.Drawing.Point(217, 333);
+            this.TBSubtotal.Location = new System.Drawing.Point(366, 331);
             this.TBSubtotal.Name = "TBSubtotal";
             this.TBSubtotal.ReadOnly = true;
             this.TBSubtotal.Size = new System.Drawing.Size(52, 20);
@@ -386,12 +387,23 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.Text = "Buscar Articulo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             // 
+            // BTNActBusqueda
+            // 
+            this.BTNActBusqueda.Enabled = false;
+            this.BTNActBusqueda.Location = new System.Drawing.Point(151, 333);
+            this.BTNActBusqueda.Name = "BTNActBusqueda";
+            this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
+            this.BTNActBusqueda.TabIndex = 33;
+            this.BTNActBusqueda.Text = "Actualizar Busqueda";
+            this.BTNActBusqueda.UseVisualStyleBackColor = true;
+            // 
             // FRMVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 375);
             this.ControlBox = false;
+            this.Controls.Add(this.BTNActBusqueda);
             this.Controls.Add(this.BTNBuscar);
             this.Controls.Add(this.TBTotal);
             this.Controls.Add(this.LBTotal);
@@ -467,6 +479,7 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.Button BTNBuscar;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
+        private System.Windows.Forms.Button BTNActBusqueda;
     }
 }
 
