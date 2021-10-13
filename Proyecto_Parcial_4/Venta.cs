@@ -16,6 +16,8 @@ namespace Proyecto_Parcial_4
         //[adm]:adminsitrador
         bool adm;//La instancio aquí para poder utilizarla en todo el formulario
         private int n = 0;//Me sirve para guardar las filas del data grid y que cuando yo seleccione algo lo pueda borrar
+        int codigo;
+        double totalventa = 0;
         public FRMVenta(bool administrador)
         {
             InitializeComponent();
@@ -110,21 +112,26 @@ namespace Proyecto_Parcial_4
             double pre = int.Parse(TBPrecio.Text);
             int cant = int.Parse(TBCantidad.Text);
             double des = 5;
-            double sub_tot = pre * cant;//Calculo para saber el subtotal
-            double descal = sub_tot * des / 100;//es el calculo del descuento
-            double total = sub_tot - descal;//me manda todo el total 
+            double pre_cant = pre * cant;
+            double des_cal = pre_cant * des / 100;//es el calculo del descuento
+            double subtotal = pre_cant - des_cal;//Calculo para saber el subtotal
 
-            int Codigo = 123;//tiene que venirme del sql 
+            totalventa = totalventa + subtotal;//acumulador del total de todas las ventas
+
+            codigo = 123;//tiene que venirme del sql 
 
 
 
             n = DGVVenta.Rows.Add();//le agrega un renglon al data grid view
             DGVVenta.Rows[n].Cells[4].Value = TBCantidad.Text;
             DGVVenta.Rows[n].Cells[1].Value = CBArticulo.Text;
-            DGVVenta.Rows[n].Cells[5].Value =$"{sub_tot}";
-            DGVVenta.Rows[n].Cells[0].Value = $"{Codigo}";
+            DGVVenta.Rows[n].Cells[5].Value =$"{subtotal}";
+            DGVVenta.Rows[n].Cells[0].Value = Convert.ToString(codigo);
 
+            //imprime el total de la venta
+            TBTotal.Text = Convert.ToString(totalventa);
 
+            //me los pone vacios 
             TBCantidad.Text = "";
             CBArticulo.Text = "";
         }
@@ -132,7 +139,8 @@ namespace Proyecto_Parcial_4
         private void BTNEliminar_Click(object sender, EventArgs e)//elimina los renglones del datagridview
         {
             int decision = int.Parse(Interaction.InputBox("Escriba el código"));
-            ///if()
+
+            
 
         }
 
