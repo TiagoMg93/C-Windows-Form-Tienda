@@ -18,6 +18,7 @@ namespace Proyecto_Parcial_4
         private int n = 0;//Me sirve para guardar las filas del data grid y que cuando yo seleccione algo lo pueda borrar
         int codigo;
         double totalventa = 0;
+        string decision;
         public FRMVenta(bool administrador)
         {
             InitializeComponent();
@@ -138,7 +139,18 @@ namespace Proyecto_Parcial_4
 
         private void BTNEliminar_Click(object sender, EventArgs e)//elimina los renglones del datagridview
         {
-            int decision = int.Parse(Interaction.InputBox("Escriba el código"));
+            
+            decision = Convert.ToString(Interaction.InputBox("Escriba el código"));
+            
+            for(int a=0;a<DGVVenta.Rows.Count;a++)
+            {
+                
+                if(decision==Convert.ToString(DGVVenta.Rows[a].Cells[0].Value))
+                {
+                    DGVVenta.Rows.RemoveAt(a);
+
+                }
+            }
 
             
 
@@ -156,6 +168,7 @@ namespace Proyecto_Parcial_4
             TBPrecio.ResetText();
             TBSubtotal.ResetText();
             TBDescuento.ResetText();
+
         }
     }
 }
