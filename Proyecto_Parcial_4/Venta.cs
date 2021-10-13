@@ -151,9 +151,11 @@ namespace Proyecto_Parcial_4
 
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
-            CBArticulo.Text = "";
-            TBCantidad.Text = "";
-
+            CBArticulo.ResetText();
+            TBCantidad.ResetText();
+            TBPrecio.ResetText();
+            TBSubtotal.ResetText();
+            TBDescuento.ResetText();
         }
     }
 }
