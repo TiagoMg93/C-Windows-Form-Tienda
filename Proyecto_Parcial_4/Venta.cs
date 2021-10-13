@@ -14,7 +14,7 @@ namespace Proyecto_Parcial_4
     {
         //[adm]:adminsitrador
         bool adm;//La instancio aquí para poder utilizarla en todo el formulario
-        private int n = 0;//para los registrar los data grid
+        private int n = 0;//Me sirve para guardar las filas del data grid y que cuando yo seleccione algo lo pueda borrar
         public FRMVenta(bool administrador)
         {
             InitializeComponent();
@@ -28,6 +28,8 @@ namespace Proyecto_Parcial_4
            if(adm==true)
             {
                 menuStrip1.Enabled = true;
+                BTNEliminar.Visible = true;
+                BTNMostrar.Visible = true;
 
             }
         }
@@ -99,7 +101,26 @@ namespace Proyecto_Parcial_4
 
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
-           
+            n = DGVVenta.Rows.Add();//le agrega un renglon al data grid view
+            DGVVenta.Rows[n].Cells[4].Value = TBCantidad.Text;
+            DGVVenta.Rows[n].Cells[1].Value = CBArticulo.Text;
+
+
+            TBCantidad.Text = "";
+            CBArticulo.Text = "";
+        }
+
+        private void BTNEliminar_Click(object sender, EventArgs e)//elimina los renglones del datagridview
+        {
+            if(n!=-1)//para que no me borre la columna donde van los tipos de datos 
+            {
+                DGVVenta.Rows.RemoveAt(n);//me elimina n
+            }
+        }
+
+        private void DGVVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)//recoge info del datagrid
+        {
+            n = e.RowIndex;//me va a guardar el numero del renglon en que estoy parado 
         }
     }
 }

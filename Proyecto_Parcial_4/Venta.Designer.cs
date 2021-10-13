@@ -179,6 +179,7 @@ namespace Proyecto_Parcial_4
             this.DGVVenta.ReadOnly = true;
             this.DGVVenta.Size = new System.Drawing.Size(573, 150);
             this.DGVVenta.TabIndex = 1;
+            this.DGVVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVVenta_CellContentClick);
             // 
             // Codigo
             // 
@@ -338,6 +339,7 @@ namespace Proyecto_Parcial_4
             this.BTNEliminar.Text = "Eliminar";
             this.BTNEliminar.UseVisualStyleBackColor = true;
             this.BTNEliminar.Visible = false;
+            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
             // 
             // BTNLimpiar
             // 
