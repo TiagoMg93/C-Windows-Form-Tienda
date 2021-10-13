@@ -90,13 +90,13 @@ namespace Proyecto_Parcial_4
             this.entradaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proveedoresToolStripMenuItem});
             this.entradaToolStripMenuItem.Name = "entradaToolStripMenuItem";
-            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.entradaToolStripMenuItem.Text = "Entrada";
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
@@ -106,27 +106,27 @@ namespace Proyecto_Parcial_4
             this.devolucionesToolStripMenuItem,
             this.informesToolStripMenuItem});
             this.salidaToolStripMenuItem.Name = "salidaToolStripMenuItem";
-            this.salidaToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.salidaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.salidaToolStripMenuItem.Text = "Salida";
             // 
             // devolucionesToolStripMenuItem
             // 
             this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
-            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.devolucionesToolStripMenuItem.Text = "Devoluciones";
             this.devolucionesToolStripMenuItem.Click += new System.EventHandler(this.devolucionesToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.informesToolStripMenuItem.Text = "Informes";
             this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -136,27 +136,27 @@ namespace Proyecto_Parcial_4
             this.usuariosToolStripMenuItem,
             this.descuentosToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.administraciónToolStripMenuItem.Text = "Administración";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // descuentosToolStripMenuItem
             // 
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
-            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.descuentosToolStripMenuItem.Text = "Descuentos";
             this.descuentosToolStripMenuItem.Click += new System.EventHandler(this.descuentosToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.historialToolStripMenuItem.Text = "Historial";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
@@ -349,6 +349,7 @@ namespace Proyecto_Parcial_4
             this.BTNLimpiar.TabIndex = 15;
             this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = true;
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
             // BTNSalir
             // 

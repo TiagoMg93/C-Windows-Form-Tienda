@@ -105,14 +105,25 @@ namespace Proyecto_Parcial_4
         {
             //[pre]:precio, [cant]:Cantidad
             TBPrecio.Text = "500";//LO TENGO PARA COMPROBAR QUE ME FUNCIONE
-            int pre = int.Parse(TBPrecio.Text);
-            int cant = int.Parse(TBCantidad.Text);            
-            int sub_tot = pre * cant;//Calculo para saber el subtotal
+
+            //calculo
+            double pre = int.Parse(TBPrecio.Text);
+            int cant = int.Parse(TBCantidad.Text);
+            double des = 5;
+            double sub_tot = pre * cant;//Calculo para saber el subtotal
+            double descal = sub_tot * des / 100;//es el calculo del descuento
+            double total = sub_tot - descal;//me manda todo el total 
+
+            int Codigo = 123;//tiene que venirme del sql 
+
+
 
             n = DGVVenta.Rows.Add();//le agrega un renglon al data grid view
             DGVVenta.Rows[n].Cells[4].Value = TBCantidad.Text;
             DGVVenta.Rows[n].Cells[1].Value = CBArticulo.Text;
             DGVVenta.Rows[n].Cells[5].Value =$"{sub_tot}";
+            DGVVenta.Rows[n].Cells[0].Value = $"{Codigo}";
+
 
             TBCantidad.Text = "";
             CBArticulo.Text = "";
@@ -121,6 +132,7 @@ namespace Proyecto_Parcial_4
         private void BTNEliminar_Click(object sender, EventArgs e)//elimina los renglones del datagridview
         {
             int decision = int.Parse(Interaction.InputBox("Escriba el código"));
+            ///if()
 
         }
 
@@ -129,6 +141,11 @@ namespace Proyecto_Parcial_4
             n = e.RowIndex;//me va a guardar el numero del renglon en que estoy parado 
         }
 
-      
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            CBArticulo.Text = "";
+            TBCantidad.Text = "";
+
+        }
     }
 }
