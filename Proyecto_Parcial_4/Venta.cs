@@ -14,7 +14,7 @@ namespace Proyecto_Parcial_4
     {
         //[adm]:adminsitrador
         bool adm;//La instancio aquí para poder utilizarla en todo el formulario
-        
+        private int n = 0;//para los registrar los data grid
         public FRMVenta(bool administrador)
         {
             InitializeComponent();
@@ -85,7 +85,21 @@ namespace Proyecto_Parcial_4
         {
             //[f_ing]:Formulario ingreso
             FMRIngreso f_ing = new FMRIngreso();
-            f_ing.Show();            
+            f_ing.Show();
+            this.Hide();
+        }
+
+        private void BTNBuscar_Click(object sender, EventArgs e)//Lo que hace es que me abra el formulario
+        {
+            //[f_bus]:Formulario busquedad
+            FMRBusqueda f_bus = new FMRBusqueda();
+            f_bus.Show();
+            
+        }
+
+        private void BTNRegistrar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

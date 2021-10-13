@@ -327,6 +327,7 @@ namespace Proyecto_Parcial_4
             this.BTNRegistrar.TabIndex = 13;
             this.BTNRegistrar.Text = "Registrar";
             this.BTNRegistrar.UseVisualStyleBackColor = true;
+            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
             // 
             // BTNEliminar
             // 
@@ -393,6 +394,7 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.TabIndex = 20;
             this.BTNBuscar.Text = "Buscar Articulo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
+            this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
             // 
             // FRMVenta
             // 
