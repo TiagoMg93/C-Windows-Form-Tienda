@@ -370,6 +370,7 @@ namespace Proyecto_Parcial_4
             this.BTNMostrar.Text = "Mostrar Ventas";
             this.BTNMostrar.UseVisualStyleBackColor = true;
             this.BTNMostrar.Visible = false;
+            this.BTNMostrar.Click += new System.EventHandler(this.BTNMostrar_Click);
             // 
             // LBTotal
             // 

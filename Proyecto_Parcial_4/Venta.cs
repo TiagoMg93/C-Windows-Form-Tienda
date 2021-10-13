@@ -174,5 +174,10 @@ namespace Proyecto_Parcial_4
             TBDescuento.ResetText();
 
         }
+
+        private void BTNMostrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
