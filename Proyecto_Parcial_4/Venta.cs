@@ -24,6 +24,7 @@ namespace Proyecto_Parcial_4
 
         private void FRMVenta_Load(object sender, EventArgs e)
         {
+            //DGVVenta.Rows.Add();
             //hago una condición if para saber si es administrador para habilitar el menustrip 
            if(adm==true)
             {
@@ -101,10 +102,16 @@ namespace Proyecto_Parcial_4
 
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
+            //[pre]:precio, [cant]:Cantidad
+            TBPrecio.Text = "500";//LO TENGO PARA COMPROBAR QUE ME FUNCIONE
+            int pre = int.Parse(TBPrecio.Text);
+            int cant = int.Parse(TBCantidad.Text);            
+            int sub_tot = pre * cant;//Calculo para saber el subtotal
+
             n = DGVVenta.Rows.Add();//le agrega un renglon al data grid view
             DGVVenta.Rows[n].Cells[4].Value = TBCantidad.Text;
             DGVVenta.Rows[n].Cells[1].Value = CBArticulo.Text;
-
+            DGVVenta.Rows[n].Cells[5].Value =$"{sub_tot}";
 
             TBCantidad.Text = "";
             CBArticulo.Text = "";
@@ -114,7 +121,17 @@ namespace Proyecto_Parcial_4
         {
             if(n!=-1)//para que no me borre la columna donde van los tipos de datos 
             {
-                DGVVenta.Rows.RemoveAt(n);//me elimina n
+
+                try
+                {
+                    DGVVenta.Rows.RemoveAt(n);
+                }
+                catch (System.ArgumentOutOfRangeException)
+                {
+                    n = 0;
+                    DGVVenta.Rows.RemoveAt(n);
+                   
+                }
             }
         }
 
@@ -122,5 +139,7 @@ namespace Proyecto_Parcial_4
         {
             n = e.RowIndex;//me va a guardar el numero del renglon en que estoy parado 
         }
+
+      
     }
 }
