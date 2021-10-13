@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Proyecto_Parcial_4
 {
@@ -119,20 +120,8 @@ namespace Proyecto_Parcial_4
 
         private void BTNEliminar_Click(object sender, EventArgs e)//elimina los renglones del datagridview
         {
-            if(n!=-1)//para que no me borre la columna donde van los tipos de datos 
-            {
+            int decision = int.Parse(Interaction.InputBox("Escriba el código"));
 
-                try
-                {
-                    DGVVenta.Rows.RemoveAt(n);
-                }
-                catch (System.ArgumentOutOfRangeException)
-                {
-                    n = 0;
-                    DGVVenta.Rows.RemoveAt(n);
-                   
-                }
-            }
         }
 
         private void DGVVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)//recoge info del datagrid
