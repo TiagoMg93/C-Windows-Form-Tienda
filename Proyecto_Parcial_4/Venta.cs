@@ -147,6 +147,10 @@ namespace Proyecto_Parcial_4
                 
                 if(decision==Convert.ToString(DGVVenta.Rows[a].Cells[0].Value))
                 {
+                    string conv_sub =Convert.ToString(DGVVenta.Rows[a].Cells[5].Value);
+                    int r_sub = int.Parse(conv_sub);
+                    totalventa = totalventa - r_sub;
+                    TBTotal.Text = Convert.ToString(totalventa);
                     DGVVenta.Rows.RemoveAt(a);
 
                 }
