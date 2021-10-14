@@ -42,13 +42,24 @@ namespace Proyecto_Parcial_4
             SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
             conexion.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
+            SqlDataAdapter dataAdapter2 = new SqlDataAdapter("Select Nombre,Marca,Contacto from Articulo inner join Proveedor on Articulo.Código = Proveedor.Código where Cantidad = 0", conexion);
             DataTable tabla = new DataTable();
             dataAdapter.Fill(tabla);
+            TBCodigo.Text = Convert.ToString(tabla.Rows.Count + 1);
             CBArticulo.Items.Add("");
             for (int row = 0; row < tabla.Rows.Count; row++)
             {
                 string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
                 CBArticulo.Items.Add(texto);
+            }
+            tabla.Clear();
+            dataAdapter2.Fill(tabla);
+            for (int row = 0; row < tabla.Rows.Count; row++)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[row].Cells[0].Value = tabla.Rows[row]["Nombre"].ToString();
+                dataGridView1.Rows[row].Cells[1].Value = tabla.Rows[row]["Marca"].ToString();
+                dataGridView1.Rows[row].Cells[2].Value = tabla.Rows[row]["Contacto"].ToString();
             }
             conexion.Close();
         }
@@ -67,6 +78,28 @@ namespace Proyecto_Parcial_4
             SqlCommand limpiar = new SqlCommand("Delete from Proveedor", conexion);
             DataTable tabla = new DataTable();
             dataAdapter.Fill(tabla);
+            limpiar.ExecuteNonQuery();
+            SqlCommand agregar = new SqlCommand("insert into Proveedor values(@Código,@Cantidad,@Proveedor,@Contacto)", conexion);
+            for(int row = 0; row < tabla.Rows.Count; row++)
+            {
+                agregar.Parameters.Clear();
+                agregar.Parameters.AddWithValue("@Código", tabla.Rows[row][0].ToString());
+                if(tabla.Rows[row][0].ToString()+" " == vector[0])
+                {
+                    int nuevo = int.Parse(tabla.Rows[row][1].ToString()) + int.Parse(TBUnidades.Text);
+                    agregar.Parameters.AddWithValue("@Cantidad", Convert.ToString(nuevo));
+                }
+                else
+                {
+                    agregar.Parameters.AddWithValue("@Cantidad", tabla.Rows[row][1].ToString());
+                }
+                agregar.Parameters.AddWithValue("@Proveedor", tabla.Rows[row][2].ToString());
+                agregar.Parameters.AddWithValue("@Contacto", tabla.Rows[row][3].ToString());
+                agregar.ExecuteNonQuery();
+            }
+            CBArticulo.ResetText();
+            TBUnidades.ResetText();
+            conexion.Close();
         }
 
         private void BTNActBusqueda_Click(object sender, EventArgs e)
@@ -93,7 +126,28 @@ namespace Proyecto_Parcial_4
 
         private void BTNCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Se muestra un Mensaje con botones para confirmar la salida del formulario
+            DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (decision == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            TBArticulo.ResetText();
+            TBPrecio.ResetText();
+            TBCosto.ResetText();
+            TBCantidad.ResetText();
+            TBMarca.ResetText();
+            TBProveedor.ResetText();
+            TBContacto.ResetText();
+        }
+
+        private void BTNAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

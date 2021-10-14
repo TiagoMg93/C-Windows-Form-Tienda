@@ -54,7 +54,7 @@ namespace Proyecto_Parcial_4
             this.TBProveedor = new System.Windows.Forms.TextBox();
             this.LBCantidad = new System.Windows.Forms.Label();
             this.TBMarca = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBContacto = new System.Windows.Forms.TextBox();
             this.LBMarca = new System.Windows.Forms.Label();
             this.LBProveedor = new System.Windows.Forms.Label();
             this.LBContacto = new System.Windows.Forms.Label();
@@ -277,12 +277,12 @@ namespace Proyecto_Parcial_4
             this.TBMarca.Size = new System.Drawing.Size(100, 20);
             this.TBMarca.TabIndex = 22;
             // 
-            // textBox3
+            // TBContacto
             // 
-            this.textBox3.Location = new System.Drawing.Point(298, 366);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 23;
+            this.TBContacto.Location = new System.Drawing.Point(298, 366);
+            this.TBContacto.Name = "TBContacto";
+            this.TBContacto.Size = new System.Drawing.Size(100, 20);
+            this.TBContacto.TabIndex = 23;
             // 
             // LBMarca
             // 
@@ -319,6 +319,7 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar.TabIndex = 27;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
+            this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
             // 
             // BTNLimpiar
             // 
@@ -328,6 +329,7 @@ namespace Proyecto_Parcial_4
             this.BTNLimpiar.TabIndex = 28;
             this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = true;
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
             // BTNCerrar
             // 
@@ -363,7 +365,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBContacto);
             this.Controls.Add(this.LBProveedor);
             this.Controls.Add(this.LBMarca);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TBContacto);
             this.Controls.Add(this.TBMarca);
             this.Controls.Add(this.LBCantidad);
             this.Controls.Add(this.TBProveedor);
@@ -420,7 +422,7 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.TextBox TBProveedor;
         private System.Windows.Forms.Label LBCantidad;
         private System.Windows.Forms.TextBox TBMarca;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBContacto;
         private System.Windows.Forms.Label LBMarca;
         private System.Windows.Forms.Label LBProveedor;
         private System.Windows.Forms.Label LBContacto;
