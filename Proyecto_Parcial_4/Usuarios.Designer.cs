@@ -30,9 +30,6 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.DTGVUsuario = new System.Windows.Forms.DataGridView();
-            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBUsuario = new System.Windows.Forms.Label();
             this.txtb_usu = new System.Windows.Forms.TextBox();
             this.LBPassword = new System.Windows.Forms.Label();
@@ -43,6 +40,9 @@ namespace Proyecto_Parcial_4
             this.BTNModificar = new System.Windows.Forms.Button();
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
+            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).BeginInit();
             this.SuspendLayout();
@@ -62,25 +62,6 @@ namespace Proyecto_Parcial_4
             this.DTGVUsuario.ReadOnly = true;
             this.DTGVUsuario.Size = new System.Drawing.Size(294, 150);
             this.DTGVUsuario.TabIndex = 0;
-            // 
-            // Indice
-            // 
-            this.Indice.HeaderText = "Índice";
-            this.Indice.Name = "Indice";
-            this.Indice.ReadOnly = true;
-            this.Indice.Width = 50;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Administrador
-            // 
-            this.Administrador.HeaderText = "Administrador";
-            this.Administrador.Name = "Administrador";
-            this.Administrador.ReadOnly = true;
             // 
             // LBUsuario
             // 
@@ -143,6 +124,7 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar.TabIndex = 7;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
+            this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
             // 
             // BTNModificar
             // 
@@ -152,6 +134,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar.TabIndex = 8;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
+            this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
             // BTNActualizar
             // 
@@ -172,6 +155,25 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
+            // 
+            // Indice
+            // 
+            this.Indice.HeaderText = "Índice";
+            this.Indice.Name = "Indice";
+            this.Indice.ReadOnly = true;
+            this.Indice.Width = 50;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // Administrador
+            // 
+            this.Administrador.HeaderText = "Administrador";
+            this.Administrador.Name = "Administrador";
+            this.Administrador.ReadOnly = true;
             // 
             // Contraseña
             // 
@@ -209,9 +211,6 @@ namespace Proyecto_Parcial_4
         #endregion
 
         private System.Windows.Forms.DataGridView DTGVUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Administrador;
         private System.Windows.Forms.Label LBUsuario;
         private System.Windows.Forms.TextBox txtb_usu;
         private System.Windows.Forms.Label LBPassword;
@@ -222,6 +221,9 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNModificar;
         private System.Windows.Forms.Button BTNActualizar;
         private System.Windows.Forms.Button BTNCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Administrador;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
     }
 }
