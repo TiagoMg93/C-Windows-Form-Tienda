@@ -140,17 +140,19 @@ namespace Proyecto_Parcial_4
         {
             
             decision = Convert.ToString(Interaction.InputBox("Escriba el código"));
-            
-            for(int a=0;a<DGVVenta.Rows.Count;a++)
+
+
+            //Redcorre todo el data grid para comparar con la variable[desicion]
+            for(int fila=0;fila<DGVVenta.Rows.Count;fila++)
             {
                 
-                if(decision==Convert.ToString(DGVVenta.Rows[a].Cells[0].Value))
+                if(decision==Convert.ToString(DGVVenta.Rows[fila].Cells[0].Value))
                 {
-                    string conv_sub =Convert.ToString(DGVVenta.Rows[a].Cells[5].Value);
+                    string conv_sub =Convert.ToString(DGVVenta.Rows[fila].Cells[5].Value);
                     int r_sub = int.Parse(conv_sub);
                     totalventa = totalventa - r_sub;
                     TBTotal.Text = Convert.ToString(totalventa);
-                    DGVVenta.Rows.RemoveAt(a);
+                    DGVVenta.Rows.RemoveAt(fila);
 
                 }
             }

@@ -30,6 +30,10 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.DTGVUsuario = new System.Windows.Forms.DataGridView();
+            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBUsuario = new System.Windows.Forms.Label();
             this.txtb_usu = new System.Windows.Forms.TextBox();
             this.LBPassword = new System.Windows.Forms.Label();
@@ -40,10 +44,6 @@ namespace Proyecto_Parcial_4
             this.BTNModificar = new System.Windows.Forms.Button();
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
-            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,31 @@ namespace Proyecto_Parcial_4
             this.DTGVUsuario.ReadOnly = true;
             this.DTGVUsuario.Size = new System.Drawing.Size(294, 150);
             this.DTGVUsuario.TabIndex = 0;
+            // 
+            // Indice
+            // 
+            this.Indice.HeaderText = "Índice";
+            this.Indice.Name = "Indice";
+            this.Indice.ReadOnly = true;
+            this.Indice.Width = 50;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // Administrador
+            // 
+            this.Administrador.HeaderText = "Administrador";
+            this.Administrador.Name = "Administrador";
+            this.Administrador.ReadOnly = true;
+            // 
+            // Contraseña
+            // 
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
             // 
             // LBUsuario
             // 
@@ -145,6 +170,7 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar.TabIndex = 9;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
+            this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
             // 
             // BTNCerrar
             // 
@@ -155,31 +181,6 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
-            // 
-            // Indice
-            // 
-            this.Indice.HeaderText = "Índice";
-            this.Indice.Name = "Indice";
-            this.Indice.ReadOnly = true;
-            this.Indice.Width = 50;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Administrador
-            // 
-            this.Administrador.HeaderText = "Administrador";
-            this.Administrador.Name = "Administrador";
-            this.Administrador.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Contraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
             // 
             // FMRUsuarios
             // 
