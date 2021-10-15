@@ -179,7 +179,6 @@ namespace Proyecto_Parcial_4
             this.DGVVenta.ReadOnly = true;
             this.DGVVenta.Size = new System.Drawing.Size(573, 150);
             this.DGVVenta.TabIndex = 1;
-            this.DGVVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVVenta_CellContentClick);
             // 
             // Codigo
             // 

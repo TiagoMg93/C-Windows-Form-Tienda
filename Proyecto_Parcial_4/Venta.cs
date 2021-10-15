@@ -28,7 +28,6 @@ namespace Proyecto_Parcial_4
 
         private void FRMVenta_Load(object sender, EventArgs e)
         {
-            //DGVVenta.Rows.Add();
             //hago una condición if para saber si es administrador para habilitar el menustrip 
            if(adm==true)
             {
@@ -160,10 +159,6 @@ namespace Proyecto_Parcial_4
 
         }
 
-        private void DGVVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)//recoge info del datagrid
-        {
-            n = e.RowIndex;//me va a guardar el numero del renglon en que estoy parado 
-        }
 
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {

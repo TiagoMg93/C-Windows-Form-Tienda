@@ -38,9 +38,7 @@ namespace Proyecto_Parcial_4
 
         private void BTNEntrar_Click(object sender, EventArgs e)
         {
-            FRMVenta f_ven = new FRMVenta(true);
-            f_ven.Show();
-            this.Hide();
+            
         }
     }
 }

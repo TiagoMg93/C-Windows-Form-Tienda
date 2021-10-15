@@ -34,7 +34,7 @@ namespace Proyecto_Parcial_4
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBUsuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtb_usu = new System.Windows.Forms.TextBox();
             this.LBPassword = new System.Windows.Forms.Label();
             this.TBPassword = new System.Windows.Forms.TextBox();
             this.LBAdmin = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar = new System.Windows.Forms.Button();
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@ namespace Proyecto_Parcial_4
             this.DTGVUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.Usuario,
-            this.Administrador});
+            this.Administrador,
+            this.Contraseña});
             this.DTGVUsuario.Location = new System.Drawing.Point(22, 22);
             this.DTGVUsuario.Name = "DTGVUsuario";
             this.DTGVUsuario.ReadOnly = true;
@@ -89,12 +91,12 @@ namespace Proyecto_Parcial_4
             this.LBUsuario.TabIndex = 1;
             this.LBUsuario.Text = "Usuario";
             // 
-            // textBox1
+            // txtb_usu
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtb_usu.Location = new System.Drawing.Point(104, 196);
+            this.txtb_usu.Name = "txtb_usu";
+            this.txtb_usu.Size = new System.Drawing.Size(100, 20);
+            this.txtb_usu.TabIndex = 2;
             // 
             // LBPassword
             // 
@@ -171,6 +173,12 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
+            // Contraseña
+            // 
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            // 
             // FMRUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +193,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBAdmin);
             this.Controls.Add(this.TBPassword);
             this.Controls.Add(this.LBPassword);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtb_usu);
             this.Controls.Add(this.LBUsuario);
             this.Controls.Add(this.DTGVUsuario);
             this.MaximizeBox = false;
@@ -205,7 +213,7 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Administrador;
         private System.Windows.Forms.Label LBUsuario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtb_usu;
         private System.Windows.Forms.Label LBPassword;
         private System.Windows.Forms.TextBox TBPassword;
         private System.Windows.Forms.Label LBAdmin;
@@ -214,5 +222,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNModificar;
         private System.Windows.Forms.Button BTNActualizar;
         private System.Windows.Forms.Button BTNCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
     }
 }
