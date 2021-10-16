@@ -24,9 +24,7 @@ namespace Proyecto_Parcial_4
 
         private void BTNCerrar_Click(object sender, EventArgs e)
         {
-            FRMVenta f_vent = new FRMVenta(true);
-            f_vent.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BTNAgregar_Click(object sender, EventArgs e)
