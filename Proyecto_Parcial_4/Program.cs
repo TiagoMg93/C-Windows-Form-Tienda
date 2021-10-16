@@ -16,7 +16,7 @@ namespace Proyecto_Parcial_4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMRUsuarios());
+            Application.Run(new FMRDescuentos());
         }
     }
 }

@@ -120,6 +120,7 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar.TabIndex = 26;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
+            this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
             // 
             // BTNModificar
             // 
@@ -129,6 +130,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar.TabIndex = 27;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
+            this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
             // BTNActualizar
             // 
@@ -139,6 +141,7 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar.TabIndex = 28;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
+            this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
             // 
             // LBTitle2
             // 
@@ -177,6 +180,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FMRDescuentos";
             this.Text = "Descuentos";
+            this.Load += new System.EventHandler(this.FMRDescuentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVDescuento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
