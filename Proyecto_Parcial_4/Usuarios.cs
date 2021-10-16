@@ -25,7 +25,8 @@ namespace Proyecto_Parcial_4
         {
             FRMVenta f_vent = new FRMVenta(true);
             f_vent.Show();
-            this.Close();
+            FMRUsuarios f_usu = new FMRUsuarios();
+            f_usu.Close();
         }
 
         private void BTNModificar_Click(object sender, EventArgs e)
