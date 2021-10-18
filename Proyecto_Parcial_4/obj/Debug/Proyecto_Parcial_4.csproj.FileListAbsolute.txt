@@ -17,6 +17,7 @@ C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programaci
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRInventarios.resources
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRProveedores.resources
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRUsuarios.resources
+<<<<<<< Updated upstream
 C:\Users\Theblack\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
 C:\Users\Theblack\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
 C:\Users\Theblack\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
@@ -55,6 +56,8 @@ C:\Users\user\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\ob
 C:\Users\user\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CoreCompileInputs.cache
 C:\Users\user\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.exe
 C:\Users\user\Source\Repos\TiagoMg93\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.pdb
+=======
+>>>>>>> Stashed changes
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
