@@ -147,6 +147,7 @@ namespace Proyecto_Parcial_4
             // 
             // TBUnidades
             // 
+            this.TBUnidades.Enabled = false;
             this.TBUnidades.Location = new System.Drawing.Point(146, 148);
             this.TBUnidades.Name = "TBUnidades";
             this.TBUnidades.Size = new System.Drawing.Size(100, 20);
@@ -164,6 +165,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNActualizar
             // 
+            this.BTNActualizar.Enabled = false;
             this.BTNActualizar.Location = new System.Drawing.Point(160, 174);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);

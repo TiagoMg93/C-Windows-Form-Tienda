@@ -117,9 +117,12 @@ namespace Proyecto_Parcial_4
                 TBUser.ResetText();
                 TBPassword.ResetText();
                 formulario.Show();
-                this.Hide();
+                MessageBox.Show("Bienvenido " + TBUser.Text);
+                TBUser.ResetText();
+                TBPassword.ResetText();
                 intentos = 3;
                 conexion.Close();
+                this.Close();
             }
             //Se hace un condicional donde podamos cerrar el programa si se supera el número de intentos
             if(intentos == 0)
