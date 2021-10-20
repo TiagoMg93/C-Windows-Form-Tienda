@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Proyecto_Parcial_4
 {
@@ -15,6 +16,35 @@ namespace Proyecto_Parcial_4
         public FRMHistorial()
         {
             InitializeComponent();
+        }
+
+        private void FRMHistorial_Load(object sender, EventArgs e)
+        {
+            //Se conecta a la base de datos para extraer la información solicitada por el datagridview
+            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            conexion.Open();
+            //se usa un DataTable para almacenar la tabla extraida por el query de sql
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Articulo.Código,Articulo.Nombre,Historial.Unidades_Vendidas from Articulo inner join Historial on Articulo.Código = Historial.Código", conexion);
+            DataTable tabla = new DataTable();
+            dataAdapter.Fill(tabla);
+            //Se emplea un ciclo for para llenar el datagridview por filas
+            for(int row = 0; row < tabla.Rows.Count; row++)
+            {
+                DTGVHistorial.Rows.Add();
+                DTGVHistorial.Rows[row].Cells[0].Value = tabla.Rows[row][0].ToString();
+                DTGVHistorial.Rows[row].Cells[1].Value = tabla.Rows[row][1].ToString();
+                DTGVHistorial.Rows[row].Cells[2].Value = tabla.Rows[row][2].ToString();
+            }
+        }
+
+        private void BTNCerrar_Click(object sender, EventArgs e)
+        {
+            //Mensaje de advertencia por el cierre de la app
+            DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (decision == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

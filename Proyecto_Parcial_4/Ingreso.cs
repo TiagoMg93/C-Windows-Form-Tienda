@@ -40,7 +40,7 @@ namespace Proyecto_Parcial_4
             DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (decision == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -85,7 +85,7 @@ namespace Proyecto_Parcial_4
                     if (password == contraseñas[position])
                     {
                         //Se extrae el booleano correspondiente de si esa cuenta es administrador o no
-                        if(admin[position] == "1")
+                        if(admin[position] == "True")
                         {
                             administrador = true;
                         }
@@ -114,15 +114,15 @@ namespace Proyecto_Parcial_4
                 //Se crea el formulario central de la app mandandole el booleano correspondiente a las funcionalidad permitidas
                 //de quien ingresa
                 FRMVenta formulario = new FRMVenta(administrador);
-                TBUser.ResetText();
-                TBPassword.ResetText();
                 formulario.Show();
                 MessageBox.Show("Bienvenido " + TBUser.Text);
                 TBUser.ResetText();
                 TBPassword.ResetText();
+                TBUser.ResetText();
+                TBPassword.ResetText();
                 intentos = 3;
                 conexion.Close();
-                this.Close();
+                this.Hide();
             }
             //Se hace un condicional donde podamos cerrar el programa si se supera el número de intentos
             if(intentos == 0)

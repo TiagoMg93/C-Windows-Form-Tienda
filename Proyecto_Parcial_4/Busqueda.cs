@@ -38,8 +38,8 @@ namespace Proyecto_Parcial_4
         private void CBCodigo_CheckedChanged(object sender, EventArgs e)
         {
             //se realiza un condicional que controle los check que se dan en los CheckBox, donde solo se permita mantener
-            //Un checkBox señalado, tambien se controla la habilitacion de la barra de busqueda, asistiendo al usuario del
-            //protocolo de busqueda
+            //Un checkBox señalado, tambien se controla la habilitacion de la barra de busqueda, asistiendo al usuario en
+            //el protocolo de busqueda
             if (CBNombre.Checked == true || CBMarca.Checked == true)
             {
                 CBCodigo.Checked = false;
@@ -58,8 +58,8 @@ namespace Proyecto_Parcial_4
         private void CBNombre_CheckedChanged(object sender, EventArgs e)
         {
             //se realiza un condicional que controle los check que se dan en los CheckBox, donde solo se permita mantener
-            //Un checkBox señalado, tambien se controla la habilitacion de la barra de busqueda, asistiendo al usuario del
-            //protocolo de busqueda
+            //Un checkBox señalado, tambien se controla la habilitacion de la barra de busqueda, asistiendo al usuario en
+            //el protocolo de busqueda
             if (CBCodigo.Checked == true || CBMarca.Checked == true)
             {
                 CBNombre.Checked = false;
@@ -77,7 +77,8 @@ namespace Proyecto_Parcial_4
 
         private void CBBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //Se habilita el botón que inicia la busqueda en la base de datos
+            BTNAceptar.Enabled = true;
         }
 
         private void BTNAceptar_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace Proyecto_Parcial_4
             //Se crea un comando sql donde se agregue la información que se encuentra en el comboBox
             SqlCommand agregar = new SqlCommand("insert into Buscar values(@Busqueda)", conexion);
             conexion.Open();
+            //Se envia el valor del Combo-Box que será agregado a la tabla de busqueda
             agregar.Parameters.AddWithValue("@Busqueda", CBBusqueda.Text);
             agregar.ExecuteNonQuery();
             conexion.Close();
@@ -136,7 +138,6 @@ namespace Proyecto_Parcial_4
             }
             //se habilita el ComboBox para localizar el elemento deseado
             CBBusqueda.Enabled = true;
-            BTNAceptar.Enabled = true;
             TBBusqueda.ResetText();
             conexion.Close();
         }

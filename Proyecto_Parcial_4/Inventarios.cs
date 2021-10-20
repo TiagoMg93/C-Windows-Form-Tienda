@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic;
 
 namespace Proyecto_Parcial_4
 {
@@ -37,8 +38,6 @@ namespace Proyecto_Parcial_4
             DataTable tabla = new DataTable();
             //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
             dataAdapter.Fill(tabla);
-            //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
-            CBArticulo.Items.Add("");
             //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
             for (int row = 0; row < tabla.Rows.Count; row++)
             {
@@ -119,8 +118,8 @@ namespace Proyecto_Parcial_4
             }
             //Se limpia el Combo-Box y se agrega el artículo
             CBArticulo.Items.Clear();
-            CBArticulo.Items.Add("");
             CBArticulo.Items.Add(texto);
+            CBArticulo.ResetText();
         }
 
         private void BTNCerrar_Click(object sender, EventArgs e)
@@ -135,54 +134,103 @@ namespace Proyecto_Parcial_4
 
         private void BTNModificar_Click(object sender, EventArgs e)
         {
-            //Con este botón se pretende modificar la información de los artículos ya existentes, para ello empleamos la
-            //base de datos y usamos un query que nos permite modificar desde el formulario la información almacenada
-            //en la base de datos
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
-            conexion.Open();
-            SqlCommand modificar = new SqlCommand(string.Format("Update Articulo set Nombre = '{0}',Precio = {1},Costo = {2},Marca = '{3}' where Código = {4}",TBArticulo.Text,float.Parse(TBPrecio.Text),float.Parse(TBCosto.Text),TBMarca.Text,int.Parse(TBCodigo.Text)), conexion);
-            modificar.ExecuteNonQuery();
-            //Luego de ser almacenados los cambios se debe limpiar los campos para comodidad del usuario
-            TBCodigo.ResetText();
-            TBArticulo.ResetText();
-            TBPrecio.ResetText();
-            TBCosto.ResetText();
-            TBCantidad.ResetText();
-            TBMarca.ResetText();
-            TBProveedor.ResetText();
-            TBContacto.ResetText();
-            CBArticulo.Items.Clear();
-            CBArticulo.ResetText();
-            //tambien se debe volver a reiniciar el Combo-Box con todos los articulos de la tienda
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
-            DataTable tabla = new DataTable();
-            dataAdapter.Fill(tabla);
-            CBArticulo.Items.Add("");
-            for (int row = 0; row < tabla.Rows.Count; row++)
+            DialogResult decision = MessageBox.Show("¿Seguro que desea modificar la información de este artículo?", "STOP", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (decision == DialogResult.Yes)
             {
-                string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
-                CBArticulo.Items.Add(texto);
+                //Con este botón se pretende modificar la información de los artículos ya existentes, para ello empleamos la
+                //base de datos y usamos un query que nos permite modificar desde el formulario la información almacenada
+                //en la base de datos
+                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                conexion.Open();
+                bool correcto = false;
+                while (correcto == false)
+                {
+                    try
+                    {
+                        double suma = double.Parse(TBPrecio.Text) + 2;
+                        correcto = true;
+                    }
+                    catch
+                    {
+                        TBPrecio.Text = Interaction.InputBox("El valor ingresado en el precio no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
+                        correcto = false;
+                    }
+                }
+                correcto = false;
+                while (correcto == false)
+                {
+                    try
+                    {
+                        double suma = double.Parse(TBCosto.Text) + 2;
+                        correcto = true;
+                    }
+                    catch
+                    {
+                        TBCosto.Text = Interaction.InputBox("El valor ingresado en el costo no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
+                        correcto = false;
+                    }
+                }
+                correcto = false;
+                while (correcto == false)
+                {
+                    try
+                    {
+                        int suma = int.Parse(TBContacto.Text) + 2;
+                        correcto = true;
+                    }
+                    catch
+                    {
+                        TBContacto.Text = Interaction.InputBox("El valor ingresado en el contacto no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
+                        correcto = false;
+                    }
+                }
+                SqlCommand modificar = new SqlCommand(string.Format("Update Articulo set Nombre = '{0}',Precio = {1},Costo = {2},Marca = '{3}' where Código = {4}", TBArticulo.Text, float.Parse(TBPrecio.Text), float.Parse(TBCosto.Text), TBMarca.Text, int.Parse(TBCodigo.Text)), conexion);
+                modificar.ExecuteNonQuery();
+                modificar = new SqlCommand(string.Format("Update Proveedor set Proveedor = '{0}',Contacto = {1} where Código = {2}", TBProveedor.Text, TBContacto.Text, TBCodigo.Text), conexion);
+                modificar.ExecuteNonQuery();
+                //Luego de ser almacenados los cambios se debe limpiar los campos para comodidad del usuario
+                TBCodigo.ResetText();
+                TBArticulo.ResetText();
+                TBPrecio.ResetText();
+                TBCosto.ResetText();
+                TBCantidad.ResetText();
+                TBMarca.ResetText();
+                TBProveedor.ResetText();
+                TBContacto.ResetText();
+                CBArticulo.Items.Clear();
+                CBArticulo.ResetText();
+                //tambien se debe volver a reiniciar el Combo-Box con todos los articulos de la tienda
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
+                DataTable tabla = new DataTable();
+                dataAdapter.Fill(tabla);
+                CBArticulo.Items.Add("");
+                for (int row = 0; row < tabla.Rows.Count; row++)
+                {
+                    string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
+                    CBArticulo.Items.Add(texto);
+                }
+                //finalmente se debe cambiar la información mostrada en el datagrid para que se actualice con los 
+                //nuevos cambios generados
+                SqlDataAdapter dataAdapter2 = new SqlDataAdapter("Select *  from Articulo  left join Proveedor on Articulo.Código = Proveedor.Código", conexion);
+                tabla.Clear();
+                dataAdapter2.Fill(tabla);
+                DTGVInventario.Rows.Clear();
+                for (int row = 0; row < tabla.Rows.Count; row++)
+                {
+                    DTGVInventario.Rows.Add();
+                    DTGVInventario.Rows[row].Cells[0].Value = tabla.Rows[row][0].ToString();
+                    DTGVInventario.Rows[row].Cells[1].Value = tabla.Rows[row][1].ToString();
+                    DTGVInventario.Rows[row].Cells[2].Value = tabla.Rows[row][3].ToString();
+                    DTGVInventario.Rows[row].Cells[3].Value = tabla.Rows[row][4].ToString();
+                    DTGVInventario.Rows[row].Cells[4].Value = tabla.Rows[row][2].ToString();
+                    DTGVInventario.Rows[row].Cells[5].Value = tabla.Rows[row][6].ToString();
+                    DTGVInventario.Rows[row].Cells[6].Value = tabla.Rows[row][7].ToString();
+                    DTGVInventario.Rows[row].Cells[7].Value = tabla.Rows[row][8].ToString();
+                }
+                conexion.Close();
+                //se deshabilita el botón
+                BTNActBusqueda.Enabled = false;
             }
-            //finalmente se debe cambiar la información mostrada en el datagrid para que se actualice con los 
-            //nuevos cambios generados
-            SqlDataAdapter dataAdapter2 = new SqlDataAdapter("Select *  from Articulo  left join Proveedor on Articulo.Código = Proveedor.Código", conexion);
-            tabla.Clear();
-            dataAdapter2.Fill(tabla);
-            DTGVInventario.Rows.Clear();
-            for (int row = 0; row < tabla.Rows.Count; row++)
-            {
-                DTGVInventario.Rows.Add();
-                DTGVInventario.Rows[row].Cells[0].Value = tabla.Rows[row][0].ToString();
-                DTGVInventario.Rows[row].Cells[1].Value = tabla.Rows[row][1].ToString();
-                DTGVInventario.Rows[row].Cells[2].Value = tabla.Rows[row][3].ToString();
-                DTGVInventario.Rows[row].Cells[3].Value = tabla.Rows[row][4].ToString();
-                DTGVInventario.Rows[row].Cells[4].Value = tabla.Rows[row][2].ToString();
-                DTGVInventario.Rows[row].Cells[5].Value = tabla.Rows[row][6].ToString();
-                DTGVInventario.Rows[row].Cells[6].Value = tabla.Rows[row][7].ToString();
-                DTGVInventario.Rows[row].Cells[7].Value = tabla.Rows[row][8].ToString();
-            }
-            conexion.Close();
-            BTNActBusqueda.Enabled = false;
         }
     }
 }

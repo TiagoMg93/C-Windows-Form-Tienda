@@ -34,7 +34,7 @@ namespace Proyecto_Parcial_4
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBUsuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBUser = new System.Windows.Forms.TextBox();
             this.LBPassword = new System.Windows.Forms.Label();
             this.TBPassword = new System.Windows.Forms.TextBox();
             this.LBAdmin = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar = new System.Windows.Forms.Button();
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.BTNCerrar = new System.Windows.Forms.Button();
+            this.BTNEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@ namespace Proyecto_Parcial_4
             this.DTGVUsuario.ReadOnly = true;
             this.DTGVUsuario.Size = new System.Drawing.Size(294, 150);
             this.DTGVUsuario.TabIndex = 0;
+            this.DTGVUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGVUsuario_CellContentClick);
             // 
             // Indice
             // 
@@ -89,12 +91,12 @@ namespace Proyecto_Parcial_4
             this.LBUsuario.TabIndex = 1;
             this.LBUsuario.Text = "Usuario";
             // 
-            // textBox1
+            // TBUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.TBUser.Location = new System.Drawing.Point(104, 196);
+            this.TBUser.Name = "TBUser";
+            this.TBUser.Size = new System.Drawing.Size(100, 20);
+            this.TBUser.TabIndex = 2;
             // 
             // LBPassword
             // 
@@ -126,8 +128,8 @@ namespace Proyecto_Parcial_4
             // 
             this.CBAdmin.FormattingEnabled = true;
             this.CBAdmin.Items.AddRange(new object[] {
-            "True",
-            "False"});
+            "Si",
+            "No"});
             this.CBAdmin.Location = new System.Drawing.Point(104, 259);
             this.CBAdmin.Name = "CBAdmin";
             this.CBAdmin.Size = new System.Drawing.Size(100, 21);
@@ -141,6 +143,7 @@ namespace Proyecto_Parcial_4
             this.BTNAgregar.TabIndex = 7;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
+            this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
             // 
             // BTNModificar
             // 
@@ -150,6 +153,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar.TabIndex = 8;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
+            this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
             // BTNActualizar
             // 
@@ -160,6 +164,7 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar.TabIndex = 9;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
+            this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
             // 
             // BTNCerrar
             // 
@@ -169,6 +174,18 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 20;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
+            // 
+            // BTNEliminar
+            // 
+            this.BTNEliminar.Enabled = false;
+            this.BTNEliminar.Location = new System.Drawing.Point(114, 302);
+            this.BTNEliminar.Name = "BTNEliminar";
+            this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
+            this.BTNEliminar.TabIndex = 21;
+            this.BTNEliminar.Text = "Eliminar Usuario";
+            this.BTNEliminar.UseVisualStyleBackColor = true;
+            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
             // 
             // FMRUsuarios
             // 
@@ -176,6 +193,7 @@ namespace Proyecto_Parcial_4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 337);
             this.ControlBox = false;
+            this.Controls.Add(this.BTNEliminar);
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.BTNActualizar);
             this.Controls.Add(this.BTNModificar);
@@ -184,13 +202,14 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBAdmin);
             this.Controls.Add(this.TBPassword);
             this.Controls.Add(this.LBPassword);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBUser);
             this.Controls.Add(this.LBUsuario);
             this.Controls.Add(this.DTGVUsuario);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRUsuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.FMRUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -204,7 +223,7 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Administrador;
         private System.Windows.Forms.Label LBUsuario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBUser;
         private System.Windows.Forms.Label LBPassword;
         private System.Windows.Forms.TextBox TBPassword;
         private System.Windows.Forms.Label LBAdmin;
@@ -213,5 +232,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNModificar;
         private System.Windows.Forms.Button BTNActualizar;
         private System.Windows.Forms.Button BTNCerrar;
+        private System.Windows.Forms.Button BTNEliminar;
     }
 }

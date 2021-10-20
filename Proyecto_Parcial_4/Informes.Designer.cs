@@ -35,23 +35,27 @@ namespace Proyecto_Parcial_4
             this.LBMasvendido = new System.Windows.Forms.Label();
             this.LBTiTle = new System.Windows.Forms.Label();
             this.LBGanancias = new System.Windows.Forms.Label();
-            this.TBMasvendido = new System.Windows.Forms.TextBox();
-            this.TBMenosvendido = new System.Windows.Forms.TextBox();
+            this.Title3 = new System.Windows.Forms.Label();
+            this.Title2 = new System.Windows.Forms.Label();
+            this.LBVentas = new System.Windows.Forms.Label();
+            this.LBArtMas = new System.Windows.Forms.Label();
+            this.LBArtMen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(238, 180);
+            this.BTNCerrar.Location = new System.Drawing.Point(238, 183);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
             this.BTNCerrar.TabIndex = 20;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // LBUtilidades
             // 
             this.LBUtilidades.AutoSize = true;
-            this.LBUtilidades.Location = new System.Drawing.Point(80, 39);
+            this.LBUtilidades.Location = new System.Drawing.Point(65, 67);
             this.LBUtilidades.Name = "LBUtilidades";
             this.LBUtilidades.Size = new System.Drawing.Size(53, 13);
             this.LBUtilidades.TabIndex = 21;
@@ -60,7 +64,7 @@ namespace Proyecto_Parcial_4
             // LBMenosvendido
             // 
             this.LBMenosvendido.AutoSize = true;
-            this.LBMenosvendido.Location = new System.Drawing.Point(31, 126);
+            this.LBMenosvendido.Location = new System.Drawing.Point(43, 149);
             this.LBMenosvendido.Name = "LBMenosvendido";
             this.LBMenosvendido.Size = new System.Drawing.Size(119, 13);
             this.LBMenosvendido.TabIndex = 22;
@@ -69,7 +73,7 @@ namespace Proyecto_Parcial_4
             // LBMasvendido
             // 
             this.LBMasvendido.AutoSize = true;
-            this.LBMasvendido.Location = new System.Drawing.Point(43, 83);
+            this.LBMasvendido.Location = new System.Drawing.Point(43, 109);
             this.LBMasvendido.Name = "LBMasvendido";
             this.LBMasvendido.Size = new System.Drawing.Size(107, 13);
             this.LBMasvendido.TabIndex = 23;
@@ -78,7 +82,7 @@ namespace Proyecto_Parcial_4
             // LBTiTle
             // 
             this.LBTiTle.AutoSize = true;
-            this.LBTiTle.Location = new System.Drawing.Point(194, 39);
+            this.LBTiTle.Location = new System.Drawing.Point(189, 67);
             this.LBTiTle.Name = "LBTiTle";
             this.LBTiTle.Size = new System.Drawing.Size(13, 13);
             this.LBTiTle.TabIndex = 24;
@@ -87,27 +91,56 @@ namespace Proyecto_Parcial_4
             // LBGanancias
             // 
             this.LBGanancias.AutoSize = true;
-            this.LBGanancias.Location = new System.Drawing.Point(235, 39);
+            this.LBGanancias.Location = new System.Drawing.Point(225, 67);
             this.LBGanancias.Name = "LBGanancias";
             this.LBGanancias.Size = new System.Drawing.Size(13, 13);
             this.LBGanancias.TabIndex = 25;
             this.LBGanancias.Text = "0";
             // 
-            // TBMasvendido
+            // Title3
             // 
-            this.TBMasvendido.Location = new System.Drawing.Point(178, 80);
-            this.TBMasvendido.Name = "TBMasvendido";
-            this.TBMasvendido.ReadOnly = true;
-            this.TBMasvendido.Size = new System.Drawing.Size(100, 20);
-            this.TBMasvendido.TabIndex = 26;
+            this.Title3.AutoSize = true;
+            this.Title3.Location = new System.Drawing.Point(65, 30);
+            this.Title3.Name = "Title3";
+            this.Title3.Size = new System.Drawing.Size(74, 13);
+            this.Title3.TabIndex = 28;
+            this.Title3.Text = "Ventas totales";
             // 
-            // TBMenosvendido
+            // Title2
             // 
-            this.TBMenosvendido.Location = new System.Drawing.Point(178, 123);
-            this.TBMenosvendido.Name = "TBMenosvendido";
-            this.TBMenosvendido.ReadOnly = true;
-            this.TBMenosvendido.Size = new System.Drawing.Size(100, 20);
-            this.TBMenosvendido.TabIndex = 27;
+            this.Title2.AutoSize = true;
+            this.Title2.Location = new System.Drawing.Point(189, 30);
+            this.Title2.Name = "Title2";
+            this.Title2.Size = new System.Drawing.Size(13, 13);
+            this.Title2.TabIndex = 29;
+            this.Title2.Text = "$";
+            // 
+            // LBVentas
+            // 
+            this.LBVentas.AutoSize = true;
+            this.LBVentas.Location = new System.Drawing.Point(225, 30);
+            this.LBVentas.Name = "LBVentas";
+            this.LBVentas.Size = new System.Drawing.Size(13, 13);
+            this.LBVentas.TabIndex = 30;
+            this.LBVentas.Text = "0";
+            // 
+            // LBArtMas
+            // 
+            this.LBArtMas.AutoSize = true;
+            this.LBArtMas.Location = new System.Drawing.Point(203, 109);
+            this.LBArtMas.Name = "LBArtMas";
+            this.LBArtMas.Size = new System.Drawing.Size(47, 13);
+            this.LBArtMas.TabIndex = 31;
+            this.LBArtMas.Text = "Ninguno";
+            // 
+            // LBArtMen
+            // 
+            this.LBArtMen.AutoSize = true;
+            this.LBArtMen.Location = new System.Drawing.Point(203, 149);
+            this.LBArtMen.Name = "LBArtMen";
+            this.LBArtMen.Size = new System.Drawing.Size(47, 13);
+            this.LBArtMen.TabIndex = 32;
+            this.LBArtMen.Text = "Ninguno";
             // 
             // FMRInformes
             // 
@@ -115,8 +148,11 @@ namespace Proyecto_Parcial_4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 218);
             this.ControlBox = false;
-            this.Controls.Add(this.TBMenosvendido);
-            this.Controls.Add(this.TBMasvendido);
+            this.Controls.Add(this.LBArtMen);
+            this.Controls.Add(this.LBArtMas);
+            this.Controls.Add(this.LBVentas);
+            this.Controls.Add(this.Title2);
+            this.Controls.Add(this.Title3);
             this.Controls.Add(this.LBGanancias);
             this.Controls.Add(this.LBTiTle);
             this.Controls.Add(this.LBMasvendido);
@@ -127,6 +163,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FMRInformes";
             this.Text = "Informes";
+            this.Load += new System.EventHandler(this.FMRInformes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +177,10 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Label LBMasvendido;
         private System.Windows.Forms.Label LBTiTle;
         private System.Windows.Forms.Label LBGanancias;
-        private System.Windows.Forms.TextBox TBMasvendido;
-        private System.Windows.Forms.TextBox TBMenosvendido;
+        private System.Windows.Forms.Label Title3;
+        private System.Windows.Forms.Label Title2;
+        private System.Windows.Forms.Label LBVentas;
+        private System.Windows.Forms.Label LBArtMas;
+        private System.Windows.Forms.Label LBArtMen;
     }
 }

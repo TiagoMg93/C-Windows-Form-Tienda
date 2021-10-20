@@ -40,13 +40,6 @@ namespace Proyecto_Parcial_4
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DGVVenta = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBTitle = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
             this.LBArticulo = new System.Windows.Forms.Label();
@@ -73,6 +66,13 @@ namespace Proyecto_Parcial_4
             this.BTNNuevo = new System.Windows.Forms.Button();
             this.LBCambio = new System.Windows.Forms.Label();
             this.TBCambio = new System.Windows.Forms.TextBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVenta)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +103,7 @@ namespace Proyecto_Parcial_4
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
@@ -118,7 +118,7 @@ namespace Proyecto_Parcial_4
             // devolucionesToolStripMenuItem
             // 
             this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
-            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.devolucionesToolStripMenuItem.Text = "Devoluciones";
             this.devolucionesToolStripMenuItem.Click += new System.EventHandler(this.devolucionesToolStripMenuItem_Click);
             // 
@@ -141,14 +141,14 @@ namespace Proyecto_Parcial_4
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // descuentosToolStripMenuItem
             // 
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
-            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.descuentosToolStripMenuItem.Text = "Descuentos";
             this.descuentosToolStripMenuItem.Click += new System.EventHandler(this.descuentosToolStripMenuItem_Click);
             // 
@@ -174,60 +174,11 @@ namespace Proyecto_Parcial_4
             this.Descuento,
             this.Cantidad,
             this.Subtotal});
-            this.DGVVenta.Location = new System.Drawing.Point(79, 77);
+            this.DGVVenta.Location = new System.Drawing.Point(69, 77);
             this.DGVVenta.Name = "DGVVenta";
             this.DGVVenta.ReadOnly = true;
-            this.DGVVenta.Size = new System.Drawing.Size(624, 150);
+            this.DGVVenta.Size = new System.Drawing.Size(634, 150);
             this.DGVVenta.TabIndex = 1;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 55;
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Artículo";
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            this.Articulo.Width = 120;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            this.Marca.Width = 110;
-            // 
-            // Precio_Unitario
-            // 
-            this.Precio_Unitario.HeaderText = "Precio Unitario";
-            this.Precio_Unitario.Name = "Precio_Unitario";
-            this.Precio_Unitario.ReadOnly = true;
-            this.Precio_Unitario.Width = 80;
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento por unidad";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            this.Descuento.Width = 80;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 70;
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
-            this.Subtotal.Width = 65;
             // 
             // LBTitle
             // 
@@ -240,6 +191,7 @@ namespace Proyecto_Parcial_4
             // 
             // CBArticulo
             // 
+            this.CBArticulo.Enabled = false;
             this.CBArticulo.FormattingEnabled = true;
             this.CBArticulo.Location = new System.Drawing.Point(98, 254);
             this.CBArticulo.Name = "CBArticulo";
@@ -258,6 +210,7 @@ namespace Proyecto_Parcial_4
             // 
             // TBCantidad
             // 
+            this.TBCantidad.Enabled = false;
             this.TBCantidad.Location = new System.Drawing.Point(98, 294);
             this.TBCantidad.Name = "TBCantidad";
             this.TBCantidad.Size = new System.Drawing.Size(49, 20);
@@ -391,6 +344,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNBuscar
             // 
+            this.BTNBuscar.Enabled = false;
             this.BTNBuscar.Location = new System.Drawing.Point(41, 331);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(93, 23);
@@ -412,6 +366,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNCalcular
             // 
+            this.BTNCalcular.Enabled = false;
             this.BTNCalcular.Location = new System.Drawing.Point(441, 266);
             this.BTNCalcular.Name = "BTNCalcular";
             this.BTNCalcular.Size = new System.Drawing.Size(75, 23);
@@ -431,6 +386,7 @@ namespace Proyecto_Parcial_4
             // 
             // TBPago
             // 
+            this.TBPago.Enabled = false;
             this.TBPago.Location = new System.Drawing.Point(628, 254);
             this.TBPago.Name = "TBPago";
             this.TBPago.Size = new System.Drawing.Size(75, 20);
@@ -449,7 +405,6 @@ namespace Proyecto_Parcial_4
             // 
             // BTNNuevo
             // 
-            this.BTNNuevo.Enabled = false;
             this.BTNNuevo.Location = new System.Drawing.Point(554, 308);
             this.BTNNuevo.Name = "BTNNuevo";
             this.BTNNuevo.Size = new System.Drawing.Size(75, 23);
@@ -474,6 +429,55 @@ namespace Proyecto_Parcial_4
             this.TBCambio.Name = "TBCambio";
             this.TBCambio.Size = new System.Drawing.Size(75, 20);
             this.TBCambio.TabIndex = 42;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 55;
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Artículo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            this.Articulo.Width = 120;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            this.Marca.Width = 110;
+            // 
+            // Precio_Unitario
+            // 
+            this.Precio_Unitario.HeaderText = "Precio Unitario ($)";
+            this.Precio_Unitario.Name = "Precio_Unitario";
+            this.Precio_Unitario.ReadOnly = true;
+            this.Precio_Unitario.Width = 90;
+            // 
+            // Descuento
+            // 
+            this.Descuento.HeaderText = "Descuento por unidad ($)";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
+            this.Descuento.Width = 80;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 70;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
+            this.Subtotal.Width = 65;
             // 
             // FRMVenta
             // 
@@ -560,6 +564,9 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Label LBPago;
         private System.Windows.Forms.TextBox TBPago;
         private System.Windows.Forms.Button BTNConfirmar;
+        private System.Windows.Forms.Button BTNNuevo;
+        private System.Windows.Forms.Label LBCambio;
+        private System.Windows.Forms.TextBox TBCambio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
@@ -567,9 +574,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.Button BTNNuevo;
-        private System.Windows.Forms.Label LBCambio;
-        private System.Windows.Forms.TextBox TBCambio;
     }
 }
 

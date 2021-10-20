@@ -60,6 +60,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 20;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // Codigo
             // 
@@ -75,7 +76,7 @@ namespace Proyecto_Parcial_4
             // 
             // Cantidad
             // 
-            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.HeaderText = "Unidades Vendidas";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
@@ -91,6 +92,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FRMHistorial";
             this.Text = "Historial";
+            this.Load += new System.EventHandler(this.FRMHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVHistorial)).EndInit();
             this.ResumeLayout(false);
 
@@ -99,9 +101,9 @@ namespace Proyecto_Parcial_4
         #endregion
 
         private System.Windows.Forms.DataGridView DTGVHistorial;
+        private System.Windows.Forms.Button BTNCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.Button BTNCerrar;
     }
 }

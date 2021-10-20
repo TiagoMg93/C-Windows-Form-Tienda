@@ -17,6 +17,7 @@ namespace Proyecto_Parcial_4
         public FRMVenta(bool administrador)
         {
             InitializeComponent();
+            //Se compara el argumento recibido del ingreso para saber que funciones se habilitan
             if (administrador == true)
             {
                 BTNEliminar.Visible = true;
@@ -27,25 +28,7 @@ namespace Proyecto_Parcial_4
 
         private void FRMVenta_Load(object sender, EventArgs e)
         {
-            //Iniciamos con conexión a la base de datos y traemos todos los articulos presentes en la tienda
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
-            conexion.Open();
-            //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
-            //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
-            //formulario
-            DataTable tabla = new DataTable();
-            //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
-            dataAdapter.Fill(tabla);
-            //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
-            CBArticulo.Items.Add("");
-            //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
-            for (int row = 0; row < tabla.Rows.Count; row++)
-            {
-                //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
-                string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
-                CBArticulo.Items.Add(texto);
-            }
+
         }
 
         private void CBArticulo_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,7 +57,7 @@ namespace Proyecto_Parcial_4
             {
                 FMRIngreso ingreso = new FMRIngreso();
                 ingreso.Show();
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -109,12 +92,26 @@ namespace Proyecto_Parcial_4
             }
             //Se limpia el Combo-Box y se agrega el artículo
             CBArticulo.Items.Clear();
-            CBArticulo.Items.Add("");
             CBArticulo.Items.Add(texto);
+            CBArticulo.ResetText();
         }
 
         private void BTNCalcular_Click(object sender, EventArgs e)
         {
+            bool correcto = false;
+            while (correcto == false)
+            {
+                try
+                {
+                    double suma = double.Parse(TBCantidad.Text) + 2;
+                    correcto = true;
+                }
+                catch
+                {
+                    TBCantidad.Text = Interaction.InputBox("El valor ingresado en la cantidad no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
+                    correcto = false;
+                }
+            }
             //Se emplea un boton Calcular que permita calcular el subtotal por pagar del articulo ingresado y su cantidad
             double valor = double.Parse(TBPrecio.Text)-((double.Parse(TBPrecio.Text) * double.Parse(TBDescuento.Text)) / 100);
             //se debe restar el descuento asociado al articulo.
@@ -124,95 +121,101 @@ namespace Proyecto_Parcial_4
 
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
-            //Se crea un vector con la información del combo box, para identificar el codigo del articulo
-            //de esa forma ir a la base de datos y buscar la información necesaria de ese articulo
-            string[] vector = CBArticulo.Text.Split('-');
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
-            conexion.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(string.Format("Select Cantidad from Proveedor where Código = {0}", vector[0]), conexion);
-            DataTable data = new DataTable();
-            dataAdapter1.Fill(data);
-            //Se evalua las existencias (inventario) que se tienen del articulo, para verificar que si se tengan los suficientes
-            if(int.Parse(TBCantidad.Text) > int.Parse(data.Rows[0][0].ToString()))
+            DialogResult decision = MessageBox.Show("¿Seguro que desea registrar este articulo?", "CONSULTA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (decision == DialogResult.Yes)
             {
-                //Se cancela la operación si se identifica que la cantidad de articulos registrados son mayores que
-                //las unidades existentes en la base de datos
-                MessageBox.Show("La operación se cancela, el almacen no cuenta con el inventario suficiente");
-                CBArticulo.Items.Clear();
-                CBArticulo.ResetText();
-                //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
-                SqlDataAdapter dataAdapter2 = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
-                //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
-                //formulario
-                DataTable tabla2 = new DataTable();
-                //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
-                dataAdapter2.Fill(tabla2);
-                //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
-                CBArticulo.Items.Add("");
-                //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
-                for (int row = 0; row < tabla2.Rows.Count; row++)
+                //Se crea un vector con la información del combo box, para identificar el codigo del articulo
+                //de esa forma ir a la base de datos y buscar la información necesaria de ese articulo
+                string[] vector = CBArticulo.Text.Split('-');
+                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                conexion.Open();
+                SqlDataAdapter dataAdapter1 = new SqlDataAdapter(string.Format("Select Cantidad from Proveedor where Código = {0}", vector[0]), conexion);
+                DataTable data = new DataTable();
+                dataAdapter1.Fill(data);
+                //Se evalua las existencias (inventario) que se tienen del articulo, para verificar que si se tengan los suficientes
+                if (int.Parse(TBCantidad.Text) > int.Parse(data.Rows[0][0].ToString()))
                 {
-                    //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
-                    string texto = tabla2.Rows[row]["Código"].ToString() + " - " + tabla2.Rows[row]["Nombre"].ToString() + " - " + tabla2.Rows[row]["Marca"].ToString();
-                    CBArticulo.Items.Add(texto);
+                    //Se cancela la operación si se identifica que la cantidad de articulos registrados son mayores que
+                    //las unidades existentes en la base de datos
+                    MessageBox.Show("La operación se cancela, el almacen no cuenta con el inventario suficiente");
+                    CBArticulo.Items.Clear();
+                    CBArticulo.ResetText();
+                    //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
+                    SqlDataAdapter dataAdapter2 = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
+                    //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
+                    //formulario
+                    DataTable tabla2 = new DataTable();
+                    //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
+                    dataAdapter2.Fill(tabla2);
+                    //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
+                    CBArticulo.Items.Add("");
+                    //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
+                    for (int row = 0; row < tabla2.Rows.Count; row++)
+                    {
+                        //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
+                        string texto = tabla2.Rows[row]["Código"].ToString() + " - " + tabla2.Rows[row]["Nombre"].ToString() + " - " + tabla2.Rows[row]["Marca"].ToString();
+                        CBArticulo.Items.Add(texto);
+                    }
+                    //Se reinicialos los campos del formulario y se habilita el boton para confirmar toda la compra
+                    TBCantidad.Clear();
+                    TBPrecio.Clear();
+                    TBDescuento.Clear();
+                    TBSubtotal.Clear();
+                    TBPago.Enabled = true;
+                    BTNConfirmar.Enabled = true;
+                    BTNActBusqueda.Enabled = false;
+                    BTNRegistrar.Enabled = false;
                 }
-                //Se reinicialos los campos del formulario y se habilita el boton para confirmar toda la compra
-                TBCantidad.Clear();
-                TBPrecio.Clear();
-                TBDescuento.Clear();
-                TBSubtotal.Clear();
-                BTNConfirmar.Enabled = true;
-                BTNActBusqueda.Enabled = false;
-                BTNRegistrar.Enabled = false;
-            }
-            else
-            {
-                int n = DGVVenta.Rows.Add();
+                else
+                {
+                    int n = DGVVenta.Rows.Add();
 
-                /*Me guarda los datos al data grid view*/
-                DGVVenta.Rows[n].Cells[0].Value = vector[0][0];
-                DGVVenta.Rows[n].Cells[1].Value = vector[1];
-                DGVVenta.Rows[n].Cells[2].Value = vector[2];
-                DGVVenta.Rows[n].Cells[3].Value = TBPrecio.Text;
-                DGVVenta.Rows[n].Cells[4].Value = Convert.ToString((double.Parse(TBPrecio.Text) * double.Parse(TBDescuento.Text)) / 100);
-                DGVVenta.Rows[n].Cells[5].Value = TBCantidad.Text;
-                DGVVenta.Rows[n].Cells[6].Value = TBSubtotal.Text;
-                double total = 0;
-                //Se emplea una variable que acumule los subtotales
-                for (int row = 0; row < DGVVenta.Rows.Count; row++)
-                {
-                    total += double.Parse(DGVVenta.Rows[row].Cells[6].Value.ToString());
+                    /*Me guarda los datos al data grid view*/
+                    DGVVenta.Rows[n].Cells[0].Value = vector[0][0];
+                    DGVVenta.Rows[n].Cells[1].Value = vector[1];
+                    DGVVenta.Rows[n].Cells[2].Value = vector[2];
+                    DGVVenta.Rows[n].Cells[3].Value = TBPrecio.Text;
+                    DGVVenta.Rows[n].Cells[4].Value = Convert.ToString((double.Parse(TBPrecio.Text) * double.Parse(TBDescuento.Text)) / 100);
+                    DGVVenta.Rows[n].Cells[5].Value = TBCantidad.Text;
+                    DGVVenta.Rows[n].Cells[6].Value = TBSubtotal.Text;
+                    double total = 0;
+                    //Se emplea una variable que acumule los subtotales
+                    for (int row = 0; row < DGVVenta.Rows.Count; row++)
+                    {
+                        total += double.Parse(DGVVenta.Rows[row].Cells[6].Value.ToString());
+                    }
+                    TBTotal.Text = Convert.ToString(total);
+                    //Se reinicia el Combo-Box
+                    CBArticulo.Items.Clear();
+                    CBArticulo.ResetText();
+                    //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
+                    //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
+                    //formulario
+                    DataTable tabla = new DataTable();
+                    //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
+                    dataAdapter.Fill(tabla);
+                    //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
+                    CBArticulo.Items.Add("");
+                    //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
+                    for (int row = 0; row < tabla.Rows.Count; row++)
+                    {
+                        //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
+                        string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
+                        CBArticulo.Items.Add(texto);
+                    }
+                    //Finalmente se debe limpiar los textbox 
+                    TBCantidad.Clear();
+                    TBPrecio.Clear();
+                    TBDescuento.Clear();
+                    TBSubtotal.Clear();
+                    TBPago.Enabled = true;
+                    BTNConfirmar.Enabled = true;
+                    BTNActBusqueda.Enabled = false;
+                    BTNRegistrar.Enabled = false;
+                    BTNNuevo.Enabled = true;
+                    BTNEliminar.Enabled = true;
                 }
-                TBTotal.Text = Convert.ToString(total);
-                //Se reinicia el Combo-Box
-                CBArticulo.Items.Clear();
-                CBArticulo.ResetText();
-                //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
-                //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
-                //formulario
-                DataTable tabla = new DataTable();
-                //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
-                dataAdapter.Fill(tabla);
-                //agregamos una opcion en el Combo-Box que permita dejar la casilla vacia
-                CBArticulo.Items.Add("");
-                //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
-                for (int row = 0; row < tabla.Rows.Count; row++)
-                {
-                    //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
-                    string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
-                    CBArticulo.Items.Add(texto);
-                }
-                //Finalmente se debe limpiar los textbox 
-                TBCantidad.Clear();
-                TBPrecio.Clear();
-                TBDescuento.Clear();
-                TBSubtotal.Clear();
-                BTNConfirmar.Enabled = true;
-                BTNActBusqueda.Enabled = false;
-                BTNRegistrar.Enabled = false;
-                BTNNuevo.Enabled = true;
-                BTNEliminar.Enabled = true;
             }
         }
 
@@ -281,11 +284,30 @@ namespace Proyecto_Parcial_4
             TBSubtotal.Clear();
             TBTotal.Clear();
             TBCambio.Clear();
+            BTNCalcular.Enabled = true;
+            TBCantidad.Enabled = true;
             BTNNuevo.Enabled = false;
             BTNEliminar.Enabled = false;
             BTNCalcular.Enabled = true;
             BTNBuscar.Enabled = true;
             CBArticulo.Enabled = true;
+            //Iniciamos con conexión a la base de datos y traemos todos los articulos presentes en la tienda
+            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            conexion.Open();
+            //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
+            //Creamos una tabla que sera la encargada de interactuar con las tablas generadas por sql y la información del
+            //formulario
+            DataTable tabla = new DataTable();
+            //Llenamos el DataTable con la información extraida con el primer query para llenar el Combo-Box
+            dataAdapter.Fill(tabla);
+            //Creamos un ciclo for para contruir el texto que irá dentro del Combo-Box
+            for (int row = 0; row < tabla.Rows.Count; row++)
+            {
+                //Elegimos la estructura del texto y se agrega a los elementos del Combo-Box
+                string texto = tabla.Rows[row]["Código"].ToString() + " - " + tabla.Rows[row]["Nombre"].ToString() + " - " + tabla.Rows[row]["Marca"].ToString();
+                CBArticulo.Items.Add(texto);
+            }
         }
 
         private void BTNEliminar_Click(object sender, EventArgs e)
@@ -330,42 +352,65 @@ namespace Proyecto_Parcial_4
 
         private void BTNConfirmar_Click(object sender, EventArgs e)
         {
-            //Se calcula el cambio que se le debe entregar al cliente final de acuerdo a lo pagado
-            double cambio = double.Parse(TBPago.Text) - double.Parse(TBTotal.Text);
-            TBCambio.Text = cambio.ToString();
-            //Se abre la base de datos para actualizar las unidades existentes y el historial de ventas
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
-            conexion.Open();
-            //se emplea un data table que traiga el query necesario para actualizar el historial
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Costo from Articulo", conexion);
-            DataTable tabla = new DataTable();
-            dataAdapter.Fill(tabla);
-            //se usa un ciclo for que recorra las filas del datagridview
-            for (int row = 0; row < DGVVenta.Rows.Count; row++)
+            DialogResult decision = MessageBox.Show("¿Seguro que desea Confirmar esta venta?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (decision == DialogResult.Yes)
             {
-                //inicialmente se extraen en variables los valores del costo total por las unidades vendidas, el número
-                //de unidades vendidas, el total de las ventas y el codigo de cada artículo
-                double Costo = double.Parse(tabla.Rows[int.Parse(DGVVenta.Rows[row].Cells[0].Value.ToString()) - 1][0].ToString()) * double.Parse(DGVVenta.Rows[row].Cells[5].Value.ToString());
-                int unidades_venta = int.Parse(DGVVenta.Rows[row].Cells[5].Value.ToString());
-                double Venta = double.Parse(DGVVenta.Rows[row].Cells[6].Value.ToString());
-                int codigo = int.Parse(DGVVenta.Rows[row].Cells[0].Value.ToString());
-                //se emplea un comando sql para modificar los valores de la tabla que contiene el historial de ventas
-                SqlCommand modificar = new SqlCommand(string.Format("update Historial set Unidades_Vendidas = Unidades_Vendidas + {0},Ventas_Totales = Ventas_Totales + {1}, Costo_Total = Costo_Total + {2} Where Código = {3}",unidades_venta,Venta,Costo,codigo), conexion);
-                modificar.Parameters.Clear();
-                modificar.ExecuteNonQuery();
-                //se emplea un comando sql para modificar las existencias del inventario de los articulos ya vendidos en el datagridview
-                SqlCommand extraer = new SqlCommand(string.Format("update Proveedor set Cantidad = Cantidad - {0} where Codigo = {1}",unidades_venta,codigo),conexion);
-                extraer.Parameters.Clear();
-                extraer.ExecuteNonQuery();
+                //Se verifica que el empleado ingrese correctamente el pago realizado por el cliente final
+                bool correcto = false;
+                while (correcto == false)
+                {
+                    try
+                    {
+                        double suma = double.Parse(TBPago.Text) + 2;
+                        correcto = true;
+                    }
+                    catch
+                    {
+                        TBPago.Text = Interaction.InputBox("El valor ingresado en el pago del cliente no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
+                        correcto = false;
+                    }
+                }
+                //Se calcula el cambio que se le debe entregar al cliente final de acuerdo a lo pagado
+                double cambio = double.Parse(TBPago.Text) - double.Parse(TBTotal.Text);
+                TBCambio.Text = cambio.ToString();
+                //Se abre la base de datos para actualizar las unidades existentes y el historial de ventas
+                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                conexion.Open();
+                //se emplea un data table que traiga el query necesario para actualizar el historial
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Costo from Articulo", conexion);
+                DataTable tabla = new DataTable();
+                dataAdapter.Fill(tabla);
+                //se usa un ciclo for que recorra las filas del datagridview
+                for (int row = 0; row < DGVVenta.Rows.Count; row++)
+                {
+                    //inicialmente se extraen en variables los valores del costo total por las unidades vendidas, el número
+                    //de unidades vendidas, el total de las ventas y el codigo de cada artículo
+                    double Costo = double.Parse(tabla.Rows[int.Parse(DGVVenta.Rows[row].Cells[0].Value.ToString()) - 1][0].ToString()) * double.Parse(DGVVenta.Rows[row].Cells[5].Value.ToString());
+                    int unidades_venta = int.Parse(DGVVenta.Rows[row].Cells[5].Value.ToString());
+                    double Venta = double.Parse(DGVVenta.Rows[row].Cells[6].Value.ToString());
+                    int codigo = int.Parse(DGVVenta.Rows[row].Cells[0].Value.ToString());
+                    //se emplea un comando sql para modificar los valores de la tabla que contiene el historial de ventas
+                    SqlCommand modificar = new SqlCommand(string.Format("update Historial set Unidades_Vendidas = Unidades_Vendidas + {0},Ventas_Totales = Ventas_Totales + {1}, Costo_Total = Costo_Total + {2} Where Código = {3}", unidades_venta, Venta, Costo, codigo), conexion);
+                    modificar.Parameters.Clear();
+                    modificar.ExecuteNonQuery();
+                    //se emplea un comando sql para modificar las existencias del inventario de los articulos ya vendidos en el datagridview
+                    SqlCommand extraer = new SqlCommand(string.Format("update Proveedor set Cantidad = Cantidad - {0} where Codigo = {1}", unidades_venta, codigo), conexion);
+                    extraer.Parameters.Clear();
+                    extraer.ExecuteNonQuery();
+                }
+                //se resetea el formulario
+                TBTotal.ResetText();
+                TBPago.ResetText();
+                DGVVenta.Rows.Clear();
+                TBPago.Enabled = false;
+                BTNConfirmar.Enabled = false;
+                TBCantidad.Enabled = false;
+                BTNBuscar.Enabled = false;
+                BTNEliminar.Enabled = false;
+                BTNCalcular.Enabled = false;
+                BTNBuscar.Enabled = false;
+                CBArticulo.Enabled = false;
             }
-            //se resetea el formulario
-            TBTotal.ResetText();
-            TBPago.ResetText();
-            DGVVenta.Rows.Clear();
-            BTNEliminar.Enabled = false;
-            BTNCalcular.Enabled = false;
-            BTNBuscar.Enabled = false;
-            CBArticulo.Enabled = false;
         }
 
         private void BTNMostrar_Click(object sender, EventArgs e)

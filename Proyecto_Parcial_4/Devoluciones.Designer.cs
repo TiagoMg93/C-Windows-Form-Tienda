@@ -36,7 +36,6 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar = new System.Windows.Forms.Button();
             this.LBTitle = new System.Windows.Forms.Label();
             this.CBEliminar = new System.Windows.Forms.ComboBox();
-            this.BTNBusqueda = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BTNEliminar = new System.Windows.Forms.Button();
             this.LBTitle2 = new System.Windows.Forms.Label();
@@ -52,15 +51,17 @@ namespace Proyecto_Parcial_4
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(174, 21);
             this.CBArticulo.TabIndex = 5;
+            this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // BTNBuscar
             // 
-            this.BTNBuscar.Location = new System.Drawing.Point(217, 34);
+            this.BTNBuscar.Location = new System.Drawing.Point(217, 16);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(89, 21);
             this.BTNBuscar.TabIndex = 6;
             this.BTNBuscar.Text = "Buscar Artículo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
+            this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
             // 
             // LBUnidades
             // 
@@ -73,6 +74,7 @@ namespace Proyecto_Parcial_4
             // 
             // TBUnidades
             // 
+            this.TBUnidades.Enabled = false;
             this.TBUnidades.Location = new System.Drawing.Point(133, 72);
             this.TBUnidades.Name = "TBUnidades";
             this.TBUnidades.Size = new System.Drawing.Size(100, 20);
@@ -80,12 +82,14 @@ namespace Proyecto_Parcial_4
             // 
             // BTNActualizar
             // 
+            this.BTNActualizar.Enabled = false;
             this.BTNActualizar.Location = new System.Drawing.Point(133, 107);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
             this.BTNActualizar.TabIndex = 11;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
+            this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
             // 
             // LBTitle
             // 
@@ -99,24 +103,16 @@ namespace Proyecto_Parcial_4
             // CBEliminar
             // 
             this.CBEliminar.FormattingEnabled = true;
-            this.CBEliminar.Location = new System.Drawing.Point(27, 229);
+            this.CBEliminar.Location = new System.Drawing.Point(68, 229);
             this.CBEliminar.Name = "CBEliminar";
             this.CBEliminar.Size = new System.Drawing.Size(174, 21);
             this.CBEliminar.TabIndex = 13;
-            // 
-            // BTNBusqueda
-            // 
-            this.BTNBusqueda.Location = new System.Drawing.Point(217, 229);
-            this.BTNBusqueda.Name = "BTNBusqueda";
-            this.BTNBusqueda.Size = new System.Drawing.Size(89, 21);
-            this.BTNBusqueda.TabIndex = 14;
-            this.BTNBusqueda.Text = "Buscar Artículo";
-            this.BTNBusqueda.UseVisualStyleBackColor = true;
+            this.CBEliminar.SelectedIndexChanged += new System.EventHandler(this.CBEliminar_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 213);
+            this.label1.Location = new System.Drawing.Point(76, 213);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 13);
             this.label1.TabIndex = 15;
@@ -124,12 +120,14 @@ namespace Proyecto_Parcial_4
             // 
             // BTNEliminar
             // 
-            this.BTNEliminar.Location = new System.Drawing.Point(68, 256);
+            this.BTNEliminar.Enabled = false;
+            this.BTNEliminar.Location = new System.Drawing.Point(112, 256);
             this.BTNEliminar.Name = "BTNEliminar";
             this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
             this.BTNEliminar.TabIndex = 16;
             this.BTNEliminar.Text = "Eliminar";
             this.BTNEliminar.UseVisualStyleBackColor = true;
+            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
             // 
             // LBTitle2
             // 
@@ -157,16 +155,18 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.TabIndex = 19;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // BTNActBusqueda
             // 
             this.BTNActBusqueda.Enabled = false;
-            this.BTNActBusqueda.Location = new System.Drawing.Point(204, 256);
+            this.BTNActBusqueda.Location = new System.Drawing.Point(207, 43);
             this.BTNActBusqueda.Name = "BTNActBusqueda";
             this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
-            this.BTNActBusqueda.TabIndex = 33;
+            this.BTNActBusqueda.TabIndex = 34;
             this.BTNActBusqueda.Text = "Actualizar Busqueda";
             this.BTNActBusqueda.UseVisualStyleBackColor = true;
+            this.BTNActBusqueda.Click += new System.EventHandler(this.button1_Click);
             // 
             // FMRDevoluciones
             // 
@@ -180,7 +180,6 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBTitle2);
             this.Controls.Add(this.BTNEliminar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BTNBusqueda);
             this.Controls.Add(this.CBEliminar);
             this.Controls.Add(this.LBTitle);
             this.Controls.Add(this.BTNActualizar);
@@ -192,6 +191,7 @@ namespace Proyecto_Parcial_4
             this.MinimizeBox = false;
             this.Name = "FMRDevoluciones";
             this.Text = "Devoluciones";
+            this.Load += new System.EventHandler(this.FMRDevoluciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +206,6 @@ namespace Proyecto_Parcial_4
         private System.Windows.Forms.Button BTNActualizar;
         private System.Windows.Forms.Label LBTitle;
         private System.Windows.Forms.ComboBox CBEliminar;
-        private System.Windows.Forms.Button BTNBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTNEliminar;
         private System.Windows.Forms.Label LBTitle2;
