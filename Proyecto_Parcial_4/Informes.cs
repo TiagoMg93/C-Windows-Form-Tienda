@@ -13,15 +13,17 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRInformes : Form
     {
-        public FMRInformes()
+        string Base_Datos;
+        public FMRInformes(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void FMRInformes_Load(object sender, EventArgs e)
         {
             //Se usa la conexion a la base de datos para cargar la información requerida por el formulario
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Primero se hace el query correspondiente a las ventas totales que se encuentran en la tabla Historial
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select Sum(Ventas_Totales) from Historial", conexion);

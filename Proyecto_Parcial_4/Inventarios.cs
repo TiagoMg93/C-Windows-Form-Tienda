@@ -14,9 +14,11 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRInventarios : Form
     {
-        public FMRInventarios()
+        string Base_Datos;
+        public FMRInventarios(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void DTGVInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -27,7 +29,7 @@ namespace Proyecto_Parcial_4
         private void FMRInventarios_Load(object sender, EventArgs e)
         {
             //Iniciamos con conexión a la base de datos y traemos todos los articulos presentes en la tienda
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Se realizan dos tablas con la informacion de la base de datos, una para llenar el Datagridview y otra para llenar
             //el Combo-Box de la busqueda
@@ -90,7 +92,7 @@ namespace Proyecto_Parcial_4
         private void BTNBuscar_Click(object sender, EventArgs e)
         {
             //se abre el formulario busqueda y se habilita el boton de actualizar busqueda
-            FMRBusqueda buscar = new FMRBusqueda();
+            FMRBusqueda buscar = new FMRBusqueda(Base_Datos);
             buscar.Show();
             BTNActBusqueda.Enabled = true;
             //Se debe limpiar el Combo-Box para que luego de actualizar lo buscado solo exista esa opción
@@ -100,7 +102,7 @@ namespace Proyecto_Parcial_4
         private void BTNActBusqueda_Click(object sender, EventArgs e)
         {
             //En este botón se carga la busqueda previamente realizada y se almacena el articulo en el Combo-Box
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Dentro de la base de datos existe una tabla de un solo elemento que es la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Buscar", conexion);
@@ -140,7 +142,7 @@ namespace Proyecto_Parcial_4
                 //Con este botón se pretende modificar la información de los artículos ya existentes, para ello empleamos la
                 //base de datos y usamos un query que nos permite modificar desde el formulario la información almacenada
                 //en la base de datos
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 bool correcto = false;
                 while (correcto == false)

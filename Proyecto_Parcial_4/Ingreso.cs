@@ -13,9 +13,11 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRIngreso : Form
     {
-        public FMRIngreso()
+        string Base_Datos;
+        public FMRIngreso(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
         //variable que denota la cantidad de oportunidad que tiene el usuario para equivocarse en el ingreso de la información
         int intentos = 3;
@@ -47,7 +49,7 @@ namespace Proyecto_Parcial_4
         private void BTNEntrar_Click(object sender, EventArgs e)
         {
             //Se crea una conexion con la base de datos en sql-server, se debe importar System.Data.SqlClient
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Se adapta la tabla sql a una tabla de datos
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Usuario,Contraseña,Administrador from Usuario", conexion);
@@ -113,7 +115,7 @@ namespace Proyecto_Parcial_4
             {
                 //Se crea el formulario central de la app mandandole el booleano correspondiente a las funcionalidad permitidas
                 //de quien ingresa
-                FRMVenta formulario = new FRMVenta(administrador);
+                FRMVenta formulario = new FRMVenta(administrador,Base_Datos);
                 formulario.Show();
                 MessageBox.Show("Bienvenido " + TBUser.Text);
                 TBUser.ResetText();

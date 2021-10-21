@@ -14,9 +14,11 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRUsuarios : Form
     {
-        public FMRUsuarios()
+        string Base_Datos;
+        public FMRUsuarios(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
         //Se emplea una varible global para capturar las modificaciones que el usuario desee hacer
         string decision;
@@ -30,7 +32,7 @@ namespace Proyecto_Parcial_4
         {
             //Se emplea la conexion con la base de datos para llenar el datagridview con la información almacenada en la tabla
             //Usuario
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Se emplea un Data-Table que permita capturar lo buscado con el query
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from Usuario", conexion);
@@ -84,7 +86,7 @@ namespace Proyecto_Parcial_4
                     admin = 1;
                 }
                 //Se emplea una conexion con la base de datos para actualizar la tabla de Usuarios
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //Se emplea un comando sql que agregue la información en una fila nueva
                 SqlCommand agregar = new SqlCommand("insert into Usuario values(@Indice,@Usuario,@Contraseña,@Administrador)", conexion);
@@ -106,7 +108,7 @@ namespace Proyecto_Parcial_4
             //Se pregunta el indice del usuario que desea modificar
             decision = Interaction.InputBox("Ingrese el Indice del usuario a modificar", "CAMBIAR");
             //Se abre una conexion con la base de datos para extraer la contraseña del usuario que se va a modificar
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(string.Format("select Contraseña from Usuario where Indice = {0}", decision), conexion);
             DataTable tabla = new DataTable();
@@ -148,7 +150,7 @@ namespace Proyecto_Parcial_4
             if (confirmar == DialogResult.Yes)
             {
                 //Se realiza una conexion con la base de datos para ingresar el comando sql que efectuara los cambios
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //Se crea un entero para convertir la informacion de la columna administrador al lenguaje sql
                 int admin = 0;
@@ -179,7 +181,7 @@ namespace Proyecto_Parcial_4
             if (confirmar == DialogResult.Yes)
             {
                 //Se restringe la eliminacion del usuario admin que será el encargado de administrar los usuarios
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 if (int.Parse(decision) == 1)
                 {

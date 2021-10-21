@@ -14,7 +14,8 @@ namespace Proyecto_Parcial_4
 {
     public partial class FRMVenta : Form
     {
-        public FRMVenta(bool administrador)
+        string Base_Datos;
+        public FRMVenta(bool administrador,string texto)
         {
             InitializeComponent();
             //Se compara el argumento recibido del ingreso para saber que funciones se habilitan
@@ -24,6 +25,7 @@ namespace Proyecto_Parcial_4
                 BTNMostrar.Visible = true;
                 menuStrip1.Enabled = true;
             }
+            Base_Datos = texto;
         }
 
         private void FRMVenta_Load(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace Proyecto_Parcial_4
             //creamos un vector que almacene el texto estructurado del Combo-Box y lo dividimos para extraer el codigo
             string[] vector = CBArticulo.Text.Split(' ');
             //Iniciamos con conexión a la base de datos y traemos todos los articulos presentes en la tienda
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Se adapta una tabla de manera que contenga la información necesaria para ser ejecutado el registro del articulo
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Articulo.Código,Precio,Marca,Descuento from Articulo inner join Descuento on Articulo.Código = Descuento.Código", conexion);
@@ -55,7 +57,7 @@ namespace Proyecto_Parcial_4
             DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (decision == DialogResult.Yes)
             {
-                FMRIngreso ingreso = new FMRIngreso();
+                FMRIngreso ingreso = new FMRIngreso(Base_Datos);
                 ingreso.Show();
                 this.Hide();
             }
@@ -64,7 +66,7 @@ namespace Proyecto_Parcial_4
         private void BTNBuscar_Click(object sender, EventArgs e)
         {
             //se abre el formulario busqueda y se habilita el boton de actualizar busqueda
-            FMRBusqueda buscar = new FMRBusqueda();
+            FMRBusqueda buscar = new FMRBusqueda(Base_Datos);
             buscar.Show();
             BTNActBusqueda.Enabled = true;
             //Se debe limpiar el Combo-Box para que luego de actualizar lo buscado solo exista esa opción
@@ -74,7 +76,7 @@ namespace Proyecto_Parcial_4
         private void BTNActBusqueda_Click(object sender, EventArgs e)
         {
             //En este botón se carga la busqueda previamente realizada y se almacena el articulo en el Combo-Box
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Dentro de la base de datos existe una tabla de un solo elemento que es la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Buscar", conexion);
@@ -127,7 +129,7 @@ namespace Proyecto_Parcial_4
                 //Se crea un vector con la información del combo box, para identificar el codigo del articulo
                 //de esa forma ir a la base de datos y buscar la información necesaria de ese articulo
                 string[] vector = CBArticulo.Text.Split('-');
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 SqlDataAdapter dataAdapter1 = new SqlDataAdapter(string.Format("Select Cantidad from Proveedor where Código = {0}", vector[0]), conexion);
                 DataTable data = new DataTable();
@@ -229,7 +231,7 @@ namespace Proyecto_Parcial_4
             /*[f_prov]:Formulario provedores
  me abre el formulario provedores*/
 
-            FMRProveedores f_prov = new FMRProveedores();
+            FMRProveedores f_prov = new FMRProveedores(Base_Datos);
             f_prov.Show();
         }
 
@@ -237,7 +239,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_dev]:Formulario devoluciones
             me abre el formulario devoluciones*/
-            FMRDevoluciones f_dev = new FMRDevoluciones();
+            FMRDevoluciones f_dev = new FMRDevoluciones(Base_Datos);
             f_dev.Show();
         }
 
@@ -245,7 +247,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_inve]:Formulario inventario
             me abre el formulario inventario*/
-            FMRInventarios f_inve = new FMRInventarios();
+            FMRInventarios f_inve = new FMRInventarios(Base_Datos);
             f_inve.Show();
         }
 
@@ -253,7 +255,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_usu]:Formulario usuarios
              me abre el formulario usuarios*/
-            FMRUsuarios f_usu = new FMRUsuarios();
+            FMRUsuarios f_usu = new FMRUsuarios(Base_Datos);
             f_usu.Show();
         }
 
@@ -261,7 +263,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_des]:Formulario descuento
              me abre el formulario descuento*/
-            FMRDescuentos f_des = new FMRDescuentos();
+            FMRDescuentos f_des = new FMRDescuentos(Base_Datos);
             f_des.Show();
         }
 
@@ -269,7 +271,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_his]:Formulario historial
             me abre el formulario historial*/
-            FRMHistorial f_his = new FRMHistorial();
+            FRMHistorial f_his = new FRMHistorial(Base_Datos);
             f_his.Show();
         }
 
@@ -292,7 +294,7 @@ namespace Proyecto_Parcial_4
             BTNBuscar.Enabled = true;
             CBArticulo.Enabled = true;
             //Iniciamos con conexión a la base de datos y traemos todos los articulos presentes en la tienda
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Se realizan dos tablas con la informacion de la base de datos, una para  llenar el Combo-Box de la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
@@ -374,7 +376,7 @@ namespace Proyecto_Parcial_4
                 double cambio = double.Parse(TBPago.Text) - double.Parse(TBTotal.Text);
                 TBCambio.Text = cambio.ToString();
                 //Se abre la base de datos para actualizar las unidades existentes y el historial de ventas
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //se emplea un data table que traiga el query necesario para actualizar el historial
                 SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Costo from Articulo", conexion);
@@ -417,7 +419,7 @@ namespace Proyecto_Parcial_4
         {
             /*[f_infor]:Formulario informe
             me abre el formulario informes*/
-            FMRInformes f_infor = new FMRInformes();
+            FMRInformes f_infor = new FMRInformes(Base_Datos);
             f_infor.Show();
         }
     }

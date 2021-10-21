@@ -13,17 +13,19 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRBusqueda : Form
     {
-        public FMRBusqueda()
+        string Base_Datos;
+        public FMRBusqueda(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
-        
+
         private void FMRBusqueda_Load(object sender, EventArgs e)
         {
             //Conectamos con la base de datos con una tabla que contiene un unico valor y la limpiamos, alli se almacenará
             //lo encontrado posteriormente por la busqueda, la limpieza se hace para que no se acumulen los datos y asi sea
             //mas facil encontrar el dato en los formularios que hagan el llamado a este
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True",Base_Datos));
             SqlCommand limpiar = new SqlCommand("delete from Buscar", conexion);
             conexion.Open();
             limpiar.ExecuteNonQuery();
@@ -84,7 +86,7 @@ namespace Proyecto_Parcial_4
         private void BTNAceptar_Click(object sender, EventArgs e)
         {
             //Se vuelve a conectar a la base de datos para almacenar el dato de la busqueda efectuada
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             //Se crea un comando sql donde se agregue la información que se encuentra en el comboBox
             SqlCommand agregar = new SqlCommand("insert into Buscar values(@Busqueda)", conexion);
             conexion.Open();
@@ -109,7 +111,7 @@ namespace Proyecto_Parcial_4
         {
             CBBusqueda.Items.Clear();
             //Se hace una conexion con la base de datos en sql
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             string texto = "";
             //Se agrega un condicional para diferenciar la columna donde se hace la busqueda

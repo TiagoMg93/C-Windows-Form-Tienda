@@ -14,9 +14,11 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRDescuentos : Form
     {
-        public FMRDescuentos()
+        string Base_Datos;
+        public FMRDescuentos(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void FMRDescuentos_Load(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace Proyecto_Parcial_4
             //Se deben cargar los productos que tengan algun descuento en de datagridview, empleamos la conexion con la base
             //de datos y ejecutamos el query correspondiente para generar una tabla anidada que muestre la información
             //solicitada por el datagridview
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select Articulo.Código,Nombre,Marca,Descuento from Articulo inner join Descuento on Articulo.Código = Descuento.Código Where Descuento > 0 ", conexion);
             DataTable tabla = new DataTable();
@@ -70,7 +72,7 @@ namespace Proyecto_Parcial_4
         private void BTNBuscar_Click(object sender, EventArgs e)
         {
             //se abre el formulario busqueda y se habilita el boton de actualizar busqueda
-            FMRBusqueda buscar = new FMRBusqueda();
+            FMRBusqueda buscar = new FMRBusqueda(Base_Datos);
             buscar.Show();
             BTNActBusqueda.Enabled = true;
             //Se debe limpiar el Combo-Box para que luego de actualizar lo buscado solo exista esa opción
@@ -80,7 +82,7 @@ namespace Proyecto_Parcial_4
         private void BTNActBusqueda_Click(object sender, EventArgs e)
         {
             //En este botón se carga la busqueda previamente realizada y se almacena el articulo en el Combo-Box
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Dentro de la base de datos existe una tabla de un solo elemento que es la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Buscar", conexion);
@@ -120,7 +122,7 @@ namespace Proyecto_Parcial_4
                 //Se limpia el datagridview
                 DTGVDescuento.Rows.Clear();
                 //se emplea la conexion a la base de datos
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //se divide el texto que se encuentra en el Combo-Box, de esa forma podemos extraer el codigo del producto 
                 //señalado por el usuario

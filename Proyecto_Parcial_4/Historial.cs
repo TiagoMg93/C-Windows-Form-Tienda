@@ -13,15 +13,17 @@ namespace Proyecto_Parcial_4
 {
     public partial class FRMHistorial : Form
     {
-        public FRMHistorial()
+        string Base_Datos;
+        public FRMHistorial(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void FRMHistorial_Load(object sender, EventArgs e)
         {
             //Se conecta a la base de datos para extraer la información solicitada por el datagridview
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //se usa un DataTable para almacenar la tabla extraida por el query de sql
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Articulo.Código,Articulo.Nombre,Historial.Unidades_Vendidas from Articulo inner join Historial on Articulo.Código = Historial.Código", conexion);

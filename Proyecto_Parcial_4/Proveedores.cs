@@ -14,9 +14,11 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRProveedores : Form
     {
-        public FMRProveedores()
+        string Base_Datos;
+        public FMRProveedores(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,7 +36,7 @@ namespace Proyecto_Parcial_4
         private void BTNBuscar_Click(object sender, EventArgs e)
         {
             //se abre el formulario busqueda y se habilita el boton de actualizar busqueda
-            FMRBusqueda buscar = new FMRBusqueda();
+            FMRBusqueda buscar = new FMRBusqueda(Base_Datos);
             buscar.Show();
             BTNActBusqueda.Enabled = true;
             //Se debe limpiar el Combo-Box para que luego de actualizar lo buscado solo exista esa opción
@@ -46,7 +48,7 @@ namespace Proyecto_Parcial_4
         {
             //Se emplea una conexión con la base de datos que permita extraer la información necesaria para 
             //llenar el Combo-Box y el Datagridview
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //se emplean dos querys y para cada una se emplea un data-atapter
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select Código,Nombre,Marca from Articulo", conexion);
@@ -89,7 +91,7 @@ namespace Proyecto_Parcial_4
                 //creamos un vector que desfragmente el texto construido en el Combo-Box
                 string[] vector = CBArticulo.Text.Split(' ');
                 //se emplea una nueva conexion con la base de datos
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //se crea un comando que se usará en la base de datos, en el cual se borrará la información existente
                 SqlCommand limpiar = new SqlCommand("delete from Proveedor", conexion);
@@ -176,7 +178,7 @@ namespace Proyecto_Parcial_4
         private void BTNActBusqueda_Click(object sender, EventArgs e)
         {
             //En este botón se carga la busqueda previamente realizada y se almacena el articulo en el Combo-Box
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Dentro de la base de datos existe una tabla de un solo elemento que es la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Buscar", conexion);
@@ -228,7 +230,7 @@ namespace Proyecto_Parcial_4
             if (decision == DialogResult.Yes)
             {
                 //Se emplea una conexión con la base de datos para agregar la nueva información del nuevo producto
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //usamos un data adapter que traiga la tabla de productos ya existente
                 SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Articulo", conexion);

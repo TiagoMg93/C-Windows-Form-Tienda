@@ -14,16 +14,18 @@ namespace Proyecto_Parcial_4
 {
     public partial class FMRDevoluciones : Form
     {
-        public FMRDevoluciones()
+        string Base_Datos;
+        public FMRDevoluciones(string texto)
         {
             InitializeComponent();
+            Base_Datos = texto;
         }
 
         private void FMRDevoluciones_Load(object sender, EventArgs e)
         {
             //Se cargan la información del combo-Box devoluciones y el Combo-Box eliminar, en el primero se listan los productos
             //que tengan algun inventario y en el segundo los productos que ya no cuentan con inventario disponible
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             //Se conecta a la base de datos y se abre
             conexion.Open();
             //se extrae la tabla del query de la base de datos para llenar el Combo-Box devoluciones
@@ -53,7 +55,7 @@ namespace Proyecto_Parcial_4
         private void BTNBuscar_Click(object sender, EventArgs e)
         {
             //se abre el formulario busqueda y se habilita el boton de actualizar busqueda
-            FMRBusqueda buscar = new FMRBusqueda();
+            FMRBusqueda buscar = new FMRBusqueda(Base_Datos);
             buscar.Show();
             BTNActBusqueda.Enabled = true;
             //Se debe limpiar el Combo-Box para que luego de actualizar lo buscado solo exista esa opción
@@ -62,7 +64,7 @@ namespace Proyecto_Parcial_4
         private void button1_Click(object sender, EventArgs e)
         {
             //En este botón se carga la busqueda previamente realizada y se almacena el articulo en el Combo-Box
-            SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+            SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
             conexion.Open();
             //Dentro de la base de datos existe una tabla de un solo elemento que es la busqueda
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Buscar", conexion);
@@ -124,7 +126,7 @@ namespace Proyecto_Parcial_4
                 string[] vector = CBArticulo.Text.Split(' ');
                 //Se emplea un una conexion a la base de datos que permita extraer la cantidad de existencias en el inventario
                 //del producto seleccionado.
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //Se emplea una tabla que traiga el query que trae la cantidad de existencias en el inventario
                 SqlDataAdapter dataAdapter1 = new SqlDataAdapter(string.Format("Select Cantidad from Proveedor where Código = {0}", vector[0]), conexion);
@@ -204,7 +206,7 @@ namespace Proyecto_Parcial_4
                 //Creamos un vector que contenga el taxto del Combo-Box fragmentado
                 string[] vector = CBEliminar.Text.Split(' ');
                 //empleamos una conexion sql que permita eliminar una fila mediante un comando sql
-                SqlConnection conexion = new SqlConnection("Data Source = DESKTOP-108L2NP;Initial Catalog = Tienda;Integrated Security = True");
+                SqlConnection conexion = new SqlConnection(string.Format("Data Source = {0};Initial Catalog = Tienda;Integrated Security = True", Base_Datos));
                 conexion.Open();
                 //ejecutamos el query y por medio de eliminacion por cascada, al eliminar una linea de la tabla Articulo
                 //se eliminarán las filas del mismo codigo de las otras tablas
