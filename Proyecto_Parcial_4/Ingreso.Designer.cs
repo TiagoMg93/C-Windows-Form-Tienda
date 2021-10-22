@@ -69,7 +69,7 @@ namespace Proyecto_Parcial_4
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.PasswordChar = '*';
             this.TBPassword.Size = new System.Drawing.Size(100, 20);
-            this.TBPassword.TabIndex = 3;
+            this.TBPassword.TabIndex = 1;
             this.TBPassword.TextChanged += new System.EventHandler(this.TBPassword_TextChanged);
             // 
             // BTNEntrar
@@ -77,7 +77,7 @@ namespace Proyecto_Parcial_4
             this.BTNEntrar.Location = new System.Drawing.Point(134, 154);
             this.BTNEntrar.Name = "BTNEntrar";
             this.BTNEntrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNEntrar.TabIndex = 4;
+            this.BTNEntrar.TabIndex = 3;
             this.BTNEntrar.Text = "Entrar";
             this.BTNEntrar.UseVisualStyleBackColor = true;
             this.BTNEntrar.Click += new System.EventHandler(this.BTNEntrar_Click);
@@ -87,7 +87,7 @@ namespace Proyecto_Parcial_4
             this.BTNSalir.Location = new System.Drawing.Point(21, 154);
             this.BTNSalir.Name = "BTNSalir";
             this.BTNSalir.Size = new System.Drawing.Size(75, 23);
-            this.BTNSalir.TabIndex = 5;
+            this.BTNSalir.TabIndex = 2;
             this.BTNSalir.Text = "Salir";
             this.BTNSalir.UseVisualStyleBackColor = true;
             this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);

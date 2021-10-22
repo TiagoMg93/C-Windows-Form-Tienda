@@ -50,7 +50,7 @@ namespace Proyecto_Parcial_4
             this.CBArticulo.Location = new System.Drawing.Point(5, 86);
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(174, 21);
-            this.CBArticulo.TabIndex = 5;
+            this.CBArticulo.TabIndex = 2;
             this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // BTNBuscar
@@ -58,7 +58,7 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.Location = new System.Drawing.Point(195, 67);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(89, 21);
-            this.BTNBuscar.TabIndex = 6;
+            this.BTNBuscar.TabIndex = 0;
             this.BTNBuscar.Text = "Buscar Artículo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
@@ -78,7 +78,7 @@ namespace Proyecto_Parcial_4
             this.TBUnidades.Location = new System.Drawing.Point(111, 123);
             this.TBUnidades.Name = "TBUnidades";
             this.TBUnidades.Size = new System.Drawing.Size(100, 20);
-            this.TBUnidades.TabIndex = 10;
+            this.TBUnidades.TabIndex = 3;
             // 
             // BTNActualizar
             // 
@@ -86,7 +86,7 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar.Location = new System.Drawing.Point(111, 158);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
-            this.BTNActualizar.TabIndex = 11;
+            this.BTNActualizar.TabIndex = 4;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
             this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
@@ -106,7 +106,7 @@ namespace Proyecto_Parcial_4
             this.CBEliminar.Location = new System.Drawing.Point(46, 280);
             this.CBEliminar.Name = "CBEliminar";
             this.CBEliminar.Size = new System.Drawing.Size(174, 21);
-            this.CBEliminar.TabIndex = 13;
+            this.CBEliminar.TabIndex = 5;
             this.CBEliminar.SelectedIndexChanged += new System.EventHandler(this.CBEliminar_SelectedIndexChanged);
             // 
             // label1
@@ -124,7 +124,7 @@ namespace Proyecto_Parcial_4
             this.BTNEliminar.Location = new System.Drawing.Point(90, 307);
             this.BTNEliminar.Name = "BTNEliminar";
             this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BTNEliminar.TabIndex = 16;
+            this.BTNEliminar.TabIndex = 6;
             this.BTNEliminar.Text = "Eliminar";
             this.BTNEliminar.UseVisualStyleBackColor = true;
             this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
@@ -152,7 +152,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.Location = new System.Drawing.Point(225, 388);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 19;
+            this.BTNCerrar.TabIndex = 7;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
@@ -163,7 +163,7 @@ namespace Proyecto_Parcial_4
             this.BTNActBusqueda.Location = new System.Drawing.Point(185, 94);
             this.BTNActBusqueda.Name = "BTNActBusqueda";
             this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
-            this.BTNActBusqueda.TabIndex = 34;
+            this.BTNActBusqueda.TabIndex = 1;
             this.BTNActBusqueda.Text = "Actualizar Busqueda";
             this.BTNActBusqueda.UseVisualStyleBackColor = true;
             this.BTNActBusqueda.Click += new System.EventHandler(this.button1_Click);

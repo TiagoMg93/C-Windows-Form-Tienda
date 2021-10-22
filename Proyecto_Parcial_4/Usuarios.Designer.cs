@@ -96,7 +96,7 @@ namespace Proyecto_Parcial_4
             this.TBUser.Location = new System.Drawing.Point(94, 240);
             this.TBUser.Name = "TBUser";
             this.TBUser.Size = new System.Drawing.Size(100, 20);
-            this.TBUser.TabIndex = 2;
+            this.TBUser.TabIndex = 0;
             // 
             // LBPassword
             // 
@@ -113,7 +113,7 @@ namespace Proyecto_Parcial_4
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.PasswordChar = '*';
             this.TBPassword.Size = new System.Drawing.Size(100, 20);
-            this.TBPassword.TabIndex = 4;
+            this.TBPassword.TabIndex = 1;
             // 
             // LBAdmin
             // 
@@ -133,14 +133,14 @@ namespace Proyecto_Parcial_4
             this.CBAdmin.Location = new System.Drawing.Point(94, 303);
             this.CBAdmin.Name = "CBAdmin";
             this.CBAdmin.Size = new System.Drawing.Size(100, 21);
-            this.CBAdmin.TabIndex = 6;
+            this.CBAdmin.TabIndex = 2;
             // 
             // BTNAgregar
             // 
             this.BTNAgregar.Location = new System.Drawing.Point(231, 238);
             this.BTNAgregar.Name = "BTNAgregar";
             this.BTNAgregar.Size = new System.Drawing.Size(75, 23);
-            this.BTNAgregar.TabIndex = 7;
+            this.BTNAgregar.TabIndex = 3;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
             this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
@@ -150,7 +150,7 @@ namespace Proyecto_Parcial_4
             this.BTNModificar.Location = new System.Drawing.Point(231, 267);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(75, 23);
-            this.BTNModificar.TabIndex = 8;
+            this.BTNModificar.TabIndex = 4;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
             this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
@@ -161,7 +161,7 @@ namespace Proyecto_Parcial_4
             this.BTNActualizar.Location = new System.Drawing.Point(231, 301);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
-            this.BTNActualizar.TabIndex = 9;
+            this.BTNActualizar.TabIndex = 5;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
             this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
@@ -171,7 +171,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.Location = new System.Drawing.Point(249, 346);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
+            this.BTNCerrar.TabIndex = 7;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
@@ -182,7 +182,7 @@ namespace Proyecto_Parcial_4
             this.BTNEliminar.Location = new System.Drawing.Point(104, 346);
             this.BTNEliminar.Name = "BTNEliminar";
             this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BTNEliminar.TabIndex = 21;
+            this.BTNEliminar.TabIndex = 6;
             this.BTNEliminar.Text = "Eliminar Usuario";
             this.BTNEliminar.UseVisualStyleBackColor = true;
             this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);

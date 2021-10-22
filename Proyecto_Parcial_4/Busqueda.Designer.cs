@@ -48,7 +48,7 @@ namespace Proyecto_Parcial_4
             this.CBCodigo.Location = new System.Drawing.Point(186, 101);
             this.CBCodigo.Name = "CBCodigo";
             this.CBCodigo.Size = new System.Drawing.Size(59, 17);
-            this.CBCodigo.TabIndex = 0;
+            this.CBCodigo.TabIndex = 3;
             this.CBCodigo.Text = "Código";
             this.CBCodigo.UseVisualStyleBackColor = true;
             this.CBCodigo.CheckedChanged += new System.EventHandler(this.CBCodigo_CheckedChanged);
@@ -59,7 +59,7 @@ namespace Proyecto_Parcial_4
             this.CBNombre.Location = new System.Drawing.Point(186, 124);
             this.CBNombre.Name = "CBNombre";
             this.CBNombre.Size = new System.Drawing.Size(63, 17);
-            this.CBNombre.TabIndex = 1;
+            this.CBNombre.TabIndex = 4;
             this.CBNombre.Text = "Nombre";
             this.CBNombre.UseVisualStyleBackColor = true;
             this.CBNombre.CheckedChanged += new System.EventHandler(this.CBNombre_CheckedChanged);
@@ -69,7 +69,7 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.Location = new System.Drawing.Point(36, 124);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BTNBuscar.TabIndex = 2;
+            this.BTNBuscar.TabIndex = 1;
             this.BTNBuscar.Text = "Buscar";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
@@ -81,7 +81,7 @@ namespace Proyecto_Parcial_4
             this.CBBusqueda.Location = new System.Drawing.Point(22, 189);
             this.CBBusqueda.Name = "CBBusqueda";
             this.CBBusqueda.Size = new System.Drawing.Size(166, 21);
-            this.CBBusqueda.TabIndex = 3;
+            this.CBBusqueda.TabIndex = 2;
             this.CBBusqueda.SelectedIndexChanged += new System.EventHandler(this.CBBusqueda_SelectedIndexChanged);
             // 
             // TBBusqueda
@@ -90,7 +90,7 @@ namespace Proyecto_Parcial_4
             this.TBBusqueda.Location = new System.Drawing.Point(22, 98);
             this.TBBusqueda.Name = "TBBusqueda";
             this.TBBusqueda.Size = new System.Drawing.Size(100, 20);
-            this.TBBusqueda.TabIndex = 4;
+            this.TBBusqueda.TabIndex = 0;
             this.TBBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LBTitle
@@ -127,7 +127,7 @@ namespace Proyecto_Parcial_4
             this.BTNAceptar.Location = new System.Drawing.Point(22, 236);
             this.BTNAceptar.Name = "BTNAceptar";
             this.BTNAceptar.Size = new System.Drawing.Size(75, 23);
-            this.BTNAceptar.TabIndex = 8;
+            this.BTNAceptar.TabIndex = 6;
             this.BTNAceptar.Text = "Aceptar";
             this.BTNAceptar.UseVisualStyleBackColor = true;
             this.BTNAceptar.Click += new System.EventHandler(this.BTNAceptar_Click);
@@ -147,7 +147,7 @@ namespace Proyecto_Parcial_4
             this.CBMarca.Location = new System.Drawing.Point(186, 147);
             this.CBMarca.Name = "CBMarca";
             this.CBMarca.Size = new System.Drawing.Size(56, 17);
-            this.CBMarca.TabIndex = 10;
+            this.CBMarca.TabIndex = 5;
             this.CBMarca.Text = "Marca";
             this.CBMarca.UseVisualStyleBackColor = true;
             this.CBMarca.CheckedChanged += new System.EventHandler(this.CBMarca_CheckedChanged);

@@ -75,7 +75,7 @@ namespace Proyecto_Parcial_4
             this.BTNCerrar.Location = new System.Drawing.Point(272, 380);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
+            this.BTNCerrar.TabIndex = 0;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);

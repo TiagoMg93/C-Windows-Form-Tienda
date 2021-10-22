@@ -245,7 +245,7 @@ namespace Proyecto_Parcial_4
             this.CBArticulo.Location = new System.Drawing.Point(64, 280);
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(315, 21);
-            this.CBArticulo.TabIndex = 3;
+            this.CBArticulo.TabIndex = 0;
             this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // LBArticulo
@@ -263,7 +263,7 @@ namespace Proyecto_Parcial_4
             this.TBCantidad.Location = new System.Drawing.Point(64, 320);
             this.TBCantidad.Name = "TBCantidad";
             this.TBCantidad.Size = new System.Drawing.Size(49, 20);
-            this.TBCantidad.TabIndex = 5;
+            this.TBCantidad.TabIndex = 1;
             this.TBCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LBCantidad
@@ -290,7 +290,7 @@ namespace Proyecto_Parcial_4
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.ReadOnly = true;
             this.TBPrecio.Size = new System.Drawing.Size(52, 20);
-            this.TBPrecio.TabIndex = 8;
+            this.TBPrecio.TabIndex = 2;
             this.TBPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TBDescuento
@@ -299,7 +299,7 @@ namespace Proyecto_Parcial_4
             this.TBDescuento.Name = "TBDescuento";
             this.TBDescuento.ReadOnly = true;
             this.TBDescuento.Size = new System.Drawing.Size(47, 20);
-            this.TBDescuento.TabIndex = 9;
+            this.TBDescuento.TabIndex = 3;
             this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LBDescuento
@@ -326,7 +326,7 @@ namespace Proyecto_Parcial_4
             this.TBSubtotal.Name = "TBSubtotal";
             this.TBSubtotal.ReadOnly = true;
             this.TBSubtotal.Size = new System.Drawing.Size(52, 20);
-            this.TBSubtotal.TabIndex = 12;
+            this.TBSubtotal.TabIndex = 6;
             this.TBSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BTNRegistrar
@@ -335,7 +335,7 @@ namespace Proyecto_Parcial_4
             this.BTNRegistrar.Location = new System.Drawing.Point(407, 330);
             this.BTNRegistrar.Name = "BTNRegistrar";
             this.BTNRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNRegistrar.TabIndex = 13;
+            this.BTNRegistrar.TabIndex = 8;
             this.BTNRegistrar.Text = "Registrar";
             this.BTNRegistrar.UseVisualStyleBackColor = true;
             this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
@@ -366,7 +366,7 @@ namespace Proyecto_Parcial_4
             this.BTNMostrar.Location = new System.Drawing.Point(622, 380);
             this.BTNMostrar.Name = "BTNMostrar";
             this.BTNMostrar.Size = new System.Drawing.Size(86, 23);
-            this.BTNMostrar.TabIndex = 17;
+            this.BTNMostrar.TabIndex = 15;
             this.BTNMostrar.Text = "Mostrar Ventas";
             this.BTNMostrar.UseVisualStyleBackColor = true;
             this.BTNMostrar.Visible = false;
@@ -387,7 +387,7 @@ namespace Proyecto_Parcial_4
             this.TBTotal.Name = "TBTotal";
             this.TBTotal.ReadOnly = true;
             this.TBTotal.Size = new System.Drawing.Size(75, 20);
-            this.TBTotal.TabIndex = 19;
+            this.TBTotal.TabIndex = 9;
             this.TBTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBTotal.TextChanged += new System.EventHandler(this.TBTotal_TextChanged);
             // 
@@ -397,7 +397,7 @@ namespace Proyecto_Parcial_4
             this.BTNBuscar.Location = new System.Drawing.Point(7, 357);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(93, 23);
-            this.BTNBuscar.TabIndex = 20;
+            this.BTNBuscar.TabIndex = 4;
             this.BTNBuscar.Text = "Buscar Articulo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
@@ -408,7 +408,7 @@ namespace Proyecto_Parcial_4
             this.BTNActBusqueda.Location = new System.Drawing.Point(117, 359);
             this.BTNActBusqueda.Name = "BTNActBusqueda";
             this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
-            this.BTNActBusqueda.TabIndex = 33;
+            this.BTNActBusqueda.TabIndex = 5;
             this.BTNActBusqueda.Text = "Actualizar Busqueda";
             this.BTNActBusqueda.UseVisualStyleBackColor = true;
             this.BTNActBusqueda.Click += new System.EventHandler(this.BTNActBusqueda_Click);
@@ -419,7 +419,7 @@ namespace Proyecto_Parcial_4
             this.BTNCalcular.Location = new System.Drawing.Point(407, 292);
             this.BTNCalcular.Name = "BTNCalcular";
             this.BTNCalcular.Size = new System.Drawing.Size(75, 23);
-            this.BTNCalcular.TabIndex = 34;
+            this.BTNCalcular.TabIndex = 7;
             this.BTNCalcular.Text = "Calcular";
             this.BTNCalcular.UseVisualStyleBackColor = true;
             this.BTNCalcular.Click += new System.EventHandler(this.BTNCalcular_Click);
@@ -439,7 +439,7 @@ namespace Proyecto_Parcial_4
             this.TBPago.Location = new System.Drawing.Point(594, 280);
             this.TBPago.Name = "TBPago";
             this.TBPago.Size = new System.Drawing.Size(75, 20);
-            this.TBPago.TabIndex = 36;
+            this.TBPago.TabIndex = 10;
             // 
             // BTNConfirmar
             // 
@@ -447,7 +447,7 @@ namespace Proyecto_Parcial_4
             this.BTNConfirmar.Location = new System.Drawing.Point(622, 334);
             this.BTNConfirmar.Name = "BTNConfirmar";
             this.BTNConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BTNConfirmar.TabIndex = 39;
+            this.BTNConfirmar.TabIndex = 13;
             this.BTNConfirmar.Text = "Confirmar";
             this.BTNConfirmar.UseVisualStyleBackColor = true;
             this.BTNConfirmar.Click += new System.EventHandler(this.BTNConfirmar_Click);
@@ -457,7 +457,7 @@ namespace Proyecto_Parcial_4
             this.BTNNuevo.Location = new System.Drawing.Point(520, 334);
             this.BTNNuevo.Name = "BTNNuevo";
             this.BTNNuevo.Size = new System.Drawing.Size(75, 23);
-            this.BTNNuevo.TabIndex = 40;
+            this.BTNNuevo.TabIndex = 12;
             this.BTNNuevo.Text = "Nuevo";
             this.BTNNuevo.UseVisualStyleBackColor = true;
             this.BTNNuevo.Click += new System.EventHandler(this.BTNNuevo_Click);
@@ -477,7 +477,7 @@ namespace Proyecto_Parcial_4
             this.TBCambio.Location = new System.Drawing.Point(594, 308);
             this.TBCambio.Name = "TBCambio";
             this.TBCambio.Size = new System.Drawing.Size(75, 20);
-            this.TBCambio.TabIndex = 42;
+            this.TBCambio.TabIndex = 11;
             // 
             // FRMVenta
             // 
