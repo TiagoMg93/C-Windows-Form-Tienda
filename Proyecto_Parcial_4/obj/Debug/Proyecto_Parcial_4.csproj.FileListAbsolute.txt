@@ -77,3 +77,4 @@ C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\obj\D
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CopyComplete
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.exe
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.pdb
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.Inicio_del_programa.resources

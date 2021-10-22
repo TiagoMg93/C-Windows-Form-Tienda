@@ -74,6 +74,12 @@
     <Compile Include="Informes.Designer.cs">
       <DependentUpon>Informes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio_del_programa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio_del_programa.Designer.cs">
+      <DependentUpon>Inicio_del_programa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="Informes.resx">
       <DependentUpon>Informes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inicio_del_programa.resx">
+      <DependentUpon>Inicio_del_programa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +153,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
@@ -164,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ganancias.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
