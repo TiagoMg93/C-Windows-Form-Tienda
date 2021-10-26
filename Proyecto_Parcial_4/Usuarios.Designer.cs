@@ -56,7 +56,7 @@ namespace Proyecto_Parcial_4
             this.Indice,
             this.Usuario,
             this.Administrador});
-            this.DTGVUsuario.Location = new System.Drawing.Point(22, 22);
+            this.DTGVUsuario.Location = new System.Drawing.Point(12, 73);
             this.DTGVUsuario.Name = "DTGVUsuario";
             this.DTGVUsuario.ReadOnly = true;
             this.DTGVUsuario.Size = new System.Drawing.Size(294, 150);
@@ -85,7 +85,7 @@ namespace Proyecto_Parcial_4
             // LBUsuario
             // 
             this.LBUsuario.AutoSize = true;
-            this.LBUsuario.Location = new System.Drawing.Point(19, 199);
+            this.LBUsuario.Location = new System.Drawing.Point(9, 243);
             this.LBUsuario.Name = "LBUsuario";
             this.LBUsuario.Size = new System.Drawing.Size(43, 13);
             this.LBUsuario.TabIndex = 1;
@@ -93,15 +93,15 @@ namespace Proyecto_Parcial_4
             // 
             // TBUser
             // 
-            this.TBUser.Location = new System.Drawing.Point(104, 196);
+            this.TBUser.Location = new System.Drawing.Point(94, 240);
             this.TBUser.Name = "TBUser";
             this.TBUser.Size = new System.Drawing.Size(100, 20);
-            this.TBUser.TabIndex = 2;
+            this.TBUser.TabIndex = 0;
             // 
             // LBPassword
             // 
             this.LBPassword.AutoSize = true;
-            this.LBPassword.Location = new System.Drawing.Point(19, 229);
+            this.LBPassword.Location = new System.Drawing.Point(9, 273);
             this.LBPassword.Name = "LBPassword";
             this.LBPassword.Size = new System.Drawing.Size(61, 13);
             this.LBPassword.TabIndex = 3;
@@ -109,16 +109,16 @@ namespace Proyecto_Parcial_4
             // 
             // TBPassword
             // 
-            this.TBPassword.Location = new System.Drawing.Point(104, 226);
+            this.TBPassword.Location = new System.Drawing.Point(94, 270);
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.PasswordChar = '*';
             this.TBPassword.Size = new System.Drawing.Size(100, 20);
-            this.TBPassword.TabIndex = 4;
+            this.TBPassword.TabIndex = 1;
             // 
             // LBAdmin
             // 
             this.LBAdmin.AutoSize = true;
-            this.LBAdmin.Location = new System.Drawing.Point(19, 262);
+            this.LBAdmin.Location = new System.Drawing.Point(9, 306);
             this.LBAdmin.Name = "LBAdmin";
             this.LBAdmin.Size = new System.Drawing.Size(70, 13);
             this.LBAdmin.TabIndex = 5;
@@ -130,27 +130,27 @@ namespace Proyecto_Parcial_4
             this.CBAdmin.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.CBAdmin.Location = new System.Drawing.Point(104, 259);
+            this.CBAdmin.Location = new System.Drawing.Point(94, 303);
             this.CBAdmin.Name = "CBAdmin";
             this.CBAdmin.Size = new System.Drawing.Size(100, 21);
-            this.CBAdmin.TabIndex = 6;
+            this.CBAdmin.TabIndex = 2;
             // 
             // BTNAgregar
             // 
-            this.BTNAgregar.Location = new System.Drawing.Point(241, 194);
+            this.BTNAgregar.Location = new System.Drawing.Point(231, 238);
             this.BTNAgregar.Name = "BTNAgregar";
             this.BTNAgregar.Size = new System.Drawing.Size(75, 23);
-            this.BTNAgregar.TabIndex = 7;
+            this.BTNAgregar.TabIndex = 3;
             this.BTNAgregar.Text = "Agregar";
             this.BTNAgregar.UseVisualStyleBackColor = true;
             this.BTNAgregar.Click += new System.EventHandler(this.BTNAgregar_Click);
             // 
             // BTNModificar
             // 
-            this.BTNModificar.Location = new System.Drawing.Point(241, 223);
+            this.BTNModificar.Location = new System.Drawing.Point(231, 267);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(75, 23);
-            this.BTNModificar.TabIndex = 8;
+            this.BTNModificar.TabIndex = 4;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
             this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
@@ -158,20 +158,20 @@ namespace Proyecto_Parcial_4
             // BTNActualizar
             // 
             this.BTNActualizar.Enabled = false;
-            this.BTNActualizar.Location = new System.Drawing.Point(241, 257);
+            this.BTNActualizar.Location = new System.Drawing.Point(231, 301);
             this.BTNActualizar.Name = "BTNActualizar";
             this.BTNActualizar.Size = new System.Drawing.Size(75, 23);
-            this.BTNActualizar.TabIndex = 9;
+            this.BTNActualizar.TabIndex = 5;
             this.BTNActualizar.Text = "Actualizar";
             this.BTNActualizar.UseVisualStyleBackColor = true;
             this.BTNActualizar.Click += new System.EventHandler(this.BTNActualizar_Click);
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(259, 302);
+            this.BTNCerrar.Location = new System.Drawing.Point(232, 349);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
+            this.BTNCerrar.TabIndex = 7;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
@@ -179,10 +179,10 @@ namespace Proyecto_Parcial_4
             // BTNEliminar
             // 
             this.BTNEliminar.Enabled = false;
-            this.BTNEliminar.Location = new System.Drawing.Point(114, 302);
+            this.BTNEliminar.Location = new System.Drawing.Point(104, 330);
             this.BTNEliminar.Name = "BTNEliminar";
             this.BTNEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BTNEliminar.TabIndex = 21;
+            this.BTNEliminar.TabIndex = 6;
             this.BTNEliminar.Text = "Eliminar Usuario";
             this.BTNEliminar.UseVisualStyleBackColor = true;
             this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
@@ -191,7 +191,7 @@ namespace Proyecto_Parcial_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 337);
+            this.ClientSize = new System.Drawing.Size(319, 384);
             this.ControlBox = false;
             this.Controls.Add(this.BTNEliminar);
             this.Controls.Add(this.BTNCerrar);
@@ -208,6 +208,7 @@ namespace Proyecto_Parcial_4
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FMRUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVUsuario)).EndInit();

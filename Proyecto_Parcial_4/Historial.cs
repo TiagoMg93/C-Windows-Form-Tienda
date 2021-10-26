@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Parcial_4
 {
-    public partial class FRMHistorial : Form
+    public partial class FRMHistorial : MaterialSkin.Controls.MaterialForm
     {
         string Base_Datos;
         public FRMHistorial(string texto)
@@ -41,12 +41,7 @@ namespace Proyecto_Parcial_4
 
         private void BTNCerrar_Click(object sender, EventArgs e)
         {
-            //Mensaje de advertencia por el cierre de la app
-            DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-            if (decision == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
     }
 }

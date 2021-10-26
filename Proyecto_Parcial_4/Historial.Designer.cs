@@ -30,10 +30,10 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.DTGVHistorial = new System.Windows.Forms.DataGridView();
-            this.BTNCerrar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DTGVHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,21 +46,11 @@ namespace Proyecto_Parcial_4
             this.Codigo,
             this.Articulo,
             this.Cantidad});
-            this.DTGVHistorial.Location = new System.Drawing.Point(12, 12);
+            this.DTGVHistorial.Location = new System.Drawing.Point(26, 82);
             this.DTGVHistorial.Name = "DTGVHistorial";
             this.DTGVHistorial.ReadOnly = true;
             this.DTGVHistorial.Size = new System.Drawing.Size(343, 306);
             this.DTGVHistorial.TabIndex = 0;
-            // 
-            // BTNCerrar
-            // 
-            this.BTNCerrar.Location = new System.Drawing.Point(280, 324);
-            this.BTNCerrar.Name = "BTNCerrar";
-            this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
-            this.BTNCerrar.Text = "Cerrar";
-            this.BTNCerrar.UseVisualStyleBackColor = true;
-            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
             // 
             // Codigo
             // 
@@ -80,17 +70,28 @@ namespace Proyecto_Parcial_4
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
+            // BTNCerrar
+            // 
+            this.BTNCerrar.Location = new System.Drawing.Point(311, 411);
+            this.BTNCerrar.Name = "BTNCerrar";
+            this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
+            this.BTNCerrar.TabIndex = 0;
+            this.BTNCerrar.Text = "Cerrar";
+            this.BTNCerrar.UseVisualStyleBackColor = true;
+            this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
+            // 
             // FRMHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 359);
+            this.ClientSize = new System.Drawing.Size(398, 446);
             this.ControlBox = false;
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.DTGVHistorial);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRMHistorial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial";
             this.Load += new System.EventHandler(this.FRMHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVHistorial)).EndInit();

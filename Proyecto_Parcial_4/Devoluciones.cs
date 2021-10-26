@@ -12,7 +12,7 @@ using Microsoft.VisualBasic;
 
 namespace Proyecto_Parcial_4
 {
-    public partial class FMRDevoluciones : Form
+    public partial class FMRDevoluciones : MaterialSkin.Controls.MaterialForm
     {
         string Base_Datos;
         public FMRDevoluciones(string texto)
@@ -102,12 +102,7 @@ namespace Proyecto_Parcial_4
 
         private void BTNCerrar_Click(object sender, EventArgs e)
         {
-            //Se muestra un Mensaje con botones para confirmar la salida del formulario
-            DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-            if (decision == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void CBArticulo_SelectedIndexChanged(object sender, EventArgs e)

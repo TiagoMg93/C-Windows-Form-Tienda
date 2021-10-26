@@ -47,7 +47,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(414, 339);
+            this.BTNCerrar.Location = new System.Drawing.Point(404, 404);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
             this.BTNCerrar.TabIndex = 5;
@@ -65,7 +65,7 @@ namespace Proyecto_Parcial_4
             this.Articulo,
             this.Marca,
             this.Descuento});
-            this.DTGVDescuento.Location = new System.Drawing.Point(28, 47);
+            this.DTGVDescuento.Location = new System.Drawing.Point(27, 94);
             this.DTGVDescuento.Name = "DTGVDescuento";
             this.DTGVDescuento.Size = new System.Drawing.Size(437, 150);
             this.DTGVDescuento.TabIndex = 22;
@@ -94,7 +94,7 @@ namespace Proyecto_Parcial_4
             // LBTitle
             // 
             this.LBTitle.AutoSize = true;
-            this.LBTitle.Location = new System.Drawing.Point(193, 18);
+            this.LBTitle.Location = new System.Drawing.Point(179, 78);
             this.LBTitle.Name = "LBTitle";
             this.LBTitle.Size = new System.Drawing.Size(123, 13);
             this.LBTitle.TabIndex = 23;
@@ -103,7 +103,7 @@ namespace Proyecto_Parcial_4
             // CBArticulo
             // 
             this.CBArticulo.FormattingEnabled = true;
-            this.CBArticulo.Location = new System.Drawing.Point(69, 219);
+            this.CBArticulo.Location = new System.Drawing.Point(44, 268);
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(174, 21);
             this.CBArticulo.TabIndex = 0;
@@ -111,7 +111,7 @@ namespace Proyecto_Parcial_4
             // 
             // BTNBuscar
             // 
-            this.BTNBuscar.Location = new System.Drawing.Point(276, 221);
+            this.BTNBuscar.Location = new System.Drawing.Point(251, 270);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(89, 21);
             this.BTNBuscar.TabIndex = 1;
@@ -122,7 +122,7 @@ namespace Proyecto_Parcial_4
             // BTNAgregar
             // 
             this.BTNAgregar.Enabled = false;
-            this.BTNAgregar.Location = new System.Drawing.Point(290, 282);
+            this.BTNAgregar.Location = new System.Drawing.Point(265, 331);
             this.BTNAgregar.Name = "BTNAgregar";
             this.BTNAgregar.Size = new System.Drawing.Size(75, 23);
             this.BTNAgregar.TabIndex = 4;
@@ -133,7 +133,7 @@ namespace Proyecto_Parcial_4
             // LBTitle2
             // 
             this.LBTitle2.AutoSize = true;
-            this.LBTitle2.Location = new System.Drawing.Point(66, 288);
+            this.LBTitle2.Location = new System.Drawing.Point(41, 337);
             this.LBTitle2.Name = "LBTitle2";
             this.LBTitle2.Size = new System.Drawing.Size(59, 13);
             this.LBTitle2.TabIndex = 30;
@@ -142,7 +142,7 @@ namespace Proyecto_Parcial_4
             // TBDescuento
             // 
             this.TBDescuento.Enabled = false;
-            this.TBDescuento.Location = new System.Drawing.Point(153, 285);
+            this.TBDescuento.Location = new System.Drawing.Point(128, 334);
             this.TBDescuento.Name = "TBDescuento";
             this.TBDescuento.Size = new System.Drawing.Size(100, 20);
             this.TBDescuento.TabIndex = 3;
@@ -150,7 +150,7 @@ namespace Proyecto_Parcial_4
             // BTNActBusqueda
             // 
             this.BTNActBusqueda.Enabled = false;
-            this.BTNActBusqueda.Location = new System.Drawing.Point(371, 219);
+            this.BTNActBusqueda.Location = new System.Drawing.Point(346, 268);
             this.BTNActBusqueda.Name = "BTNActBusqueda";
             this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
             this.BTNActBusqueda.TabIndex = 2;
@@ -162,7 +162,7 @@ namespace Proyecto_Parcial_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 375);
+            this.ClientSize = new System.Drawing.Size(491, 439);
             this.ControlBox = false;
             this.Controls.Add(this.BTNActBusqueda);
             this.Controls.Add(this.TBDescuento);
@@ -176,6 +176,7 @@ namespace Proyecto_Parcial_4
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRDescuentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Descuentos";
             this.Load += new System.EventHandler(this.FMRDescuentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVDescuento)).EndInit();

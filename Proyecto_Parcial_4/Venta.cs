@@ -12,7 +12,7 @@ using Microsoft.VisualBasic;
 
 namespace Proyecto_Parcial_4
 {
-    public partial class FRMVenta : Form
+    public partial class FRMVenta : MaterialSkin.Controls.MaterialForm
     {
         string Base_Datos;
         public FRMVenta(bool administrador,string texto)
@@ -57,7 +57,7 @@ namespace Proyecto_Parcial_4
             DialogResult decision = MessageBox.Show("¿Seguro que desea salir?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (decision == DialogResult.Yes)
             {
-                FMRIngreso ingreso = new FMRIngreso(Base_Datos);
+                FMRIngreso ingreso = new FMRIngreso();
                 ingreso.Show();
                 this.Hide();
             }
@@ -286,6 +286,7 @@ namespace Proyecto_Parcial_4
             TBSubtotal.Clear();
             TBTotal.Clear();
             TBCambio.Clear();
+            CBArticulo.Items.Clear();
             BTNCalcular.Enabled = true;
             TBCantidad.Enabled = true;
             BTNNuevo.Enabled = false;
@@ -370,6 +371,20 @@ namespace Proyecto_Parcial_4
                     {
                         TBPago.Text = Interaction.InputBox("El valor ingresado en el pago del cliente no es un número, por favor vuelva a ingresarlo", "ATENCIÓN");
                         correcto = false;
+                    }
+                }
+                correcto = false;
+                //Se comprueba si el pago ingresado del cliente es suficiente para pagar la venta registrada
+                while (correcto == false)
+                {
+                    if (double.Parse(TBPago.Text) < double.Parse(TBTotal.Text))
+                    {
+                        TBPago.Text = Interaction.InputBox("El valor ingresado en el pago del cliente es menor que la venta, por favor vuelva a ingresarlo", "ATENCIÓN");
+                        correcto = false;
+                    }
+                    else
+                    {
+                        correcto = true;
                     }
                 }
                 //Se calcula el cambio que se le debe entregar al cliente final de acuerdo a lo pagado

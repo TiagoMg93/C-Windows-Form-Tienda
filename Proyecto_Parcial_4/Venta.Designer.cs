@@ -40,6 +40,13 @@ namespace Proyecto_Parcial_4
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DGVVenta = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBTitle = new System.Windows.Forms.Label();
             this.CBArticulo = new System.Windows.Forms.ComboBox();
             this.LBArticulo = new System.Windows.Forms.Label();
@@ -66,13 +73,6 @@ namespace Proyecto_Parcial_4
             this.BTNNuevo = new System.Windows.Forms.Button();
             this.LBCambio = new System.Windows.Forms.Label();
             this.TBCambio = new System.Windows.Forms.TextBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVenta)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,7 @@ namespace Proyecto_Parcial_4
             this.historialToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(772, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(709, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,261 +174,11 @@ namespace Proyecto_Parcial_4
             this.Descuento,
             this.Cantidad,
             this.Subtotal});
-            this.DGVVenta.Location = new System.Drawing.Point(69, 77);
+            this.DGVVenta.Location = new System.Drawing.Point(35, 82);
             this.DGVVenta.Name = "DGVVenta";
             this.DGVVenta.ReadOnly = true;
-            this.DGVVenta.Size = new System.Drawing.Size(634, 150);
+            this.DGVVenta.Size = new System.Drawing.Size(634, 171);
             this.DGVVenta.TabIndex = 1;
-            // 
-            // LBTitle
-            // 
-            this.LBTitle.AutoSize = true;
-            this.LBTitle.Location = new System.Drawing.Point(349, 40);
-            this.LBTitle.Name = "LBTitle";
-            this.LBTitle.Size = new System.Drawing.Size(91, 13);
-            this.LBTitle.TabIndex = 2;
-            this.LBTitle.Text = "Registro de venta";
-            // 
-            // CBArticulo
-            // 
-            this.CBArticulo.Enabled = false;
-            this.CBArticulo.FormattingEnabled = true;
-            this.CBArticulo.Location = new System.Drawing.Point(98, 254);
-            this.CBArticulo.Name = "CBArticulo";
-            this.CBArticulo.Size = new System.Drawing.Size(315, 21);
-            this.CBArticulo.TabIndex = 3;
-            this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
-            // 
-            // LBArticulo
-            // 
-            this.LBArticulo.AutoSize = true;
-            this.LBArticulo.Location = new System.Drawing.Point(38, 257);
-            this.LBArticulo.Name = "LBArticulo";
-            this.LBArticulo.Size = new System.Drawing.Size(44, 13);
-            this.LBArticulo.TabIndex = 4;
-            this.LBArticulo.Text = "Artículo";
-            // 
-            // TBCantidad
-            // 
-            this.TBCantidad.Enabled = false;
-            this.TBCantidad.Location = new System.Drawing.Point(98, 294);
-            this.TBCantidad.Name = "TBCantidad";
-            this.TBCantidad.Size = new System.Drawing.Size(49, 20);
-            this.TBCantidad.TabIndex = 5;
-            this.TBCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LBCantidad
-            // 
-            this.LBCantidad.AutoSize = true;
-            this.LBCantidad.Location = new System.Drawing.Point(33, 297);
-            this.LBCantidad.Name = "LBCantidad";
-            this.LBCantidad.Size = new System.Drawing.Size(49, 13);
-            this.LBCantidad.TabIndex = 6;
-            this.LBCantidad.Text = "Cantidad";
-            // 
-            // LBPrecio
-            // 
-            this.LBPrecio.AutoSize = true;
-            this.LBPrecio.Location = new System.Drawing.Point(174, 297);
-            this.LBPrecio.Name = "LBPrecio";
-            this.LBPrecio.Size = new System.Drawing.Size(37, 13);
-            this.LBPrecio.TabIndex = 7;
-            this.LBPrecio.Text = "Precio";
-            // 
-            // TBPrecio
-            // 
-            this.TBPrecio.Location = new System.Drawing.Point(217, 294);
-            this.TBPrecio.Name = "TBPrecio";
-            this.TBPrecio.ReadOnly = true;
-            this.TBPrecio.Size = new System.Drawing.Size(52, 20);
-            this.TBPrecio.TabIndex = 8;
-            this.TBPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TBDescuento
-            // 
-            this.TBDescuento.Location = new System.Drawing.Point(366, 294);
-            this.TBDescuento.Name = "TBDescuento";
-            this.TBDescuento.ReadOnly = true;
-            this.TBDescuento.Size = new System.Drawing.Size(47, 20);
-            this.TBDescuento.TabIndex = 9;
-            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LBDescuento
-            // 
-            this.LBDescuento.AutoSize = true;
-            this.LBDescuento.Location = new System.Drawing.Point(301, 297);
-            this.LBDescuento.Name = "LBDescuento";
-            this.LBDescuento.Size = new System.Drawing.Size(59, 13);
-            this.LBDescuento.TabIndex = 10;
-            this.LBDescuento.Text = "Descuento";
-            // 
-            // LBSubtotal
-            // 
-            this.LBSubtotal.AutoSize = true;
-            this.LBSubtotal.Location = new System.Drawing.Point(301, 338);
-            this.LBSubtotal.Name = "LBSubtotal";
-            this.LBSubtotal.Size = new System.Drawing.Size(46, 13);
-            this.LBSubtotal.TabIndex = 11;
-            this.LBSubtotal.Text = "Subtotal";
-            // 
-            // TBSubtotal
-            // 
-            this.TBSubtotal.Location = new System.Drawing.Point(366, 331);
-            this.TBSubtotal.Name = "TBSubtotal";
-            this.TBSubtotal.ReadOnly = true;
-            this.TBSubtotal.Size = new System.Drawing.Size(52, 20);
-            this.TBSubtotal.TabIndex = 12;
-            this.TBSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BTNRegistrar
-            // 
-            this.BTNRegistrar.Enabled = false;
-            this.BTNRegistrar.Location = new System.Drawing.Point(441, 304);
-            this.BTNRegistrar.Name = "BTNRegistrar";
-            this.BTNRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNRegistrar.TabIndex = 13;
-            this.BTNRegistrar.Text = "Registrar";
-            this.BTNRegistrar.UseVisualStyleBackColor = true;
-            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
-            // 
-            // BTNEliminar
-            // 
-            this.BTNEliminar.Enabled = false;
-            this.BTNEliminar.Location = new System.Drawing.Point(554, 354);
-            this.BTNEliminar.Name = "BTNEliminar";
-            this.BTNEliminar.Size = new System.Drawing.Size(90, 23);
-            this.BTNEliminar.TabIndex = 14;
-            this.BTNEliminar.Text = "Eliminar Articulo";
-            this.BTNEliminar.UseVisualStyleBackColor = true;
-            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
-            // 
-            // BTNSalir
-            // 
-            this.BTNSalir.Location = new System.Drawing.Point(441, 354);
-            this.BTNSalir.Name = "BTNSalir";
-            this.BTNSalir.Size = new System.Drawing.Size(75, 23);
-            this.BTNSalir.TabIndex = 16;
-            this.BTNSalir.Text = "Salir";
-            this.BTNSalir.UseVisualStyleBackColor = true;
-            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
-            // 
-            // BTNMostrar
-            // 
-            this.BTNMostrar.Location = new System.Drawing.Point(656, 354);
-            this.BTNMostrar.Name = "BTNMostrar";
-            this.BTNMostrar.Size = new System.Drawing.Size(86, 23);
-            this.BTNMostrar.TabIndex = 17;
-            this.BTNMostrar.Text = "Mostrar Ventas";
-            this.BTNMostrar.UseVisualStyleBackColor = true;
-            this.BTNMostrar.Visible = false;
-            this.BTNMostrar.Click += new System.EventHandler(this.BTNMostrar_Click);
-            // 
-            // LBTotal
-            // 
-            this.LBTotal.AutoSize = true;
-            this.LBTotal.Location = new System.Drawing.Point(553, 230);
-            this.LBTotal.Name = "LBTotal";
-            this.LBTotal.Size = new System.Drawing.Size(65, 13);
-            this.LBTotal.TabIndex = 18;
-            this.LBTotal.Text = "Total Venta:";
-            // 
-            // TBTotal
-            // 
-            this.TBTotal.Location = new System.Drawing.Point(628, 227);
-            this.TBTotal.Name = "TBTotal";
-            this.TBTotal.ReadOnly = true;
-            this.TBTotal.Size = new System.Drawing.Size(75, 20);
-            this.TBTotal.TabIndex = 19;
-            this.TBTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBTotal.TextChanged += new System.EventHandler(this.TBTotal_TextChanged);
-            // 
-            // BTNBuscar
-            // 
-            this.BTNBuscar.Enabled = false;
-            this.BTNBuscar.Location = new System.Drawing.Point(41, 331);
-            this.BTNBuscar.Name = "BTNBuscar";
-            this.BTNBuscar.Size = new System.Drawing.Size(93, 23);
-            this.BTNBuscar.TabIndex = 20;
-            this.BTNBuscar.Text = "Buscar Articulo";
-            this.BTNBuscar.UseVisualStyleBackColor = true;
-            this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
-            // 
-            // BTNActBusqueda
-            // 
-            this.BTNActBusqueda.Enabled = false;
-            this.BTNActBusqueda.Location = new System.Drawing.Point(151, 333);
-            this.BTNActBusqueda.Name = "BTNActBusqueda";
-            this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
-            this.BTNActBusqueda.TabIndex = 33;
-            this.BTNActBusqueda.Text = "Actualizar Busqueda";
-            this.BTNActBusqueda.UseVisualStyleBackColor = true;
-            this.BTNActBusqueda.Click += new System.EventHandler(this.BTNActBusqueda_Click);
-            // 
-            // BTNCalcular
-            // 
-            this.BTNCalcular.Enabled = false;
-            this.BTNCalcular.Location = new System.Drawing.Point(441, 266);
-            this.BTNCalcular.Name = "BTNCalcular";
-            this.BTNCalcular.Size = new System.Drawing.Size(75, 23);
-            this.BTNCalcular.TabIndex = 34;
-            this.BTNCalcular.Text = "Calcular";
-            this.BTNCalcular.UseVisualStyleBackColor = true;
-            this.BTNCalcular.Click += new System.EventHandler(this.BTNCalcular_Click);
-            // 
-            // LBPago
-            // 
-            this.LBPago.AutoSize = true;
-            this.LBPago.Location = new System.Drawing.Point(573, 257);
-            this.LBPago.Name = "LBPago";
-            this.LBPago.Size = new System.Drawing.Size(35, 13);
-            this.LBPago.TabIndex = 35;
-            this.LBPago.Text = "Pago:";
-            // 
-            // TBPago
-            // 
-            this.TBPago.Enabled = false;
-            this.TBPago.Location = new System.Drawing.Point(628, 254);
-            this.TBPago.Name = "TBPago";
-            this.TBPago.Size = new System.Drawing.Size(75, 20);
-            this.TBPago.TabIndex = 36;
-            // 
-            // BTNConfirmar
-            // 
-            this.BTNConfirmar.Enabled = false;
-            this.BTNConfirmar.Location = new System.Drawing.Point(656, 308);
-            this.BTNConfirmar.Name = "BTNConfirmar";
-            this.BTNConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BTNConfirmar.TabIndex = 39;
-            this.BTNConfirmar.Text = "Confirmar";
-            this.BTNConfirmar.UseVisualStyleBackColor = true;
-            this.BTNConfirmar.Click += new System.EventHandler(this.BTNConfirmar_Click);
-            // 
-            // BTNNuevo
-            // 
-            this.BTNNuevo.Location = new System.Drawing.Point(554, 308);
-            this.BTNNuevo.Name = "BTNNuevo";
-            this.BTNNuevo.Size = new System.Drawing.Size(75, 23);
-            this.BTNNuevo.TabIndex = 40;
-            this.BTNNuevo.Text = "Nuevo";
-            this.BTNNuevo.UseVisualStyleBackColor = true;
-            this.BTNNuevo.Click += new System.EventHandler(this.BTNNuevo_Click);
-            // 
-            // LBCambio
-            // 
-            this.LBCambio.AutoSize = true;
-            this.LBCambio.Location = new System.Drawing.Point(566, 285);
-            this.LBCambio.Name = "LBCambio";
-            this.LBCambio.Size = new System.Drawing.Size(45, 13);
-            this.LBCambio.TabIndex = 41;
-            this.LBCambio.Text = "Cambio:";
-            // 
-            // TBCambio
-            // 
-            this.TBCambio.Enabled = false;
-            this.TBCambio.Location = new System.Drawing.Point(628, 282);
-            this.TBCambio.Name = "TBCambio";
-            this.TBCambio.Size = new System.Drawing.Size(75, 20);
-            this.TBCambio.TabIndex = 42;
             // 
             // Codigo
             // 
@@ -479,11 +229,261 @@ namespace Proyecto_Parcial_4
             this.Subtotal.ReadOnly = true;
             this.Subtotal.Width = 65;
             // 
+            // LBTitle
+            // 
+            this.LBTitle.AutoSize = true;
+            this.LBTitle.Location = new System.Drawing.Point(303, 66);
+            this.LBTitle.Name = "LBTitle";
+            this.LBTitle.Size = new System.Drawing.Size(91, 13);
+            this.LBTitle.TabIndex = 2;
+            this.LBTitle.Text = "Registro de venta";
+            // 
+            // CBArticulo
+            // 
+            this.CBArticulo.Enabled = false;
+            this.CBArticulo.FormattingEnabled = true;
+            this.CBArticulo.Location = new System.Drawing.Point(64, 280);
+            this.CBArticulo.Name = "CBArticulo";
+            this.CBArticulo.Size = new System.Drawing.Size(315, 21);
+            this.CBArticulo.TabIndex = 0;
+            this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
+            // 
+            // LBArticulo
+            // 
+            this.LBArticulo.AutoSize = true;
+            this.LBArticulo.Location = new System.Drawing.Point(4, 283);
+            this.LBArticulo.Name = "LBArticulo";
+            this.LBArticulo.Size = new System.Drawing.Size(44, 13);
+            this.LBArticulo.TabIndex = 4;
+            this.LBArticulo.Text = "Artículo";
+            // 
+            // TBCantidad
+            // 
+            this.TBCantidad.Enabled = false;
+            this.TBCantidad.Location = new System.Drawing.Point(64, 320);
+            this.TBCantidad.Name = "TBCantidad";
+            this.TBCantidad.Size = new System.Drawing.Size(49, 20);
+            this.TBCantidad.TabIndex = 1;
+            this.TBCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LBCantidad
+            // 
+            this.LBCantidad.AutoSize = true;
+            this.LBCantidad.Location = new System.Drawing.Point(9, 323);
+            this.LBCantidad.Name = "LBCantidad";
+            this.LBCantidad.Size = new System.Drawing.Size(49, 13);
+            this.LBCantidad.TabIndex = 6;
+            this.LBCantidad.Text = "Cantidad";
+            // 
+            // LBPrecio
+            // 
+            this.LBPrecio.AutoSize = true;
+            this.LBPrecio.Location = new System.Drawing.Point(140, 323);
+            this.LBPrecio.Name = "LBPrecio";
+            this.LBPrecio.Size = new System.Drawing.Size(37, 13);
+            this.LBPrecio.TabIndex = 7;
+            this.LBPrecio.Text = "Precio";
+            // 
+            // TBPrecio
+            // 
+            this.TBPrecio.Location = new System.Drawing.Point(183, 320);
+            this.TBPrecio.Name = "TBPrecio";
+            this.TBPrecio.ReadOnly = true;
+            this.TBPrecio.Size = new System.Drawing.Size(52, 20);
+            this.TBPrecio.TabIndex = 2;
+            this.TBPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TBDescuento
+            // 
+            this.TBDescuento.Location = new System.Drawing.Point(332, 320);
+            this.TBDescuento.Name = "TBDescuento";
+            this.TBDescuento.ReadOnly = true;
+            this.TBDescuento.Size = new System.Drawing.Size(47, 20);
+            this.TBDescuento.TabIndex = 3;
+            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LBDescuento
+            // 
+            this.LBDescuento.AutoSize = true;
+            this.LBDescuento.Location = new System.Drawing.Point(267, 323);
+            this.LBDescuento.Name = "LBDescuento";
+            this.LBDescuento.Size = new System.Drawing.Size(59, 13);
+            this.LBDescuento.TabIndex = 10;
+            this.LBDescuento.Text = "Descuento";
+            // 
+            // LBSubtotal
+            // 
+            this.LBSubtotal.AutoSize = true;
+            this.LBSubtotal.Location = new System.Drawing.Point(280, 364);
+            this.LBSubtotal.Name = "LBSubtotal";
+            this.LBSubtotal.Size = new System.Drawing.Size(46, 13);
+            this.LBSubtotal.TabIndex = 11;
+            this.LBSubtotal.Text = "Subtotal";
+            // 
+            // TBSubtotal
+            // 
+            this.TBSubtotal.Location = new System.Drawing.Point(332, 357);
+            this.TBSubtotal.Name = "TBSubtotal";
+            this.TBSubtotal.ReadOnly = true;
+            this.TBSubtotal.Size = new System.Drawing.Size(52, 20);
+            this.TBSubtotal.TabIndex = 6;
+            this.TBSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BTNRegistrar
+            // 
+            this.BTNRegistrar.Enabled = false;
+            this.BTNRegistrar.Location = new System.Drawing.Point(407, 330);
+            this.BTNRegistrar.Name = "BTNRegistrar";
+            this.BTNRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.BTNRegistrar.TabIndex = 8;
+            this.BTNRegistrar.Text = "Registrar";
+            this.BTNRegistrar.UseVisualStyleBackColor = true;
+            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
+            // 
+            // BTNEliminar
+            // 
+            this.BTNEliminar.Enabled = false;
+            this.BTNEliminar.Location = new System.Drawing.Point(505, 380);
+            this.BTNEliminar.Name = "BTNEliminar";
+            this.BTNEliminar.Size = new System.Drawing.Size(90, 23);
+            this.BTNEliminar.TabIndex = 14;
+            this.BTNEliminar.Text = "Eliminar Articulo";
+            this.BTNEliminar.UseVisualStyleBackColor = true;
+            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click);
+            // 
+            // BTNSalir
+            // 
+            this.BTNSalir.Location = new System.Drawing.Point(407, 380);
+            this.BTNSalir.Name = "BTNSalir";
+            this.BTNSalir.Size = new System.Drawing.Size(75, 23);
+            this.BTNSalir.TabIndex = 16;
+            this.BTNSalir.Text = "Salir";
+            this.BTNSalir.UseVisualStyleBackColor = true;
+            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
+            // 
+            // BTNMostrar
+            // 
+            this.BTNMostrar.Location = new System.Drawing.Point(601, 380);
+            this.BTNMostrar.Name = "BTNMostrar";
+            this.BTNMostrar.Size = new System.Drawing.Size(86, 23);
+            this.BTNMostrar.TabIndex = 15;
+            this.BTNMostrar.Text = "Mostrar Ventas";
+            this.BTNMostrar.UseVisualStyleBackColor = true;
+            this.BTNMostrar.Visible = false;
+            this.BTNMostrar.Click += new System.EventHandler(this.BTNMostrar_Click);
+            // 
+            // LBTotal
+            // 
+            this.LBTotal.AutoSize = true;
+            this.LBTotal.Location = new System.Drawing.Point(519, 256);
+            this.LBTotal.Name = "LBTotal";
+            this.LBTotal.Size = new System.Drawing.Size(65, 13);
+            this.LBTotal.TabIndex = 18;
+            this.LBTotal.Text = "Total Venta:";
+            // 
+            // TBTotal
+            // 
+            this.TBTotal.Location = new System.Drawing.Point(594, 253);
+            this.TBTotal.Name = "TBTotal";
+            this.TBTotal.ReadOnly = true;
+            this.TBTotal.Size = new System.Drawing.Size(75, 20);
+            this.TBTotal.TabIndex = 9;
+            this.TBTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBTotal.TextChanged += new System.EventHandler(this.TBTotal_TextChanged);
+            // 
+            // BTNBuscar
+            // 
+            this.BTNBuscar.Enabled = false;
+            this.BTNBuscar.Location = new System.Drawing.Point(18, 359);
+            this.BTNBuscar.Name = "BTNBuscar";
+            this.BTNBuscar.Size = new System.Drawing.Size(93, 23);
+            this.BTNBuscar.TabIndex = 4;
+            this.BTNBuscar.Text = "Buscar Articulo";
+            this.BTNBuscar.UseVisualStyleBackColor = true;
+            this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
+            // 
+            // BTNActBusqueda
+            // 
+            this.BTNActBusqueda.Enabled = false;
+            this.BTNActBusqueda.Location = new System.Drawing.Point(117, 359);
+            this.BTNActBusqueda.Name = "BTNActBusqueda";
+            this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
+            this.BTNActBusqueda.TabIndex = 5;
+            this.BTNActBusqueda.Text = "Actualizar Busqueda";
+            this.BTNActBusqueda.UseVisualStyleBackColor = true;
+            this.BTNActBusqueda.Click += new System.EventHandler(this.BTNActBusqueda_Click);
+            // 
+            // BTNCalcular
+            // 
+            this.BTNCalcular.Enabled = false;
+            this.BTNCalcular.Location = new System.Drawing.Point(407, 292);
+            this.BTNCalcular.Name = "BTNCalcular";
+            this.BTNCalcular.Size = new System.Drawing.Size(75, 23);
+            this.BTNCalcular.TabIndex = 7;
+            this.BTNCalcular.Text = "Calcular";
+            this.BTNCalcular.UseVisualStyleBackColor = true;
+            this.BTNCalcular.Click += new System.EventHandler(this.BTNCalcular_Click);
+            // 
+            // LBPago
+            // 
+            this.LBPago.AutoSize = true;
+            this.LBPago.Location = new System.Drawing.Point(539, 283);
+            this.LBPago.Name = "LBPago";
+            this.LBPago.Size = new System.Drawing.Size(35, 13);
+            this.LBPago.TabIndex = 35;
+            this.LBPago.Text = "Pago:";
+            // 
+            // TBPago
+            // 
+            this.TBPago.Enabled = false;
+            this.TBPago.Location = new System.Drawing.Point(594, 280);
+            this.TBPago.Name = "TBPago";
+            this.TBPago.Size = new System.Drawing.Size(75, 20);
+            this.TBPago.TabIndex = 10;
+            // 
+            // BTNConfirmar
+            // 
+            this.BTNConfirmar.Enabled = false;
+            this.BTNConfirmar.Location = new System.Drawing.Point(601, 334);
+            this.BTNConfirmar.Name = "BTNConfirmar";
+            this.BTNConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.BTNConfirmar.TabIndex = 13;
+            this.BTNConfirmar.Text = "Confirmar";
+            this.BTNConfirmar.UseVisualStyleBackColor = true;
+            this.BTNConfirmar.Click += new System.EventHandler(this.BTNConfirmar_Click);
+            // 
+            // BTNNuevo
+            // 
+            this.BTNNuevo.Location = new System.Drawing.Point(520, 334);
+            this.BTNNuevo.Name = "BTNNuevo";
+            this.BTNNuevo.Size = new System.Drawing.Size(75, 23);
+            this.BTNNuevo.TabIndex = 12;
+            this.BTNNuevo.Text = "Nuevo";
+            this.BTNNuevo.UseVisualStyleBackColor = true;
+            this.BTNNuevo.Click += new System.EventHandler(this.BTNNuevo_Click);
+            // 
+            // LBCambio
+            // 
+            this.LBCambio.AutoSize = true;
+            this.LBCambio.Location = new System.Drawing.Point(532, 311);
+            this.LBCambio.Name = "LBCambio";
+            this.LBCambio.Size = new System.Drawing.Size(45, 13);
+            this.LBCambio.TabIndex = 41;
+            this.LBCambio.Text = "Cambio:";
+            // 
+            // TBCambio
+            // 
+            this.TBCambio.Enabled = false;
+            this.TBCambio.Location = new System.Drawing.Point(594, 308);
+            this.TBCambio.Name = "TBCambio";
+            this.TBCambio.Size = new System.Drawing.Size(75, 20);
+            this.TBCambio.TabIndex = 11;
+            // 
             // FRMVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 389);
+            this.ClientSize = new System.Drawing.Size(709, 430);
             this.ControlBox = false;
             this.Controls.Add(this.TBCambio);
             this.Controls.Add(this.LBCambio);

@@ -16,7 +16,7 @@ namespace Proyecto_Parcial_4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMRIngreso("DESKTOP-108L2NP"));
+            Application.Run(new Inicio_del_programa());
         }
     }
 }

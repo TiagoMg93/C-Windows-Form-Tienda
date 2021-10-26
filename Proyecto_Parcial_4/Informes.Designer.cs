@@ -44,10 +44,10 @@ namespace Proyecto_Parcial_4
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(238, 183);
+            this.BTNCerrar.Location = new System.Drawing.Point(211, 230);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 20;
+            this.BTNCerrar.TabIndex = 0;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
@@ -55,7 +55,7 @@ namespace Proyecto_Parcial_4
             // LBUtilidades
             // 
             this.LBUtilidades.AutoSize = true;
-            this.LBUtilidades.Location = new System.Drawing.Point(65, 67);
+            this.LBUtilidades.Location = new System.Drawing.Point(35, 108);
             this.LBUtilidades.Name = "LBUtilidades";
             this.LBUtilidades.Size = new System.Drawing.Size(53, 13);
             this.LBUtilidades.TabIndex = 21;
@@ -64,7 +64,7 @@ namespace Proyecto_Parcial_4
             // LBMenosvendido
             // 
             this.LBMenosvendido.AutoSize = true;
-            this.LBMenosvendido.Location = new System.Drawing.Point(43, 149);
+            this.LBMenosvendido.Location = new System.Drawing.Point(13, 190);
             this.LBMenosvendido.Name = "LBMenosvendido";
             this.LBMenosvendido.Size = new System.Drawing.Size(119, 13);
             this.LBMenosvendido.TabIndex = 22;
@@ -73,7 +73,7 @@ namespace Proyecto_Parcial_4
             // LBMasvendido
             // 
             this.LBMasvendido.AutoSize = true;
-            this.LBMasvendido.Location = new System.Drawing.Point(43, 109);
+            this.LBMasvendido.Location = new System.Drawing.Point(13, 150);
             this.LBMasvendido.Name = "LBMasvendido";
             this.LBMasvendido.Size = new System.Drawing.Size(107, 13);
             this.LBMasvendido.TabIndex = 23;
@@ -82,7 +82,7 @@ namespace Proyecto_Parcial_4
             // LBTiTle
             // 
             this.LBTiTle.AutoSize = true;
-            this.LBTiTle.Location = new System.Drawing.Point(189, 67);
+            this.LBTiTle.Location = new System.Drawing.Point(159, 108);
             this.LBTiTle.Name = "LBTiTle";
             this.LBTiTle.Size = new System.Drawing.Size(13, 13);
             this.LBTiTle.TabIndex = 24;
@@ -91,7 +91,7 @@ namespace Proyecto_Parcial_4
             // LBGanancias
             // 
             this.LBGanancias.AutoSize = true;
-            this.LBGanancias.Location = new System.Drawing.Point(225, 67);
+            this.LBGanancias.Location = new System.Drawing.Point(195, 108);
             this.LBGanancias.Name = "LBGanancias";
             this.LBGanancias.Size = new System.Drawing.Size(13, 13);
             this.LBGanancias.TabIndex = 25;
@@ -100,7 +100,7 @@ namespace Proyecto_Parcial_4
             // Title3
             // 
             this.Title3.AutoSize = true;
-            this.Title3.Location = new System.Drawing.Point(65, 30);
+            this.Title3.Location = new System.Drawing.Point(35, 71);
             this.Title3.Name = "Title3";
             this.Title3.Size = new System.Drawing.Size(74, 13);
             this.Title3.TabIndex = 28;
@@ -109,7 +109,7 @@ namespace Proyecto_Parcial_4
             // Title2
             // 
             this.Title2.AutoSize = true;
-            this.Title2.Location = new System.Drawing.Point(189, 30);
+            this.Title2.Location = new System.Drawing.Point(159, 71);
             this.Title2.Name = "Title2";
             this.Title2.Size = new System.Drawing.Size(13, 13);
             this.Title2.TabIndex = 29;
@@ -118,7 +118,7 @@ namespace Proyecto_Parcial_4
             // LBVentas
             // 
             this.LBVentas.AutoSize = true;
-            this.LBVentas.Location = new System.Drawing.Point(225, 30);
+            this.LBVentas.Location = new System.Drawing.Point(195, 71);
             this.LBVentas.Name = "LBVentas";
             this.LBVentas.Size = new System.Drawing.Size(13, 13);
             this.LBVentas.TabIndex = 30;
@@ -127,7 +127,7 @@ namespace Proyecto_Parcial_4
             // LBArtMas
             // 
             this.LBArtMas.AutoSize = true;
-            this.LBArtMas.Location = new System.Drawing.Point(203, 109);
+            this.LBArtMas.Location = new System.Drawing.Point(173, 150);
             this.LBArtMas.Name = "LBArtMas";
             this.LBArtMas.Size = new System.Drawing.Size(47, 13);
             this.LBArtMas.TabIndex = 31;
@@ -136,7 +136,7 @@ namespace Proyecto_Parcial_4
             // LBArtMen
             // 
             this.LBArtMen.AutoSize = true;
-            this.LBArtMen.Location = new System.Drawing.Point(203, 149);
+            this.LBArtMen.Location = new System.Drawing.Point(173, 190);
             this.LBArtMen.Name = "LBArtMen";
             this.LBArtMen.Size = new System.Drawing.Size(47, 13);
             this.LBArtMen.TabIndex = 32;
@@ -146,7 +146,7 @@ namespace Proyecto_Parcial_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 218);
+            this.ClientSize = new System.Drawing.Size(298, 265);
             this.ControlBox = false;
             this.Controls.Add(this.LBArtMen);
             this.Controls.Add(this.LBArtMas);
@@ -162,6 +162,7 @@ namespace Proyecto_Parcial_4
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRInformes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informes";
             this.Load += new System.EventHandler(this.FMRInformes_Load);
             this.ResumeLayout(false);

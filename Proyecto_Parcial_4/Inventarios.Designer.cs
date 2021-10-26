@@ -76,7 +76,7 @@ namespace Proyecto_Parcial_4
             this.Cantidad,
             this.Proveedor,
             this.Contacto});
-            this.DTGVInventario.Location = new System.Drawing.Point(12, 12);
+            this.DTGVInventario.Location = new System.Drawing.Point(12, 76);
             this.DTGVInventario.Name = "DTGVInventario";
             this.DTGVInventario.ReadOnly = true;
             this.DTGVInventario.Size = new System.Drawing.Size(821, 221);
@@ -134,18 +134,18 @@ namespace Proyecto_Parcial_4
             // CBArticulo
             // 
             this.CBArticulo.FormattingEnabled = true;
-            this.CBArticulo.Location = new System.Drawing.Point(54, 252);
+            this.CBArticulo.Location = new System.Drawing.Point(44, 307);
             this.CBArticulo.Name = "CBArticulo";
             this.CBArticulo.Size = new System.Drawing.Size(174, 21);
-            this.CBArticulo.TabIndex = 5;
+            this.CBArticulo.TabIndex = 0;
             this.CBArticulo.SelectedIndexChanged += new System.EventHandler(this.CBArticulo_SelectedIndexChanged);
             // 
             // BTNBuscar
             // 
-            this.BTNBuscar.Location = new System.Drawing.Point(254, 252);
+            this.BTNBuscar.Location = new System.Drawing.Point(244, 307);
             this.BTNBuscar.Name = "BTNBuscar";
             this.BTNBuscar.Size = new System.Drawing.Size(89, 21);
-            this.BTNBuscar.TabIndex = 6;
+            this.BTNBuscar.TabIndex = 1;
             this.BTNBuscar.Text = "Buscar Artículo";
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
@@ -153,7 +153,7 @@ namespace Proyecto_Parcial_4
             // LBCodigo
             // 
             this.LBCodigo.AutoSize = true;
-            this.LBCodigo.Location = new System.Drawing.Point(72, 294);
+            this.LBCodigo.Location = new System.Drawing.Point(62, 347);
             this.LBCodigo.Name = "LBCodigo";
             this.LBCodigo.Size = new System.Drawing.Size(40, 13);
             this.LBCodigo.TabIndex = 15;
@@ -162,15 +162,15 @@ namespace Proyecto_Parcial_4
             // TBCodigo
             // 
             this.TBCodigo.Enabled = false;
-            this.TBCodigo.Location = new System.Drawing.Point(128, 291);
+            this.TBCodigo.Location = new System.Drawing.Point(118, 344);
             this.TBCodigo.Name = "TBCodigo";
             this.TBCodigo.Size = new System.Drawing.Size(100, 20);
-            this.TBCodigo.TabIndex = 16;
+            this.TBCodigo.TabIndex = 3;
             // 
             // LBPrecio
             // 
             this.LBPrecio.AutoSize = true;
-            this.LBPrecio.Location = new System.Drawing.Point(36, 332);
+            this.LBPrecio.Location = new System.Drawing.Point(26, 385);
             this.LBPrecio.Name = "LBPrecio";
             this.LBPrecio.Size = new System.Drawing.Size(76, 13);
             this.LBPrecio.TabIndex = 17;
@@ -178,15 +178,15 @@ namespace Proyecto_Parcial_4
             // 
             // TBPrecio
             // 
-            this.TBPrecio.Location = new System.Drawing.Point(128, 329);
+            this.TBPrecio.Location = new System.Drawing.Point(118, 382);
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(100, 20);
-            this.TBPrecio.TabIndex = 18;
+            this.TBPrecio.TabIndex = 6;
             // 
             // LBCosto
             // 
             this.LBCosto.AutoSize = true;
-            this.LBCosto.Location = new System.Drawing.Point(39, 371);
+            this.LBCosto.Location = new System.Drawing.Point(29, 424);
             this.LBCosto.Name = "LBCosto";
             this.LBCosto.Size = new System.Drawing.Size(73, 13);
             this.LBCosto.TabIndex = 19;
@@ -194,15 +194,15 @@ namespace Proyecto_Parcial_4
             // 
             // TBCosto
             // 
-            this.TBCosto.Location = new System.Drawing.Point(128, 368);
+            this.TBCosto.Location = new System.Drawing.Point(118, 421);
             this.TBCosto.Name = "TBCosto";
             this.TBCosto.Size = new System.Drawing.Size(100, 20);
-            this.TBCosto.TabIndex = 20;
+            this.TBCosto.TabIndex = 9;
             // 
             // LBCantidad
             // 
             this.LBCantidad.AutoSize = true;
-            this.LBCantidad.Location = new System.Drawing.Point(294, 332);
+            this.LBCantidad.Location = new System.Drawing.Point(284, 385);
             this.LBCantidad.Name = "LBCantidad";
             this.LBCantidad.Size = new System.Drawing.Size(49, 13);
             this.LBCantidad.TabIndex = 22;
@@ -211,15 +211,15 @@ namespace Proyecto_Parcial_4
             // TBCantidad
             // 
             this.TBCantidad.Enabled = false;
-            this.TBCantidad.Location = new System.Drawing.Point(367, 329);
+            this.TBCantidad.Location = new System.Drawing.Point(357, 382);
             this.TBCantidad.Name = "TBCantidad";
             this.TBCantidad.Size = new System.Drawing.Size(100, 20);
-            this.TBCantidad.TabIndex = 23;
+            this.TBCantidad.TabIndex = 7;
             // 
             // LBMarca
             // 
             this.LBMarca.AutoSize = true;
-            this.LBMarca.Location = new System.Drawing.Point(306, 371);
+            this.LBMarca.Location = new System.Drawing.Point(296, 424);
             this.LBMarca.Name = "LBMarca";
             this.LBMarca.Size = new System.Drawing.Size(37, 13);
             this.LBMarca.TabIndex = 25;
@@ -227,15 +227,15 @@ namespace Proyecto_Parcial_4
             // 
             // TBMarca
             // 
-            this.TBMarca.Location = new System.Drawing.Point(367, 368);
+            this.TBMarca.Location = new System.Drawing.Point(357, 421);
             this.TBMarca.Name = "TBMarca";
             this.TBMarca.Size = new System.Drawing.Size(100, 20);
-            this.TBMarca.TabIndex = 26;
+            this.TBMarca.TabIndex = 10;
             // 
             // LBProveedor
             // 
             this.LBProveedor.AutoSize = true;
-            this.LBProveedor.Location = new System.Drawing.Point(518, 294);
+            this.LBProveedor.Location = new System.Drawing.Point(508, 347);
             this.LBProveedor.Name = "LBProveedor";
             this.LBProveedor.Size = new System.Drawing.Size(56, 13);
             this.LBProveedor.TabIndex = 27;
@@ -243,15 +243,15 @@ namespace Proyecto_Parcial_4
             // 
             // TBProveedor
             // 
-            this.TBProveedor.Location = new System.Drawing.Point(595, 291);
+            this.TBProveedor.Location = new System.Drawing.Point(585, 344);
             this.TBProveedor.Name = "TBProveedor";
             this.TBProveedor.Size = new System.Drawing.Size(100, 20);
-            this.TBProveedor.TabIndex = 28;
+            this.TBProveedor.TabIndex = 5;
             // 
             // LBContacto
             // 
             this.LBContacto.AutoSize = true;
-            this.LBContacto.Location = new System.Drawing.Point(524, 332);
+            this.LBContacto.Location = new System.Drawing.Point(514, 385);
             this.LBContacto.Name = "LBContacto";
             this.LBContacto.Size = new System.Drawing.Size(50, 13);
             this.LBContacto.TabIndex = 29;
@@ -259,27 +259,27 @@ namespace Proyecto_Parcial_4
             // 
             // TBContacto
             // 
-            this.TBContacto.Location = new System.Drawing.Point(595, 329);
+            this.TBContacto.Location = new System.Drawing.Point(585, 382);
             this.TBContacto.Name = "TBContacto";
             this.TBContacto.Size = new System.Drawing.Size(100, 20);
-            this.TBContacto.TabIndex = 30;
+            this.TBContacto.TabIndex = 8;
             // 
             // BTNModificar
             // 
-            this.BTNModificar.Location = new System.Drawing.Point(611, 366);
+            this.BTNModificar.Location = new System.Drawing.Point(601, 419);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(75, 23);
-            this.BTNModificar.TabIndex = 31;
+            this.BTNModificar.TabIndex = 11;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
             this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
             // BTNCerrar
             // 
-            this.BTNCerrar.Location = new System.Drawing.Point(758, 377);
+            this.BTNCerrar.Location = new System.Drawing.Point(762, 431);
             this.BTNCerrar.Name = "BTNCerrar";
             this.BTNCerrar.Size = new System.Drawing.Size(75, 23);
-            this.BTNCerrar.TabIndex = 32;
+            this.BTNCerrar.TabIndex = 12;
             this.BTNCerrar.Text = "Cerrar";
             this.BTNCerrar.UseVisualStyleBackColor = true;
             this.BTNCerrar.Click += new System.EventHandler(this.BTNCerrar_Click);
@@ -287,10 +287,10 @@ namespace Proyecto_Parcial_4
             // BTNActBusqueda
             // 
             this.BTNActBusqueda.Enabled = false;
-            this.BTNActBusqueda.Location = new System.Drawing.Point(349, 250);
+            this.BTNActBusqueda.Location = new System.Drawing.Point(339, 306);
             this.BTNActBusqueda.Name = "BTNActBusqueda";
             this.BTNActBusqueda.Size = new System.Drawing.Size(118, 23);
-            this.BTNActBusqueda.TabIndex = 33;
+            this.BTNActBusqueda.TabIndex = 2;
             this.BTNActBusqueda.Text = "Actualizar Busqueda";
             this.BTNActBusqueda.UseVisualStyleBackColor = true;
             this.BTNActBusqueda.Click += new System.EventHandler(this.BTNActBusqueda_Click);
@@ -298,7 +298,7 @@ namespace Proyecto_Parcial_4
             // LBArticulo
             // 
             this.LBArticulo.AutoSize = true;
-            this.LBArticulo.Location = new System.Drawing.Point(299, 294);
+            this.LBArticulo.Location = new System.Drawing.Point(289, 347);
             this.LBArticulo.Name = "LBArticulo";
             this.LBArticulo.Size = new System.Drawing.Size(44, 13);
             this.LBArticulo.TabIndex = 34;
@@ -306,16 +306,16 @@ namespace Proyecto_Parcial_4
             // 
             // TBArticulo
             // 
-            this.TBArticulo.Location = new System.Drawing.Point(367, 291);
+            this.TBArticulo.Location = new System.Drawing.Point(357, 344);
             this.TBArticulo.Name = "TBArticulo";
             this.TBArticulo.Size = new System.Drawing.Size(100, 20);
-            this.TBArticulo.TabIndex = 35;
+            this.TBArticulo.TabIndex = 4;
             // 
             // FMRInventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 412);
+            this.ClientSize = new System.Drawing.Size(849, 466);
             this.ControlBox = false;
             this.Controls.Add(this.TBArticulo);
             this.Controls.Add(this.LBArticulo);
@@ -342,6 +342,7 @@ namespace Proyecto_Parcial_4
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRInventarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventarios";
             this.Load += new System.EventHandler(this.FMRInventarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGVInventario)).EndInit();
