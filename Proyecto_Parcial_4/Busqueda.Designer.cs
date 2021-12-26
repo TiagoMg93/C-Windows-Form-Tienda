@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRBusqueda));
             this.CBCodigo = new System.Windows.Forms.CheckBox();
             this.CBNombre = new System.Windows.Forms.CheckBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
@@ -169,6 +170,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.BTNBuscar);
             this.Controls.Add(this.CBNombre);
             this.Controls.Add(this.CBCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRBusqueda";

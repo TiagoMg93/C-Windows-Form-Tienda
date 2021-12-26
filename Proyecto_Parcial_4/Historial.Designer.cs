@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMHistorial));
             this.DTGVHistorial = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +89,7 @@ namespace Proyecto_Parcial_4
             this.ControlBox = false;
             this.Controls.Add(this.BTNCerrar);
             this.Controls.Add(this.DTGVHistorial);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRMHistorial";

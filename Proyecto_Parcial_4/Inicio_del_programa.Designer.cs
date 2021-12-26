@@ -30,6 +30,7 @@ namespace Proyecto_Parcial_4
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio_del_programa));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lb_info = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -79,6 +80,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.lb_info);
             this.Controls.Add(this.progressBar1);
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inicio_del_programa";

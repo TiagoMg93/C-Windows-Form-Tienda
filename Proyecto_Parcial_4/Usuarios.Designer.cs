@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRUsuarios));
             this.DTGVUsuario = new System.Windows.Forms.DataGridView();
             this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -205,6 +206,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.TBUser);
             this.Controls.Add(this.LBUsuario);
             this.Controls.Add(this.DTGVUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRUsuarios";

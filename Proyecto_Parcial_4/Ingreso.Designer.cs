@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRIngreso));
             this.TBUser = new System.Windows.Forms.TextBox();
             this.LBUser = new System.Windows.Forms.Label();
             this.LBPassword = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBPassword);
             this.Controls.Add(this.LBUser);
             this.Controls.Add(this.TBUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRIngreso";

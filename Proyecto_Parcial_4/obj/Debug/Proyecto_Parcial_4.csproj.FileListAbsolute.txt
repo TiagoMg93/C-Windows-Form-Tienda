@@ -36,9 +36,6 @@ C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-master\Proyecto_Parcial_4\obj\D
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-master\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-master\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-master\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
-C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
-C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
-C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\MaterialSkin.dll
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.AssemblyReference.cache
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRBusqueda.resources
@@ -54,8 +51,6 @@ C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\De
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.FMRUsuarios.resources
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.GenerateResource.cache
 C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CoreCompileInputs.cache
-C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.exe
-C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.pdb
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe.config
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.exe
 C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-dise-o\Proyecto_Parcial_4\bin\Debug\Proyecto_Parcial_4.pdb
@@ -103,3 +98,12 @@ C:\Users\Usuario\Downloads\C-Windows-Form-Tienda-Prototipo_1\Proyecto_Parcial_4\
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\bin\Debug\MaterialSkin.dll
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.Inicio_del_programa.resources
 C:\Users\Usuario\Desktop\Tiago\Universidad\Semestre 3\Herramientas de programación II\Proyecto_Parcial_4\Proyecto_Parcial_4\obj\Debug\Proyecto_Parcial_4.csproj.CopyComplete
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Tienda.exe.config
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Tienda.exe.manifest
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Tienda.application
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Tienda.exe
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\bin\Debug\Tienda.pdb
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Tienda.exe.manifest
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Tienda.application
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Tienda.exe
+C:\Users\WILDER\Documents\GitHub\C-Windows-Form-Tienda\Proyecto_Parcial_4\obj\Debug\Tienda.pdb

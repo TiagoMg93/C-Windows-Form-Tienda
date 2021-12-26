@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRDescuentos));
             this.BTNCerrar = new System.Windows.Forms.Button();
             this.DTGVDescuento = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,6 +174,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBTitle);
             this.Controls.Add(this.DTGVDescuento);
             this.Controls.Add(this.BTNCerrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRDescuentos";

@@ -29,6 +29,7 @@ namespace Proyecto_Parcial_4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRInformes));
             this.BTNCerrar = new System.Windows.Forms.Button();
             this.LBUtilidades = new System.Windows.Forms.Label();
             this.LBMenosvendido = new System.Windows.Forms.Label();
@@ -159,6 +160,7 @@ namespace Proyecto_Parcial_4
             this.Controls.Add(this.LBMenosvendido);
             this.Controls.Add(this.LBUtilidades);
             this.Controls.Add(this.BTNCerrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMRInformes";
